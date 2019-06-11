@@ -1,0 +1,20 @@
+{
+    "age": 0,
+    "altitude": -0,
+    "angular_size": 0,
+    "azimuth": 0,
+    "colong": 0,
+    "dec": 0,
+    "earth_distance": 0,
+    "elongation": 0,
+    "fractional_phase": 0,
+    "libration_lat": -0,
+    "libration_lon": 0,
+    "libration_phase_angle": 0,
+    "magnitude": -0,
+    "next_four_phases": {},
+    "phase": "Full Moon",
+    "ra": 0,
+    "rise_set_times": {},
+    "subsolar_lat": -0
+}
