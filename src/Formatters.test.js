@@ -1,4 +1,4 @@
-import { formatCoordinateLabel, formatDoubleLabel } from './Formatters';
+import { formatCoordinateLabel, formatDoubleLabel, formatTimeWithSeconds } from './Formatters';
 
 describe('Formatting Double Labels', () => {
     test('Standard Value Label', () => {
@@ -28,10 +28,26 @@ describe('Formatting Coordinate Labels', () => {
     });
 });
 
-// const testDate = new Date(Date.UTC(2019, 6, 8, 3, 30, 0));
+// Month is actual - 1
+const testDate = new Date(Date.UTC(2019, 5, 8, 3, 30, 0, 743)).getTime() / 1000;
+const timezone = 'America/New_York';
 
-// describe('Formatting Time Labels', () => {
-//     test('Local Time Label', () => {
-//         expect(formatTimeWithSeconds(testDate, timezone)).toBe();
-//     });   
-// });
+describe('Formatting Time Labels', () => {
+    test('UTC Time Label', () => {
+        expect(formatTimeWithSeconds(testDate, 'UTC')).toBe('2019-06-08 03:30:00');
+    });
+
+    test('Local Time Label', () => {
+        expect(formatTimeWithSeconds(testDate, timezone)).toBe('2019-06-07 23:30:00')
+    });
+
+    test('Local Time with IANA Timezone Label', () => {
+        const output = '2019-06-07 23:30:00 ' + timezone 
+        expect(formatTimeWithSeconds(testDate, timezone, true)).toBe(output)
+    });
+
+    test('Local Time with Short Timezone Label', () => {
+        const output = '2019-06-07 23:30:00 EDT' 
+        expect(formatTimeWithSeconds(testDate, timezone, true, true)).toBe(output)
+    });
+});

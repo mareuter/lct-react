@@ -67,6 +67,8 @@ class App extends Component {
         <main className="App-main">
           <Ephemeris 
             moon_info={this.state.moon_info}
+            datetime={this.getSecondsTimestamp()}
+            timezone={this.state.timezone.name()}
             latitude={this.state.latitude}
             longitude={this.state.longitude}
             error={this.state.error}
