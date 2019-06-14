@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import jstz from 'jstz';
 import axios from 'axios';
 import './App.css';
 
-import Ephemeris from './components/Ephemeris';
+import MainNav from './components/MainNav';
+import MoonInformation from './components/MoonInformation';
+import LunarClub from './components/LunarClub';
+import LunarIIClub from './components/LunarIIClub';
 
 import moon_info from './data/moon_info.json';
 
@@ -64,15 +68,11 @@ class App extends Component {
     console.log('App render');
     return (
       <div className="App">
+        <MainNav />
         <main className="App-main">
-          <Ephemeris 
-            moon_info={this.state.moon_info}
-            datetime={this.getSecondsTimestamp()}
-            timezone={this.state.timezone.name()}
-            latitude={this.state.latitude}
-            longitude={this.state.longitude}
-            error={this.state.error}
-          />
+          <Route path="/moon_info" component={MoonInformation} />
+          <Route path="/lunar_club" component={LunarClub} />
+          <Route path="/lunar_club_ii" component={LunarIIClub} />
         </main>
       </div>
     );

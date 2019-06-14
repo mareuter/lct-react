@@ -15,7 +15,6 @@ class Ephemeris extends Component {
 
     renderItems() {
         if (!this.props.error) {
-            console.log(this.props.datetime);
             return (
                 <div>
                     <p>Location: {formatCoordinateLabel(this.props.latitude, 'N S')}&nbsp;&nbsp; 
