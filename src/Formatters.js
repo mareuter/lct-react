@@ -41,3 +41,21 @@ export function formatTimeWithSeconds(timestamp, timezone, showTz = false, useSh
     }
     return dateString;
 }
+
+export const formatTimeOnly = (timeTuple) => {
+    const local = DateTime.local(timeTuple[0], timeTuple[1], timeTuple[2],
+                                 timeTuple[3], timeTuple[4], timeTuple[5])
+    const timeString = local.toFormat('HH:mm');
+    return timeString;
+}
+
+export const formatRightAscension = (value) => {
+    const hoursDecimal = value / 15.0;
+    const hours = Math.trunc(hoursDecimal);
+    const minutesDecimal = (hoursDecimal - hours) * 60.0;
+    const minutes = Math.round(minutesDecimal);
+
+    const hoursString = hours.toString().padStart(2, '0') + 'h';
+    const minutesString = minutes.toString().padStart(2, '0') + 'm';
+    return hoursString + ' ' + minutesString;
+}

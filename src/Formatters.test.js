@@ -1,4 +1,5 @@
-import { formatCoordinateLabel, formatDoubleLabel, formatTimeWithSeconds } from './Formatters';
+import { formatCoordinateLabel, formatDoubleLabel, 
+         formatRightAscension, formatTimeOnly, formatTimeWithSeconds } from './Formatters';
 
 describe('Formatting Double Labels', () => {
     test('Standard Value Label', () => {
@@ -31,6 +32,7 @@ describe('Formatting Coordinate Labels', () => {
 // Month is actual - 1
 const testDate = new Date(Date.UTC(2019, 5, 8, 3, 30, 0, 743)).getTime() / 1000;
 const timezone = 'America/New_York';
+const timeTuple = [2019, 6, 7, 23, 30, 0, 743];
 
 describe('Formatting Time Labels', () => {
     test('UTC Time Label', () => {
@@ -42,12 +44,27 @@ describe('Formatting Time Labels', () => {
     });
 
     test('Local Time with IANA Timezone Label', () => {
-        const output = '2019-06-07 23:30:00 ' + timezone 
+        const output = '2019-06-07 23:30:00 ' + timezone; 
         expect(formatTimeWithSeconds(testDate, timezone, true)).toBe(output)
     });
 
     test('Local Time with Short Timezone Label', () => {
-        const output = '2019-06-07 23:30:00 EDT' 
+        const output = '2019-06-07 23:30:00 EDT'; 
         expect(formatTimeWithSeconds(testDate, timezone, true, true)).toBe(output)
+    });
+
+    test('Local Time with Hours and Minutes Only', () => {
+        const output = '23:30';
+        expect(formatTimeOnly(timeTuple)).toBe(output);
+    });
+});
+
+describe('Formatting Right Ascension', () => {
+    test('Single Digit Hours', () => {
+        expect(formatRightAscension(23.331888825304354)).toBe('01h 33m');
+    });
+
+    test('Single Digit Minutes', () => {
+        expect(formatRightAscension(227.0)).toBe('15h 08m');
     });
 });

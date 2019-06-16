@@ -3,9 +3,10 @@ import axios from 'axios';
 
 import Ephemeris from './Ephemeris';
 import NextFourPhases from './NextFourPhases';
+import PhaseAndLibration from './PhaseAndLibration';
 import SkyPosition from './SkyPosition';
 
-import moon_info from '../data/moon_info.json';
+import moonInfo from '../data/moonInfo.json';
 
 class MoonInformation extends Component {
 
@@ -13,7 +14,7 @@ class MoonInformation extends Component {
         super(props);
         this.state = {
             pageIndex: 1,
-            moon_info: moon_info,
+            moonInfo: moonInfo,
             error: false
         }
         this.plusPages = this.plusPages.bind(this);
@@ -35,7 +36,7 @@ class MoonInformation extends Component {
         }
         axios(config).then((response) => {
             this.setState({
-                moon_info: response.data
+                moonInfo: response.data
             })
         })
         .catch((error) => {
@@ -44,6 +45,35 @@ class MoonInformation extends Component {
             })
             console.log(error.request);
         });            
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.date !== this.props.date || 
+            prevProps.timezone !== this.props.timezone ||
+            prevProps.latitude !== this.props.latitude ||
+            prevProps.longitude !== this.props.longitude
+            ) {
+                const config = {
+                    url: 'https://lct-web-stage.herokuapp.com/moon_info',
+                    params: {
+                        date: this.props.date,
+                        tz: this.props.timezone,
+                        lat: this.props.latitude,
+                        lon: this.props.longitude
+                    }
+                }
+                axios(config).then((response) => {
+                    this.setState({
+                        moonInfo: response.data
+                    })
+                })
+                .catch((error) => {
+                    this.setState({
+                        error: true
+                    })
+                    console.log(error.request);
+                }); 
+        }
     }
 
     minusPages() {
@@ -90,7 +120,7 @@ class MoonInformation extends Component {
                                    timezone={this.props.timezone}
                                    latitude={this.props.latitude}
                                    longitude={this.props.longitude}
-                                   moon_info={this.state.moon_info}
+                                   moonInfo={this.state.moonInfo}
                                    error={this.state.error}
                         />
                     </div>
@@ -98,7 +128,14 @@ class MoonInformation extends Component {
                         <NextFourPhases />
                     </div>
                     <div className="pages">
-                        <SkyPosition />
+                        <PhaseAndLibration moonInfo={this.state.moonInfo}
+                                           error={this.state.error}
+                        />
+                    </div>
+                    <div className="pages">
+                        <SkyPosition moonInfo={this.state.moonInfo}
+                                     error={this.state.error}
+                        />
                     </div>
                     <button className="prev" onClick={this.minusPages}>&#10094;</button>
                     <button className="next" onClick={this.plusPages}>&#10095;</button>
@@ -108,11 +145,11 @@ class MoonInformation extends Component {
                     <span className="dot" onClick={() => this.showPages(1)}></span>
                     <span className="dot" onClick={() => this.showPages(2)}></span>
                     <span className="dot" onClick={() => this.showPages(3)}></span>
+                    <span className="dot" onClick={() => this.showPages(4)}></span>
                 </div>
             </div>
         );
     }
-
 }
 
 export default MoonInformation;
