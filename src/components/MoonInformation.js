@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
+import Ephemeris from './Ephemeris';
 import NextFourPhases from './NextFourPhases';
 import SkyPosition from './SkyPosition';
+
+import moon_info from '../data/moon_info.json';
 
 class MoonInformation extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            pageIndex: 1
+            pageIndex: 1,
+            moon_info: moon_info,
+            error: false
         }
         this.plusPages = this.plusPages.bind(this);
         this.minusPages = this.plusPages.bind(this);
@@ -17,6 +23,27 @@ class MoonInformation extends Component {
 
     componentDidMount() {
         this.showPages(this.state.pageIndex);
+
+        const config = {
+            url: 'https://lct-web-stage.herokuapp.com/moon_info',
+            params: {
+                date: this.props.date,
+                tz: this.props.timezone,
+                lat: this.props.latitude,
+                lon: this.props.longitude
+            }
+        }
+        axios(config).then((response) => {
+            this.setState({
+                moon_info: response.data
+            })
+        })
+        .catch((error) => {
+            this.setState({
+                error: true
+            })
+            console.log(error.request);
+        });            
     }
 
     minusPages() {
@@ -59,6 +86,15 @@ class MoonInformation extends Component {
             <div>
                 <div className="pages-container">
                     <div className="pages">
+                        <Ephemeris datetime={this.props.date}
+                                   timezone={this.props.timezone}
+                                   latitude={this.props.latitude}
+                                   longitude={this.props.longitude}
+                                   moon_info={this.state.moon_info}
+                                   error={this.state.error}
+                        />
+                    </div>
+                    <div className="pages">
                         <NextFourPhases />
                     </div>
                     <div className="pages">
@@ -71,6 +107,7 @@ class MoonInformation extends Component {
                 <div className="dot-div">
                     <span className="dot" onClick={() => this.showPages(1)}></span>
                     <span className="dot" onClick={() => this.showPages(2)}></span>
+                    <span className="dot" onClick={() => this.showPages(3)}></span>
                 </div>
             </div>
         );
