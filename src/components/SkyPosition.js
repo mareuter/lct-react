@@ -6,6 +6,7 @@ import { formatDoubleLabel, formatRightAscension, formatTimeOnly } from '../Form
 function SkyPosition(props) {
     const hasError = props.error;
     const noTime = '----'
+    const badDateTime = 'Invalid DateTime';
 
     var riseTime = noTime;
     var transitTime = noTime;
@@ -15,7 +16,11 @@ function SkyPosition(props) {
         const value = props.moonInfo.rise_set_times[key];
         const name = value['time'];
         const datetime = value['datetime'];
-        const formattedDateTime = formatTimeOnly(datetime);
+        var formattedDateTime = formatTimeOnly(datetime);
+        if (formattedDateTime === badDateTime) {
+            formattedDateTime = noTime;
+        }
+        console.log(name, formattedDateTime);
         switch (name) {
             case 'rise':
                 riseTime = formattedDateTime;
