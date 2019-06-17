@@ -20,7 +20,6 @@ function SkyPosition(props) {
         if (formattedDateTime === badDateTime) {
             formattedDateTime = noTime;
         }
-        console.log(name, formattedDateTime);
         switch (name) {
             case 'rise':
                 riseTime = formattedDateTime;

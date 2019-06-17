@@ -1,5 +1,6 @@
 import { formatCoordinateLabel, formatDoubleLabel, 
-         formatRightAscension, formatTimeOnly, formatTimeWithSeconds } from './Formatters';
+         formatRightAscension, formatTimeOnly, formatTimeWithMinutes,
+         formatTimeWithSeconds } from './Formatters';
 
 describe('Formatting Double Labels', () => {
     test('Standard Value Label', () => {
@@ -56,6 +57,11 @@ describe('Formatting Time Labels', () => {
     test('Local Time with Hours and Minutes Only', () => {
         const output = '23:30';
         expect(formatTimeOnly(timeTuple)).toBe(output);
+    });
+
+    test('Local Time with Minutes Only and Short Timezone Label', () => {
+        const output = '2019-06-07 23:30 EDT';
+        expect(formatTimeWithMinutes(timeTuple, timezone)).toBe(output);
     });
 });
 

@@ -103,3 +103,8 @@
 .active, .dot:hover {
   background-color: #717171;
 }
+
+.phase-image {
+  height: 100px;
+  width: 100px;
+}

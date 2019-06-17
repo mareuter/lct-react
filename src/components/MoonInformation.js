@@ -125,7 +125,10 @@ class MoonInformation extends Component {
                         />
                     </div>
                     <div className="pages">
-                        <NextFourPhases />
+                        <NextFourPhases timezone={this.props.timezone}
+                                        moonInfo={this.state.moonInfo}
+                                        error={this.state.error}
+                        />
                     </div>
                     <div className="pages">
                         <PhaseAndLibration moonInfo={this.state.moonInfo}
