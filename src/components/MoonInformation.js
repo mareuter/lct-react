@@ -43,7 +43,6 @@ class MoonInformation extends Component {
             this.setState({
                 error: true
             })
-            console.log(error.request);
         });            
     }
 
@@ -71,41 +70,32 @@ class MoonInformation extends Component {
                     this.setState({
                         error: true
                     })
-                    console.log(error.request);
                 }); 
         }
     }
 
     minusPages() {
-        console.log('minus pages');
         this.showPages(this.state.pageIndex - 1);
     }
 
     plusPages() {
-        console.log('plus pages');
         this.showPages(this.state.pageIndex + 1);
     }
 
     showPages(n) {
-        console.log("showPages Page Index: " + n);
         var i;
         var pages = document.getElementsByClassName('pages');
-        console.log("Pages: " + pages.length);
         var dots = document.getElementsByClassName('dot');
-        console.log("Dots: " + dots.length);
         if (n > pages.length) {
             n = 1;
         }
         if (n < 1) {
-            console.log('Off left end');
             n = pages.length;
         }
         for (i = 0; i < pages.length; i++) {
-            console.log('Setting pages');
             pages[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
-            console.log('Setting dots');
             dots[i].className = dots[i].className.replace("active", "");
         }
         pages[n - 1].style.display = "block";
