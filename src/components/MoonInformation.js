@@ -18,7 +18,7 @@ class MoonInformation extends Component {
             error: false
         }
         this.plusPages = this.plusPages.bind(this);
-        this.minusPages = this.plusPages.bind(this);
+        this.minusPages = this.minusPages.bind(this);
         this.showPages = this.showPages.bind(this);
     }
 
@@ -77,15 +77,17 @@ class MoonInformation extends Component {
     }
 
     minusPages() {
+        console.log('minus pages');
         this.showPages(this.state.pageIndex - 1);
     }
 
     plusPages() {
+        console.log('plus pages');
         this.showPages(this.state.pageIndex + 1);
     }
 
     showPages(n) {
-        console.log("showPages Page Index: "+ n);
+        console.log("showPages Page Index: " + n);
         var i;
         var pages = document.getElementsByClassName('pages');
         console.log("Pages: " + pages.length);
