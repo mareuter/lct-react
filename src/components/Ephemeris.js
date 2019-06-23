@@ -13,37 +13,121 @@ class Ephemeris extends Component {
         console.log('Ephemeris did update');
     }
 
-    renderItems() {
+    render() {
+        const localTime = formatTimeWithSeconds(this.props.datetime,                                                      this.props.timezone, true);
+        const localTimeParts = localTime.split(" ");
+        const utcTime = formatTimeWithSeconds(this.props.datetime, 'UTC');
+        const utcTimeParts = utcTime.split(" ");
+
         if (!this.props.error) {
             return (
-                <div>
-                    <p>Location: {formatCoordinateLabel(this.props.latitude, 'N S')}&nbsp;&nbsp; 
-                                 {formatCoordinateLabel(this.props.longitude, 'E W')}</p>
-                    <p>Local Date: {formatTimeWithSeconds(this.props.datetime, this.props.timezone, true)}</p>
-                    <p>UTC Date: {formatTimeWithSeconds(this.props.datetime, 'UTC')}</p>
-                    <p>Age: {formatDoubleLabel(this.props.moonInfo.age, ' days')}</p>
-                    <p>Phase: {this.props.moonInfo.phase}</p>
-                    <p>Illumination: {formatDoubleLabel(this.props.moonInfo.fractional_phase * 100, '%')}</p>
-                    <p>Colongitude: {formatCoordinateLabel(this.props.moonInfo.colong, null)}</p>
-                    <p>Elongation: {formatCoordinateLabel(this.props.moonInfo.elongation, null)}</p>
-                    <p>Distance: {formatDoubleLabel(this.props.moonInfo.earth_distance, ' km')}</p>
-                    <p>Angular Size: {formatDoubleLabel(this.props.moonInfo.angular_size, '°')}</p>
-                    <p>Magnitude: {formatDoubleLabel(this.props.moonInfo.magnitude, '')}</p>
+                <div className="w3-container">
+                    <div className="w3-row">
+                        <div className="w3-third">
+                            <p>Location:</p>
+                        </div>
+                        <div className="w3-third">
+                            <p>{formatCoordinateLabel(this.props.latitude, 'N S')}</p>
+                        </div>
+                        <div className="w3-third">
+                            <p>{formatCoordinateLabel(this.props.longitude, 'E W')}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-quarter">
+                            <p>Local Date:</p>
+                        </div>
+                        <div className="w3-quarter">
+                            <p>{localTimeParts[0]}</p>
+                        </div>
+                        <div className="w3-quarter">
+                            <p>{localTimeParts[1]}</p>
+                        </div>
+                        <div className="w3-quarter">
+                            <p>{localTimeParts[2]}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-third">
+                            <p>UTC Date:</p>
+                        </div>
+                        <div className="w3-third">
+                            <p>{utcTimeParts[0]}</p>
+                        </div>
+                        <div className="w3-third">
+                            <p>{utcTimeParts[1]}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Age:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{formatDoubleLabel(this.props.moonInfo.age, ' days')}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Phase:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{this.props.moonInfo.phase}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Illumination:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{formatDoubleLabel(this.props.moonInfo.fractional_phase * 100, '%')}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Colongitude:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{formatCoordinateLabel(this.props.moonInfo.colong, null)}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Elongation:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{formatCoordinateLabel(this.props.moonInfo.elongation, null)}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Distance:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{formatDoubleLabel(this.props.moonInfo.earth_distance, ' km')}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Angular Size:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{formatDoubleLabel(this.props.moonInfo.angular_size, '°')}</p>
+                        </div>
+                    </div>
+                    <div className="w3-row">
+                        <div className="w3-half">
+                            <p>Magnitude:</p>
+                        </div>
+                        <div className="w3-half">
+                            <p>{formatDoubleLabel(this.props.moonInfo.magnitude, '')}</p>
+                        </div>
+                    </div>
                 </div>
             );
         } else {
             console.log('Ephemeris: Render error')
             return <Error />
         }
-    }
-
-    render() {
-        console.log('Ephemeris render');
-        return (
-            <div>
-                {this.renderItems()}
-            </div>
-        );
     }
 }
 
