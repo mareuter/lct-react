@@ -33,7 +33,8 @@ describe('Formatting Coordinate Labels', () => {
 // Month is actual - 1
 const testDate = new Date(Date.UTC(2019, 5, 8, 3, 30, 0, 743)).getTime() / 1000;
 const timezone = 'America/New_York';
-const timeTuple = [2019, 6, 7, 23, 30, 0, 743];
+const timeTuple = [2019, 6, 7, 23, 30, 0.743];
+const timeTuple2 = [2019, 6, 7, 23, 30, 59.975]
 
 describe('Formatting Time Labels', () => {
     test('UTC Time Label', () => {
@@ -59,10 +60,20 @@ describe('Formatting Time Labels', () => {
         expect(formatTimeOnly(timeTuple)).toBe(output);
     });
 
+    test('Local Time with Hours and Minutes Only with Seconds Near Turnover', () => {
+        const output = '23:30';
+        expect(formatTimeOnly(timeTuple2)).toBe(output);
+    })
+
     test('Local Time with Minutes Only and Short Timezone Label', () => {
         const output = '2019-06-07 23:30 EDT';
         expect(formatTimeWithMinutes(timeTuple, timezone)).toBe(output);
     });
+
+    test('Local Time with Minutes Only and Seconds Near Turnover', () => {
+        const output = '2019-06-07 23:30 EDT';
+        expect(formatTimeWithMinutes(timeTuple2, timezone)).toBe(output);
+    })
 });
 
 describe('Formatting Right Ascension', () => {
