@@ -14,48 +14,37 @@ class Ephemeris extends Component {
     }
 
     render() {
-        const localTime = formatTimeWithSeconds(this.props.datetime,                                                      this.props.timezone, true);
-        const localTimeParts = localTime.split(" ");
+        const localTime = formatTimeWithSeconds(this.props.datetime, this.props.timezone, true);
         const utcTime = formatTimeWithSeconds(this.props.datetime, 'UTC');
-        const utcTimeParts = utcTime.split(" ");
 
         if (!this.props.error) {
             return (
                 <div className="w3-container">
                     <div className="w3-row">
-                        <div className="w3-third">
+                        <div className="w3-half">
                             <p>Location:</p>
                         </div>
-                        <div className="w3-third">
-                            <p>{formatCoordinateLabel(this.props.latitude, 'N S')}</p>
-                        </div>
-                        <div className="w3-third">
-                            <p>{formatCoordinateLabel(this.props.longitude, 'E W')}</p>
+                        <div className="w3-half">
+                            <p>{formatCoordinateLabel(this.props.latitude, 'N S')}
+                                &nbsp;&nbsp;
+                               {formatCoordinateLabel(this.props.longitude, 'E W')}
+                            </p>
                         </div>
                     </div>
                     <div className="w3-row">
-                        <div className="w3-quarter">
+                        <div className="w3-half">
                             <p>Local Date:</p>
                         </div>
-                        <div className="w3-quarter">
-                            <p>{localTimeParts[0]}</p>
-                        </div>
-                        <div className="w3-quarter">
-                            <p>{localTimeParts[1]}</p>
-                        </div>
-                        <div className="w3-quarter">
-                            <p>{localTimeParts[2]}</p>
+                        <div className="w3-half">
+                            <p>{localTime}</p>
                         </div>
                     </div>
                     <div className="w3-row">
-                        <div className="w3-third">
+                        <div className="w3-half">
                             <p>UTC Date:</p>
                         </div>
-                        <div className="w3-third">
-                            <p>{utcTimeParts[0]}</p>
-                        </div>
-                        <div className="w3-third">
-                            <p>{utcTimeParts[1]}</p>
+                        <div className="w3-half">
+                            <p>{utcTime}</p>
                         </div>
                     </div>
                     <div className="w3-row">
