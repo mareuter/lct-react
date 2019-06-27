@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './PageContainer.css';
+
 import Ephemeris from './Ephemeris';
 import NextFourPhases from './NextFourPhases';
 import PhaseAndLibration from './PhaseAndLibration';
@@ -105,8 +107,12 @@ class MoonInformation extends Component {
 
     render() {
         return (
-            <div>
-                <div className="pages-container">
+            <div className="w3-container pages-container">
+                <div className="w3-cell-row">
+                <div className="w3-container w3-cell w3-cell-middle">
+                    <button className="prev" onClick={this.minusPages}>&#10094;</button>
+                </div>
+                <div className="w3-container w3-cell">
                     <div className="pages">
                         <Ephemeris datetime={this.props.date}
                                    timezone={this.props.timezone}
@@ -132,15 +138,18 @@ class MoonInformation extends Component {
                                      error={this.state.error}
                         />
                     </div>
-                    <button className="prev" onClick={this.minusPages}>&#10094;</button>
+                </div>
+                <div className="w3-container w3-cell w3-cell-middle">
                     <button className="next" onClick={this.plusPages}>&#10095;</button>
                 </div>
-                <br />
-                <div className="dot-div">
-                    <span className="dot" onClick={() => this.showPages(1)}></span>
-                    <span className="dot" onClick={() => this.showPages(2)}></span>
-                    <span className="dot" onClick={() => this.showPages(3)}></span>
-                    <span className="dot" onClick={() => this.showPages(4)}></span>
+                </div>
+                <div className="w3-container w3-cell-row">
+                    <div className="dot-div">
+                        <span className="dot" onClick={() => this.showPages(1)}></span>
+                        <span className="dot" onClick={() => this.showPages(2)}></span>
+                        <span className="dot" onClick={() => this.showPages(3)}></span>
+                        <span className="dot" onClick={() => this.showPages(4)}></span>
+                    </div>
                 </div>
             </div>
         );
