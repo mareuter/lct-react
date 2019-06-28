@@ -109,7 +109,7 @@ class MoonInformation extends Component {
         return (
             <div className="w3-container pages-container">
                 <div className="w3-cell-row">
-                <div className="w3-container w3-cell w3-cell-middle">
+                <div className="w3-container w3-cell w3-cell-middle w3-center">
                     <button className="prev" onClick={this.minusPages}>&#10094;</button>
                 </div>
                 <div className="w3-container w3-cell">
@@ -139,7 +139,7 @@ class MoonInformation extends Component {
                         />
                     </div>
                 </div>
-                <div className="w3-container w3-cell w3-cell-middle">
+                <div className="w3-container w3-cell w3-cell-middle w3-center">
                     <button className="next" onClick={this.plusPages}>&#10095;</button>
                 </div>
                 </div>
