@@ -45,35 +45,35 @@ function NextFourPhases(props) {
         <div>
             {!hasError ? (
                 <div className="w3-container">
-                    <div id="0" className="w3-row phase">
-                        <div className="w3-half">
+                    <div id="0" className="w3-cell-row phase">
+                        <div className="w3-container w3-cell w3-center">
                             <img className="phase-image" src={phase_placeholder} alt="placeholder" />
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-container w3-cell w3-cell-middle w3-center">
                             <p>{emptyTime}</p>
                         </div>
                     </div>
-                    <div id="1" className="w3-row phase">
-                        <div className="w3-half">
+                    <div id="1" className="w3-cell-row phase">
+                        <div className="w3-container w3-cell w3-center">
                             <img className="phase-image" src={phase_placeholder} alt="placeholder" />
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-container w3-cell w3-cell-middle w3-center">
                             <p>{emptyTime}</p>
                         </div>
                     </div>                    
-                    <div id="2" className="w3-row phase">
-                        <div className="w3-half">
+                    <div id="2" className="w3-cell-row phase">
+                        <div className="w3-container w3-cell w3-center">
                             <img className="phase-image" src={phase_placeholder} alt="placeholder" />
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-container w3-cell w3-cell-middle w3-center">
                             <p>{emptyTime}</p>
                         </div>
                     </div>
-                    <div id="3" className="w3-row phase">
-                        <div className="w3-half">
+                    <div id="3" className="w3-cell-row phase">
+                        <div className="w3-container w3-cell w3-center">
                             <img className="phase-image" src={phase_placeholder} alt="placeholder" />
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-container w3-cell w3-cell-middle w3-center">
                             <p>{emptyTime}</p>
                         </div>
                     </div>
