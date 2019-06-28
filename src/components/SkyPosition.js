@@ -43,7 +43,7 @@ function SkyPosition(props) {
                     <div className="w3-half">
                         <p>Altitude:</p>
                     </div>
-                    <div className="w3-half">
+                    <div className="w3-half w3-right-align">
                         <p>{formatDoubleLabel(props.moonInfo.altitude, '°')}</p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ function SkyPosition(props) {
                     <div className="w3-half">
                         <p>Azimuth:</p>
                     </div>
-                    <div className="w3-half">
+                    <div className="w3-half w3-right-align">
                         <p>{formatDoubleLabel(props.moonInfo.azimuth, '°')}</p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ function SkyPosition(props) {
                     <div className="w3-half">
                         <p>Right Ascension:</p>
                     </div>
-                    <div className="w3-half">
+                    <div className="w3-half w3-right-align">
                         <p>{formatRightAscension(props.moonInfo.ra)}</p>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ function SkyPosition(props) {
                     <div className="w3-half">
                         <p>Declination:</p>
                     </div>
-                    <div className="w3-half">
+                    <div className="w3-half w3-right-align">
                         <p>{formatDoubleLabel(props.moonInfo.dec, '°')}</p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ function SkyPosition(props) {
                     <div className="w3-half">
                         <p>Rise Time:</p>
                     </div>
-                    <div className="w3-half">
+                    <div className="w3-half w3-right-align">
                         <p>{riseTime}</p>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ function SkyPosition(props) {
                     <div className="w3-half">
                         <p>Transit Time:</p>
                     </div>
-                    <div className="w3-half">
+                    <div className="w3-half w3-right-align">
                         <p>{transitTime}</p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ function SkyPosition(props) {
                     <div className="w3-half">
                         <p>Set Time:</p>
                     </div>
-                    <div className="w3-half">
+                    <div className="w3-half w3-right-align">
                         <p>{setTime}</p>
                     </div>
                 </div>

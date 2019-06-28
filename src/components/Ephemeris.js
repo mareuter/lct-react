@@ -24,7 +24,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Location:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{formatCoordinateLabel(this.props.latitude, 'N S')}
                                 &nbsp;&nbsp;
                                {formatCoordinateLabel(this.props.longitude, 'E W')}
@@ -35,7 +35,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Local Date:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{localTime}</p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>UTC Date:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{utcTime}</p>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Age:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{formatDoubleLabel(this.props.moonInfo.age, ' days')}</p>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Phase:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{this.props.moonInfo.phase}</p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Illumination:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{formatDoubleLabel(this.props.moonInfo.fractional_phase * 100, '%')}</p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Colongitude:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align ">
                             <p>{formatCoordinateLabel(this.props.moonInfo.colong, null)}</p>
                         </div>
                     </div>
@@ -83,7 +83,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Elongation:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{formatCoordinateLabel(this.props.moonInfo.elongation, null)}</p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Distance:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{formatDoubleLabel(this.props.moonInfo.earth_distance, ' km')}</p>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Angular Size:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{formatDoubleLabel(this.props.moonInfo.angular_size, '°')}</p>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ class Ephemeris extends Component {
                         <div className="w3-half">
                             <p>Magnitude:</p>
                         </div>
-                        <div className="w3-half">
+                        <div className="w3-half w3-right-align">
                             <p>{formatDoubleLabel(this.props.moonInfo.magnitude, '')}</p>
                         </div>
                     </div>
