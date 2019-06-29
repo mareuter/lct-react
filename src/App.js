@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import jstz from 'jstz';
 
-//import './App.css';
+import './App.css';
 
 import MainNav from './components/MainNav';
 import MoonInformation from './components/MoonInformation';
