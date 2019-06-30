@@ -1,0 +1,31 @@
+.main-nav {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.main-nav nav {
+    -ms-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+
+.main-nav-img {
+    height: 50px;
+    width: 50px;
+}
+
+.main-nav nav a {
+    display: inline-block;
+    padding: 0.3em 0.8em;
+    color: #555;
+    text-decoration: none;
+  }
+  
+.main-nav nav a:hover {
+    background-color: #eee;
+}
+
+.main-nav nav a.active {
+    background-color: #555;
+    color: #61dafb;
+}
