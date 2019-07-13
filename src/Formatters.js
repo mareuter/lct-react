@@ -43,8 +43,10 @@ export function formatTimeWithSeconds(timestamp, timezone, showTz = false, useSh
 }
 
 export const formatTimeWithMinutes = (timeTuple, timezone) => {
+    const seconds = Math.trunc(timeTuple[5]);
+    const milliseconds = (timeTuple[5] - seconds) * 1000;
     const local = DateTime.local(timeTuple[0], timeTuple[1], timeTuple[2],
-                                 timeTuple[3], timeTuple[4], timeTuple[5])
+                                 timeTuple[3], timeTuple[4], seconds, milliseconds)
     const localForTimezone = local.setZone(timezone, { keepLocalTime: true });
     var dateString = localForTimezone.toFormat('y-MM-dd HH:mm');
     dateString += ' ' + localForTimezone.offsetNameShort;
@@ -52,8 +54,10 @@ export const formatTimeWithMinutes = (timeTuple, timezone) => {
 }
 
 export const formatTimeOnly = (timeTuple) => {
+    const seconds = Math.trunc(timeTuple[5]);
+    const milliseconds = (timeTuple[5] - seconds) * 1000;
     const local = DateTime.local(timeTuple[0], timeTuple[1], timeTuple[2],
-                                 timeTuple[3], timeTuple[4], timeTuple[5])
+                                 timeTuple[3], timeTuple[4], seconds, milliseconds);
     const timeString = local.toFormat('HH:mm');
     return timeString;
 }

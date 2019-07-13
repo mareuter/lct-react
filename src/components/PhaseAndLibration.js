@@ -9,15 +9,34 @@ function PhaseAndLibration(props) {
     return (
         <div>
         {!hasError ? (
-            <div>
-                <p>Libration Latitude: {formatDoubleLabel(props.moonInfo.libration_lat, '°')}</p>
-                <p>Libration Longitude: {formatDoubleLabel(props.moonInfo.libration_lon, '°')}</p>
-                <p>SubSolar Latitude: {formatDoubleLabel(props.moonInfo.subsolar_lat, '°')}</p>
+            <div className="w3-container">
+              <div className="w3-row">
+                <div className="w3-half">
+                  <p>Libration Latitude:</p>
+                </div>
+                <div className="w3-half">
+                  <p>{formatDoubleLabel(props.moonInfo.libration_lat, '°')}</p>
+                </div>
+              </div>
+              <div className="w3-row">
+                <div className="w3-half">
+                  <p>Libration Longitude:</p>
+                </div>
+                <div className="w3-half">
+                  <p>{formatDoubleLabel(props.moonInfo.libration_lon, '°')}</p>
+                </div>
+              </div>
+              <div className="w3-row">
+                <div className="w3-half">
+                  <p>SubSolar Latitude:</p>
+                </div>
+                <div className="w3-half">
+                  <p>{formatDoubleLabel(props.moonInfo.subsolar_lat, '°')}</p>
+                </div>
+              </div>
             </div>
         ) : (
-          <div>
-            <Error />
-          </div>
+          <Error />
         )}
         </div>
     );
