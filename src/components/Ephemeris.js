@@ -20,6 +20,9 @@ class Ephemeris extends Component {
         if (!this.props.error) {
             return (
                 <div className="w3-container">
+                    <div className="w3-row w3-center">
+                        <h1>Ephemeris Information</h1>
+                    </div>
                     <div className="w3-row">
                         <div className="w3-half">
                             <p>Location:</p>

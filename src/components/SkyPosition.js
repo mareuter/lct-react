@@ -39,6 +39,9 @@ function SkyPosition(props) {
         <div>
         {!hasError ? (
             <div className="w3-container">
+                <div className="w3-row w3-center">
+                    <h1>Sky Position</h1>
+                </div>
                 <div className="w3-row">
                     <div className="w3-half">
                         <p>Altitude:</p>

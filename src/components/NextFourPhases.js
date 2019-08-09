@@ -45,6 +45,9 @@ function NextFourPhases(props) {
         <div>
             {!hasError ? (
                 <div className="w3-container">
+                    <div className="w3-row w3-center">
+                        <h1>Next Four Phases</h1>
+                    </div>
                     <div id="0" className="w3-cell-row phase">
                         <div className="w3-container w3-cell w3-center">
                             <img className="phase-image" src={phase_placeholder} alt="placeholder" />

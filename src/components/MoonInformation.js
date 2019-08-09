@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import './PageContainer.css';
-
 import Ephemeris from './Ephemeris';
 import NextFourPhases from './NextFourPhases';
 import PhaseAndLibration from './PhaseAndLibration';
@@ -15,18 +13,12 @@ class MoonInformation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pageIndex: 1,
             moonInfo: moonInfo,
             error: false
         }
-        this.plusPages = this.plusPages.bind(this);
-        this.minusPages = this.minusPages.bind(this);
-        this.showPages = this.showPages.bind(this);
     }
 
     componentDidMount() {
-        this.showPages(this.state.pageIndex);
-
         const config = {
             url: 'https://lct-web-stage.herokuapp.com/moon_info',
             params: {
@@ -76,81 +68,26 @@ class MoonInformation extends Component {
         }
     }
 
-    minusPages() {
-        this.showPages(this.state.pageIndex - 1);
-    }
-
-    plusPages() {
-        this.showPages(this.state.pageIndex + 1);
-    }
-
-    showPages(n) {
-        var i;
-        var pages = document.getElementsByClassName('pages');
-        var dots = document.getElementsByClassName('dot');
-        if (n > pages.length) {
-            n = 1;
-        }
-        if (n < 1) {
-            n = pages.length;
-        }
-        for (i = 0; i < pages.length; i++) {
-            pages[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace("active", "");
-        }
-        pages[n - 1].style.display = "block";
-        dots[n - 1].className += " active";
-        this.setState({ pageIndex: n });
-    }
-
     render() {
         return (
-            <div className="w3-container pages-container">
-                <div className="w3-cell-row">
-                <div className="w3-container w3-cell w3-cell-middle w3-center">
-                    <button className="prev" onClick={this.minusPages}>&#10094;</button>
-                </div>
-                <div className="w3-container w3-cell">
-                    <div className="pages">
-                        <Ephemeris datetime={this.props.date}
-                                   timezone={this.props.timezone}
-                                   latitude={this.props.latitude}
-                                   longitude={this.props.longitude}
-                                   moonInfo={this.state.moonInfo}
-                                   error={this.state.error}
-                        />
-                    </div>
-                    <div className="pages">
-                        <NextFourPhases timezone={this.props.timezone}
-                                        moonInfo={this.state.moonInfo}
-                                        error={this.state.error}
-                        />
-                    </div>
-                    <div className="pages">
-                        <PhaseAndLibration moonInfo={this.state.moonInfo}
-                                           error={this.state.error}
-                        />
-                    </div>
-                    <div className="pages">
-                        <SkyPosition moonInfo={this.state.moonInfo}
-                                     error={this.state.error}
-                        />
-                    </div>
-                </div>
-                <div className="w3-container w3-cell w3-cell-middle w3-center">
-                    <button className="next" onClick={this.plusPages}>&#10095;</button>
-                </div>
-                </div>
-                <div className="w3-container w3-cell-row">
-                    <div className="dot-div">
-                        <span className="dot" onClick={() => this.showPages(1)}></span>
-                        <span className="dot" onClick={() => this.showPages(2)}></span>
-                        <span className="dot" onClick={() => this.showPages(3)}></span>
-                        <span className="dot" onClick={() => this.showPages(4)}></span>
-                    </div>
-                </div>
+            <div className="w3-container">
+                <Ephemeris datetime={this.props.date}
+                            timezone={this.props.timezone}
+                            latitude={this.props.latitude}
+                            longitude={this.props.longitude}
+                            moonInfo={this.state.moonInfo}
+                            error={this.state.error}
+                />
+                <NextFourPhases timezone={this.props.timezone}
+                                moonInfo={this.state.moonInfo}
+                                error={this.state.error}
+                />
+                <PhaseAndLibration moonInfo={this.state.moonInfo}
+                                    error={this.state.error}
+                />
+                <SkyPosition moonInfo={this.state.moonInfo}
+                                error={this.state.error}
+                />
             </div>
         );
     }
