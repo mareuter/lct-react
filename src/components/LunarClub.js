@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import FeatureList from "./FeatureList";
+import Special from "./Special";
 
 import lunarClubInfoJson from "../data/lunarClubInfo.json";
 
@@ -38,6 +39,13 @@ function LunarClub(props) {
 
   return (
     <div className="w3-container">
+      <Special 
+        timeFromNew={lunarClubInfo.time_from_new_moon}
+        timeToNew={lunarClubInfo.time_to_new_moon}
+        timeToFull={lunarClubInfo.time_to_full_moon}
+        fractionalPhase={lunarClubInfo.fractional_phase}
+        error={error}
+      />
       <FeatureList
         title={"Naked Eye"}
         features={lunarClubInfo.naked_eye_features}

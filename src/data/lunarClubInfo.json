@@ -3,7 +3,7 @@
     "binocular_features": {},
     "telescope_features": {},
     "fractional_phase": 0,
-    "time_from_new_moon": 0,
+    "time_from_new_moon": 100,
     "time_to_full_moon": 0,
-    "time_to_new_moon": 0
+    "time_to_new_moon": 100
 }

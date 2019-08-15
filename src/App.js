@@ -9,11 +9,21 @@ import MoonInformation from "./components/MoonInformation";
 import LunarClub from "./components/LunarClub";
 import LunarIIClub from "./components/LunarIIClub";
 
+function getDate() {
+  return new Date();
+  // Near New Moon (old)
+  // return new Date(2019, 7, 28, 4, 0, 0);
+  // Near New Moon (new)
+  //return new Date(2019, 8, 2, 7, 0, 0);
+  // Near Full Moon
+  // return new Date(2019, 7, 13, 4, 0, 0);
+}
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      date: new Date(),
+      date: getDate(),
       latitude: 0.0,
       longitude: 0.0,
       timezone: jstz.determine()

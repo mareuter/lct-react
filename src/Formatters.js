@@ -52,7 +52,7 @@ export function formatTimeWithSeconds(
 export const formatTimeWithMinutes = (timeTuple, timezone) => {
   const seconds = Math.trunc(timeTuple[5]);
   const milliseconds = (timeTuple[5] - seconds) * 1000;
-  const local = DateTime.local(
+  const local = DateTime.utc(
     timeTuple[0],
     timeTuple[1],
     timeTuple[2],
@@ -61,7 +61,7 @@ export const formatTimeWithMinutes = (timeTuple, timezone) => {
     seconds,
     milliseconds
   );
-  const localForTimezone = local.setZone(timezone, { keepLocalTime: true });
+  const localForTimezone = local.setZone(timezone);
   var dateString = localForTimezone.toFormat("y-MM-dd HH:mm");
   dateString += " " + localForTimezone.offsetNameShort;
   return dateString;
