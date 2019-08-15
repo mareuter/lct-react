@@ -56,7 +56,17 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/lunar_club" component={LunarClub} />
+          <Route 
+            path="/lunar_club" 
+            render={props => (
+              <LunarClub
+                {...props}
+                date={this.getSecondsTimestamp()}
+                latitude={this.state.latitude}
+                longitude={this.state.longitude}
+              />
+            )}
+          />
           <Route path="/lunar_club_ii" component={LunarIIClub} />
         </main>
       </div>
