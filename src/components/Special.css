@@ -1,0 +1,7 @@
+.star-active {
+    color: orange;
+}
+
+.from-new, .to-new, .near-full, .at-full {
+    margin: 22px 0;
+}

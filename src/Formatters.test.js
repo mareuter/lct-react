@@ -73,12 +73,12 @@ describe("Formatting Time Labels", () => {
   });
 
   test("Local Time with Minutes Only and Short Timezone Label", () => {
-    const output = "2019-06-07 23:30 EDT";
+    const output = "2019-06-07 19:30 EDT";
     expect(formatTimeWithMinutes(timeTuple, timezone)).toBe(output);
   });
 
   test("Local Time with Minutes Only and Seconds Near Turnover", () => {
-    const output = "2019-06-07 23:30 EDT";
+    const output = "2019-06-07 19:30 EDT";
     expect(formatTimeWithMinutes(timeTuple2, timezone)).toBe(output);
   });
 });
