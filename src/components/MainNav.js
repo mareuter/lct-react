@@ -30,7 +30,7 @@ const MainNav = () => (
           Lunar Club
         </div>
       </NavLink>
-      <NavLink to="/lunar_club_ii" activeClassName="active">
+      <NavLink to="/lunar_ii_club" activeClassName="active">
         <div className="w3-container w3-cell w3-center">
           <img
             className="main-nav-img"
