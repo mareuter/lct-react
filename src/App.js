@@ -5,6 +5,7 @@ import jstz from "jstz";
 import "./App.css";
 
 import MainNav from "./components/MainNav";
+import Welcome from "./components/Welcome";
 import MoonInformation from "./components/MoonInformation";
 import LunarClub from "./components/LunarClub";
 import LunarIIClub from "./components/LunarIIClub";
@@ -54,6 +55,7 @@ class App extends Component {
       <div className="App">
         <MainNav />
         <main className="App-main">
+          <Route exact path="/" component={Welcome}/>
           <Route
             path="/moon_info"
             render={props => (
