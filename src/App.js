@@ -10,6 +10,8 @@ import MoonInformation from "./components/MoonInformation";
 import LunarClub from "./components/LunarClub";
 import LunarIIClub from "./components/LunarIIClub";
 
+import {getAverageTimezoneCoordinates} from "./AverageTimezoneCoordinates";
+
 function getDate() {
   return new Date();
   // Near New Moon (old)
@@ -27,16 +29,47 @@ class App extends Component {
       date: getDate(),
       latitude: 0.0,
       longitude: 0.0,
+      coordinatesGood: false,
       timezone: jstz.determine()
     };
     this.setLocation = this.setLocation.bind(this);
+    this.showError = this.showError.bind(this);
   }
+
+  showError(error) {
+    var message;
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        message = "User denied the request for Geolocation."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        message = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        message = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+      default:
+        message = "An unknown error occurred."
+        break;
+    }
+    message += " Using average latitude/longitude from timezone.";
+    message += " Inaccurate information shown in italics!";
+    alert(message);
+    let coordinates = getAverageTimezoneCoordinates(this.state.timezone.name());
+    this.setState({
+      latitude: coordinates[0],
+      longitude: coordinates[1],
+      coordinatesGood: false
+    });
+  } 
 
   setLocation(position) {
     console.log("set location");
     this.setState({
       latitude: position.coords.latitude,
-      longitude: position.coords.longitude
+      longitude: position.coords.longitude,
+      coordinatesGood: true
     });
   }
 
@@ -46,7 +79,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log("App did mount");
-    navigator.geolocation.getCurrentPosition(this.setLocation);
+    navigator.geolocation.getCurrentPosition(this.setLocation, this.showError);
   }
 
   render() {
@@ -65,6 +98,7 @@ class App extends Component {
                 timezone={this.state.timezone.name()}
                 latitude={this.state.latitude}
                 longitude={this.state.longitude}
+                coordinatesGood={this.state.coordinatesGood}
               />
             )}
           />
