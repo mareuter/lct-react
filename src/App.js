@@ -10,7 +10,7 @@ import MoonInformation from "./components/MoonInformation";
 import LunarClub from "./components/LunarClub";
 import LunarIIClub from "./components/LunarIIClub";
 
-import {getAverageTimezoneCoordinates} from "./AverageTimezoneCoordinates";
+import { getAverageTimezoneCoordinates } from "./AverageTimezoneCoordinates";
 
 function getDate() {
   return new Date();
