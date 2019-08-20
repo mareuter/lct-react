@@ -6,6 +6,8 @@ import NextFourPhases from "./NextFourPhases";
 import PhaseAndLibration from "./PhaseAndLibration";
 import SkyPosition from "./SkyPosition";
 
+import "./MoonInformation.css"
+
 import moonInfo from "../data/moonInfo.json";
 
 class MoonInformation extends Component {
@@ -38,6 +40,15 @@ class MoonInformation extends Component {
           error: true
         });
       });
+
+      let divs = document.getElementsByClassName("coord-check");
+      for (var i = 0; i < divs.length; i++) {
+        if (this.props.coordinatesGood) {
+          divs[i].className.replace(" bad-coords", "");
+        } else {
+          divs[i].className += " bad-coords";
+        }
+      }
   }
 
   componentDidUpdate(prevProps) {
@@ -68,6 +79,17 @@ class MoonInformation extends Component {
           });
         });
     }
+
+    if (prevProps.coordinatesGood !== this.props.coordinatesGood) {
+      let divs = document.getElementsByClassName("coord-check");
+      for (var i = 0; i < divs.length; i++) {
+        if (this.props.coordinatesGood) {
+          divs[i].className = divs[i].className.replace(" bad-coords", "");
+        } else {
+          divs[i].className += " bad-coords";
+        }
+      }
+    }
   }
 
   render() {
@@ -90,7 +112,10 @@ class MoonInformation extends Component {
           moonInfo={this.state.moonInfo}
           error={this.state.error}
         />
-        <SkyPosition moonInfo={this.state.moonInfo} error={this.state.error} />
+        <SkyPosition
+          moonInfo={this.state.moonInfo}
+          error={this.state.error}
+        />
       </div>
     );
   }

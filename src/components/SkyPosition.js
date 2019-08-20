@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Error from "./Error";
 import {
@@ -12,32 +12,34 @@ function SkyPosition(props) {
   const noTime = "----";
   const badDateTime = "Invalid DateTime";
 
-  var riseTime = noTime;
-  var transitTime = noTime;
-  var setTime = noTime;
+  var [riseTime, setRiseTime] = useState(noTime);
+  var [transitTime, setTransitTime] = useState(noTime);
+  var [setTime, setSetTime] = useState(noTime);
 
-  for (var key in props.moonInfo.rise_set_times) {
-    const value = props.moonInfo.rise_set_times[key];
-    const name = value["time"];
-    const datetime = value["datetime"];
-    var formattedDateTime = formatTimeOnly(datetime);
-    if (formattedDateTime === badDateTime) {
-      formattedDateTime = noTime;
+  useEffect(() => {
+    for (var key in props.moonInfo.rise_set_times) {
+      const value = props.moonInfo.rise_set_times[key];
+      const name = value["time"];
+      const datetime = value["datetime"];
+      var formattedDateTime = formatTimeOnly(datetime);
+      if (formattedDateTime === badDateTime) {
+        formattedDateTime = noTime;
+      }
+      switch (name) {
+        case "rise":
+          setRiseTime(formattedDateTime);
+          break;
+        case "transit":
+          setTransitTime(formattedDateTime);
+          break;
+        case "set":
+          setSetTime(formattedDateTime);
+          break;
+        default:
+          break;
+      }
     }
-    switch (name) {
-      case "rise":
-        riseTime = formattedDateTime;
-        break;
-      case "transit":
-        transitTime = formattedDateTime;
-        break;
-      case "set":
-        setTime = formattedDateTime;
-        break;
-      default:
-        break;
-    }
-  }
+  }, [props.moonInfo.rise_set_times]);
 
   return (
     <div>
@@ -50,7 +52,7 @@ function SkyPosition(props) {
             <div className="w3-half">
               <p>Altitude:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-half w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.altitude, "°")}</p>
             </div>
           </div>
@@ -58,7 +60,7 @@ function SkyPosition(props) {
             <div className="w3-half">
               <p>Azimuth:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-half w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.azimuth, "°")}</p>
             </div>
           </div>
@@ -66,7 +68,7 @@ function SkyPosition(props) {
             <div className="w3-half">
               <p>Right Ascension:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-half w3-right-align coord-check">
               <p>{formatRightAscension(props.moonInfo.ra)}</p>
             </div>
           </div>
@@ -74,7 +76,7 @@ function SkyPosition(props) {
             <div className="w3-half">
               <p>Declination:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-half w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.dec, "°")}</p>
             </div>
           </div>
@@ -82,7 +84,7 @@ function SkyPosition(props) {
             <div className="w3-half">
               <p>Rise Time:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-half w3-right-align coord-check">
               <p>{riseTime}</p>
             </div>
           </div>
@@ -90,7 +92,7 @@ function SkyPosition(props) {
             <div className="w3-half">
               <p>Transit Time:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-half w3-right-align coord-check">
               <p>{transitTime}</p>
             </div>
           </div>
@@ -98,7 +100,7 @@ function SkyPosition(props) {
             <div className="w3-half">
               <p>Set Time:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-half w3-right-align coord-check">
               <p>{setTime}</p>
             </div>
           </div>
