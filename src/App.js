@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Route } from "react-router-dom";
 import jstz from "jstz";
 
@@ -22,112 +22,104 @@ function getDate() {
   // return new Date(2019, 7, 13, 4, 0, 0);
 }
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      date: getDate(),
-      latitude: 0.0,
-      longitude: 0.0,
-      coordinatesGood: false,
-      timezone: jstz.determine()
-    };
-    this.setLocation = this.setLocation.bind(this);
-    this.showError = this.showError.bind(this);
-  }
+function getSecondsTimestamp(date) {
+  return date.current.getTime() / 1000;
+}
 
-  showError(error) {
-    var message;
-    switch(error.code) {
-      case error.PERMISSION_DENIED:
-        message = "User denied the request for Geolocation."
-        break;
-      case error.POSITION_UNAVAILABLE:
-        message = "Location information is unavailable."
-        break;
-      case error.TIMEOUT:
-        message = "The request to get user location timed out."
-        break;
-      case error.UNKNOWN_ERROR:
-      default:
-        message = "An unknown error occurred."
-        break;
+function App() {
+  var date = useRef(getDate());
+  var timezone = useRef(jstz.determine());
+  var [coordinates, setCoordinates] = useState({
+    latitude: 0.0,
+    longitude: 0.0,
+    good: false
+  });
+
+  useEffect(() => {
+    function setLocation(position) {
+      setCoordinates({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        good: true
+      });
     }
-    message += " Using average latitude/longitude from timezone.";
-    message += " Inaccurate information shown in italics!";
-    alert(message);
-    let coordinates = getAverageTimezoneCoordinates(this.state.timezone.name());
-    this.setState({
-      latitude: coordinates[0],
-      longitude: coordinates[1],
-      coordinatesGood: false
-    });
-  } 
 
-  setLocation(position) {
-    console.log("set location");
-    this.setState({
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-      coordinatesGood: true
-    });
-  }
+    function showError(error) {
+      var message;
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          message = "User denied the request for Geolocation.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          message = "Location information is unavailable.";
+          break;
+        case error.TIMEOUT:
+          message = "The request to get user location timed out.";
+          break;
+        case error.UNKNOWN_ERROR:
+        default:
+          message = "An unknown error occurred.";
+          break;
+      }
+      message += " Using average latitude/longitude from timezone.";
+      message += " Inaccurate information shown in italics!";
+      alert(message);
+      let avgCoordinates = getAverageTimezoneCoordinates(
+        timezone.current.name()
+      );
+      setCoordinates({
+        latitude: avgCoordinates[0],
+        longitude: avgCoordinates[1],
+        good: false
+      });
+    }
 
-  getSecondsTimestamp() {
-    return this.state.date.getTime() / 1000;
-  }
+    navigator.geolocation.getCurrentPosition(setLocation, showError);
+  }, [coordinates, timezone]);
 
-  componentDidMount() {
-    console.log("App did mount");
-    navigator.geolocation.getCurrentPosition(this.setLocation, this.showError);
-  }
-
-  render() {
-    console.log("App render");
-    return (
-      <div className="App">
-        <MainNav />
-        <main className="App-main">
-          <Route exact path="/" component={Welcome}/>
-          <Route
-            path="/moon_info"
-            render={props => (
-              <MoonInformation
-                {...props}
-                date={this.getSecondsTimestamp()}
-                timezone={this.state.timezone.name()}
-                latitude={this.state.latitude}
-                longitude={this.state.longitude}
-                coordinatesGood={this.state.coordinatesGood}
-              />
-            )}
-          />
-          <Route
-            path="/lunar_club"
-            render={props => (
-              <LunarClub
-                {...props}
-                date={this.getSecondsTimestamp()}
-                latitude={this.state.latitude}
-                longitude={this.state.longitude}
-              />
-            )}
-          />
-          <Route
-            path="/lunar_ii_club"
-            render={props => (
-              <LunarIIClub
-                {...props}
-                date={this.getSecondsTimestamp()}
-                latitude={this.state.latitude}
-                longitude={this.state.longitude}
-              />
-            )}
-          />
-        </main>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <MainNav />
+      <main className="App-main">
+        <Route exact path="/" component={Welcome} />
+        <Route
+          path="/moon_info"
+          render={props => (
+            <MoonInformation
+              {...props}
+              date={getSecondsTimestamp(date)}
+              timezone={timezone.current.name()}
+              latitude={coordinates.latitude}
+              longitude={coordinates.longitude}
+              coordinatesGood={coordinates.good}
+            />
+          )}
+        />
+        <Route
+          path="/lunar_club"
+          render={props => (
+            <LunarClub
+              {...props}
+              date={getSecondsTimestamp(date)}
+              latitude={coordinates.latitude}
+              longitude={coordinates.longitude}
+            />
+          )}
+        />
+        <Route
+          path="/lunar_ii_club"
+          render={props => (
+            <LunarIIClub
+              {...props}
+              date={getSecondsTimestamp(date)}
+              latitude={coordinates.latitude}
+              longitude={coordinates.longitude}
+            />
+          )}
+        />
+      </main>
+    </div>
+  );
 }
 
 export default App;

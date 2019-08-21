@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Ephemeris from "./Ephemeris";
@@ -8,117 +8,76 @@ import SkyPosition from "./SkyPosition";
 
 import "./MoonInformation.css"
 
-import moonInfo from "../data/moonInfo.json";
+import moonInfoJson from "../data/moonInfo.json";
 
-class MoonInformation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      moonInfo: moonInfo,
-      error: false
-    };
-  }
+function MoonInformation(props) {
+  var [moonInfo, setMoonInfo] = useState(moonInfoJson);
+  var [error, setError] = useState(false);
 
-  componentDidMount() {
+  useEffect(() => {
+    let axiosCancelSource = axios.CancelToken.source();
+
     const config = {
       url: "https://lct-web-stage.herokuapp.com/moon_info",
       params: {
-        date: this.props.date,
-        tz: this.props.timezone,
-        lat: this.props.latitude,
-        lon: this.props.longitude
-      }
+        date: props.date,
+        tz: props.timezone,
+        lat: props.latitude,
+        lon: props.longitude
+      },
+      cancelToken: axiosCancelSource.token,
     };
     axios(config)
       .then(response => {
-        this.setState({
-          moonInfo: response.data
-        });
+        setMoonInfo(response.data);
+        setError(false);
       })
       .catch(error => {
-        this.setState({
-          error: true
-        });
+        if (error.toString() !== "Cancel") {
+          setError(true);
+        }
       });
+    return () => {
+      axiosCancelSource.cancel();
+    };
+  }, [props.date, props.timezone, props.latitude, props.longitude]);
 
+  useEffect(() => {
       let divs = document.getElementsByClassName("coord-check");
       for (var i = 0; i < divs.length; i++) {
-        if (this.props.coordinatesGood) {
-          divs[i].className.replace(" bad-coords", "");
-        } else {
-          divs[i].className += " bad-coords";
-        }
-      }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (
-      prevProps.date !== this.props.date ||
-      prevProps.timezone !== this.props.timezone ||
-      prevProps.latitude !== this.props.latitude ||
-      prevProps.longitude !== this.props.longitude
-    ) {
-      const config = {
-        url: "https://lct-web-stage.herokuapp.com/moon_info",
-        params: {
-          date: this.props.date,
-          tz: this.props.timezone,
-          lat: this.props.latitude,
-          lon: this.props.longitude
-        }
-      };
-      axios(config)
-        .then(response => {
-          this.setState({
-            moonInfo: response.data
-          });
-        })
-        .catch(error => {
-          this.setState({
-            error: true
-          });
-        });
-    }
-
-    if (prevProps.coordinatesGood !== this.props.coordinatesGood) {
-      let divs = document.getElementsByClassName("coord-check");
-      for (var i = 0; i < divs.length; i++) {
-        if (this.props.coordinatesGood) {
+        if (props.coordinatesGood) {
           divs[i].className = divs[i].className.replace(" bad-coords", "");
         } else {
           divs[i].className += " bad-coords";
         }
       }
-    }
-  }
+  }, [props.coordinatesGood]);
 
-  render() {
-    return (
-      <div className="w3-container">
-        <Ephemeris
-          datetime={this.props.date}
-          timezone={this.props.timezone}
-          latitude={this.props.latitude}
-          longitude={this.props.longitude}
-          moonInfo={this.state.moonInfo}
-          error={this.state.error}
-        />
-        <NextFourPhases
-          timezone={this.props.timezone}
-          moonInfo={this.state.moonInfo}
-          error={this.state.error}
-        />
-        <PhaseAndLibration
-          moonInfo={this.state.moonInfo}
-          error={this.state.error}
-        />
-        <SkyPosition
-          moonInfo={this.state.moonInfo}
-          error={this.state.error}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="w3-container">
+      <Ephemeris
+        datetime={props.date}
+        timezone={props.timezone}
+        latitude={props.latitude}
+        longitude={props.longitude}
+        moonInfo={moonInfo}
+        error={error}
+      />
+      <NextFourPhases
+        timezone={props.timezone}
+        moonInfo={moonInfo}
+        error={error}
+      />
+      <PhaseAndLibration
+        moonInfo={moonInfo}
+        error={error}
+      />
+      <SkyPosition
+        moonInfo={moonInfo}
+        error={error}
+      />
+    </div>
+  );
 }
 
 export default MoonInformation;
