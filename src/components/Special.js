@@ -94,84 +94,84 @@ function Special(props) {
             <h1>Special</h1>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Time from New Moon:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-col s2 w3-right-align">
               <p>{timeFromNew}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Cresent Moon, Waxing</p>
             </div>
-            <div id="1" className="w3-half w3-right-align from-new">
+            <div id="1" className="w3-col s2 w3-right-align from-new">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s11">
               <p>Old Moon in New Moon's Arms</p>
             </div>
-            <div id="2" className="w3-half w3-right-align from-new">
+            <div id="2" className="w3-col s1 w3-right-align from-new">
               <FontAwesomeIcon icon={faStar} className="star-inactive"/>
             </div>
           </div>
           <hr />
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Time to New Moon:</p>
             </div>
-            <div className="w3-half w3-right-align">
+            <div className="w3-col s2 w3-right-align">
               <p>{timeToNew}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Cresent Moon, Waning</p>
             </div>
-            <div id="1" className="w3-half w3-right-align to-new">
+            <div id="1" className="w3-col s2 w3-right-align to-new">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s11">
               <p>New Moon in Old Moon's Arms</p>
             </div>
-            <div id="2" className="w3-half w3-right-align to-new">
+            <div id="2" className="w3-col s1 w3-right-align to-new">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>
           <hr />
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Cow Jumping over the Moon</p>
             </div>
-            <div className="w3-half w3-right-align near-full">
+            <div className="w3-col s2 w3-right-align near-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Woman in the Moon</p>
             </div>
-            <div className="w3-half w3-right-align at-full">
+            <div className="w3-col s2 w3-right-align at-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Man in the Moon</p>
             </div>
-            <div className="w3-half w3-right-align at-full">
+            <div className="w3-col s2 w3-right-align at-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s10">
               <p>Rabbit in the Moon</p>
             </div>
-            <div className="w3-half w3-right-align at-full">
+            <div className="w3-col s2 w3-right-align at-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>

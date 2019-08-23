@@ -49,58 +49,58 @@ function SkyPosition(props) {
             <h1>Sky Position</h1>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s4">
               <p>Altitude:</p>
             </div>
-            <div className="w3-half w3-right-align coord-check">
+            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.altitude, "°")}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s4">
               <p>Azimuth:</p>
             </div>
-            <div className="w3-half w3-right-align coord-check">
+            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.azimuth, "°")}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s6">
               <p>Right Ascension:</p>
             </div>
-            <div className="w3-half w3-right-align coord-check">
+            <div className="w3-col s6 w3-right-align coord-check">
               <p>{formatRightAscension(props.moonInfo.ra)}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s4">
               <p>Declination:</p>
             </div>
-            <div className="w3-half w3-right-align coord-check">
+            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.dec, "°")}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s4">
               <p>Rise Time:</p>
             </div>
-            <div className="w3-half w3-right-align coord-check">
+            <div className="w3-col s8 w3-right-align coord-check">
               <p>{riseTime}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s5">
               <p>Transit Time:</p>
             </div>
-            <div className="w3-half w3-right-align coord-check">
+            <div className="w3-col s7 w3-right-align coord-check">
               <p>{transitTime}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-half">
+            <div className="w3-col s4">
               <p>Set Time:</p>
             </div>
-            <div className="w3-half w3-right-align coord-check">
+            <div className="w3-col s8 w3-right-align coord-check">
               <p>{setTime}</p>
             </div>
           </div>
