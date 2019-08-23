@@ -9,7 +9,10 @@ import {
 
 function Ephemeris(props) {
   const hasError = props.error;
-  const localTime = formatTimeWithSeconds(props.datetime, props.timezone, true);
+  const localTime = formatTimeWithSeconds(props.datetime, props.timezone, true, true);
+  const pos = localTime.lastIndexOf(" ");
+  const localDateTime = localTime.slice(0, pos);
+  const localTimeZone = localTime.slice(pos + 1, localTime.length);
   const utcTime = formatTimeWithSeconds(props.datetime, "UTC");
 
   return (
@@ -33,10 +36,10 @@ function Ephemeris(props) {
           </div>
           <div className="w3-row">
             <div className="w3-half">
-              <p>Local Date:</p>
+              <p>{localTimeZone} Date:</p>
             </div>
             <div className="w3-half w3-right-align">
-              <p>{localTime}</p>
+              <p>{localDateTime}</p>
             </div>
           </div>
           <div className="w3-row">
