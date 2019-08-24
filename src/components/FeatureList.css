@@ -1,5 +1,5 @@
 .hr-small {
-    margin: 2px 0;
+    margin: 2px 0 0 0;
 }
 
 .w3-bar .w3-bar-item {
@@ -8,9 +8,15 @@
 
 @media only screen and (min-width: 768px) {
     .hr-small {
-        margin: 6px 0;
+        margin: 6px 0 0 0;
     }
     .w3-bar .w3-bar-item {
         padding: 40px 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .w3-bar .w3-bar-item {
+        padding: 60px 60px;
     }
 }
