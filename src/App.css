@@ -3,6 +3,7 @@
   /* font-size: calc(10px + 2vmin); */
   font-size: 5.1vw;
   color: white;
+  overflow: auto;
 }
 
 .App-main {
