@@ -36,7 +36,7 @@ function Ephemeris(props) {
           </div>
           <div className="w3-row">
             <div className="w3-col s4">
-              <p>{localTimeZone} Date:</p>
+              <p>Date ({localTimeZone}):</p>
             </div>
             <div className="w3-col s8 w3-right-align">
               <p>{localDateTime}</p>
@@ -44,7 +44,7 @@ function Ephemeris(props) {
           </div>
           <div className="w3-row">
             <div className="w3-col s4">
-              <p>UTC Date:</p>
+              <p>Date (UTC):</p>
             </div>
             <div className="w3-col s8 w3-right-align">
               <p>{utcTime}</p>
@@ -67,36 +67,36 @@ function Ephemeris(props) {
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-col s3">
+            <div className="w3-col s4">
               <p>Illumination:</p>
             </div>
-            <div className="w3-col s9 w3-right-align">
+            <div className="w3-col s8 w3-right-align">
               <p>
                 {formatDoubleLabel(props.moonInfo.fractional_phase * 100, "%")}
               </p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-col s3">
+            <div className="w3-col s5">
               <p>Colongitude:</p>
             </div>
-            <div className="w3-col s9 w3-right-align ">
+            <div className="w3-col s7 w3-right-align ">
               <p>{formatCoordinateLabel(props.moonInfo.colong, null)}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-col s3">
+            <div className="w3-col s4">
               <p>Elongation:</p>
             </div>
-            <div className="w3-col s9 w3-right-align">
+            <div className="w3-col s8 w3-right-align">
               <p>{formatCoordinateLabel(props.moonInfo.elongation, null)}</p>
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-col s3">
+            <div className="w3-col s4">
               <p>Distance:</p>
             </div>
-            <div className="w3-col s9 w3-right-align coord-check">
+            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.earth_distance, " km")}</p>
             </div>
           </div>
@@ -109,10 +109,10 @@ function Ephemeris(props) {
             </div>
           </div>
           <div className="w3-row">
-            <div className="w3-col s3">
+            <div className="w3-col s4">
               <p>Magnitude:</p>
             </div>
-            <div className="w3-col s9 w3-right-align">
+            <div className="w3-col s8 w3-right-align">
               <p>{formatDoubleLabel(props.moonInfo.magnitude, "")}</p>
             </div>
           </div>
