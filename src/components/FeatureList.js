@@ -18,16 +18,11 @@ function FeatureList(props) {
           <div className="w3-row w3-center">
             <h1>{props.title}</h1>
           </div>
-
-          <div className="compact">
-          <hr className="hr-small" />
           <ul className="w3-ul">
             {featureArray.map(feature => (
               <Feature key={feature.key} name={feature.name} type={feature.type} />
             ))}
           </ul>
-          <hr className="hr-small" />
-          </div>
         </div>
       ) : (
         <div>
