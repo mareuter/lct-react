@@ -1,13 +1,36 @@
 .main-nav {
-    display: -ms-flexbox;
-    display: flex;
+    /* display: -ms-flexbox;
+    display: flex; */
+    width: 100%;
+    position: fixed;
+    height: 5vh;
+    background: #282c34;
+    z-index: 1;
 }
 
-.main-nav nav {
+@media only screen and (min-width: 768px) {
+    .main-nav {
+        height: 6vh;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .main-nav {
+        height: 7vh;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .main-nav {
+        height: 11vh;
+    }
+}
+
+/* .main-nav nav {
     -ms-flex: 1;
     flex: 1;
     overflow: auto;
-}
+} */
 
 .main-nav-img {
     height: 5vw;
@@ -23,7 +46,7 @@
 .main-nav nav a {
     display: inline-block;
     /* padding: 0.3em 0.8em; */
-    color: #555;
+    color: #aaa;
     text-decoration: none;
     font-size: 3vw;
   }

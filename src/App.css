@@ -5,6 +5,12 @@
   color: white;
 }
 
+.App-main {
+  top: 10vw;
+  position: relative;
+  z-index: 0;
+}
+
 h1 {
   font-size: 7.5vw;
 }
