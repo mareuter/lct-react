@@ -1,0 +1,16 @@
+.hr-small {
+    margin: 2px 0;
+}
+
+.w3-bar .w3-bar-item {
+    padding: 8px 8px;
+}
+
+@media only screen and (min-width: 768px) {
+    .hr-small {
+        margin: 6px 0;
+    }
+    .w3-bar .w3-bar-item {
+        padding: 40px 40px;
+    }
+}
