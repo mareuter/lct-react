@@ -11,6 +11,14 @@ import lunar_2_club_tab from "../images/lunar_2_tab.png";
 import lunar_2_club_tab_sel from "../images/lunar_2_tab_sel.png";
 
 function clickHandler(event) {
+  let navs = document.getElementsByTagName("a");
+  for (var i = 0; i < navs.length; i++) {
+    if (navs[i].className === "active") {
+      let activemage = navs[i].childNodes[0].childNodes[0];
+      // console.log(activemage.alt);
+      changeSelectedIcon(activemage, getLinkName(activemage), false);
+    }
+  }
   let target = event.target ? event.target : event.srcElement;
   let image;
   // console.log(target.nodeName);
@@ -23,42 +31,48 @@ function clickHandler(event) {
   if (target.nodeName === "DIV") {
     image = target.childNodes[0];
   }
-  const pos = image.alt.lastIndexOf(" ");
-  let linkName = image.alt.slice(0, pos);
-  switch (linkName) {
+  changeSelectedIcon(image, getLinkName(image), true);
+}
+
+function changeSelectedIcon(img, name, isSelected) {
+  switch (name) {
     case "Moon Info":
-      image.src = moon_info_tab_sel;
+      if (isSelected) {
+        img.src = moon_info_tab_sel;
+      } else {
+        img.src = moon_info_tab;
+      }
       break;
     case "Lunar Club":
-      image.src = lunar_club_tab_sel;
+      if (isSelected) {
+        img.src = lunar_club_tab_sel;
+      } else {
+        img.src = lunar_club_tab;
+      }
       break;
     case "Lunar 2 Club":
-      image.src = lunar_2_club_tab_sel;
+      if (isSelected) {
+        img.src = lunar_2_club_tab_sel;
+      } else {
+        img.src = lunar_2_club_tab;
+      }
       break;
     default:
       break;
   }
 }
 
-function blurHandler(event) {
-  let target = event.target ? event.target : event.srcElement;
-  let image = target.childNodes[0].childNodes[0];
-  const pos = image.alt.lastIndexOf(" ");
-  let linkName = image.alt.slice(0, pos);
-  switch (linkName) {
-    case "Moon Info":
-      image.src = moon_info_tab;
-      break;
-    case "Lunar Club":
-      image.src = lunar_club_tab;
-      break;
-    case "Lunar 2 Club":
-      image.src = lunar_2_club_tab;
-      break;
-    default:
-      break;
-  }
+function getLinkName(img) {
+  const pos = img.alt.lastIndexOf(" ");
+  return img.alt.slice(0, pos);
 }
+
+// function blurHandler(event) {
+//   let target = event.target ? event.target : event.srcElement;
+//   if (target.className === "active") {
+//     return;
+//   }
+// }
 
 function MainNav() {
   return (
@@ -69,7 +83,6 @@ function MainNav() {
           exact
           activeClassName="active"
           onClick={clickHandler}
-          onBlur={blurHandler}
         >
           <div className="w3-container w3-cell w3-center">
             <img
@@ -84,7 +97,6 @@ function MainNav() {
           to="/lunar_club"
           activeClassName="active"
           onClick={clickHandler}
-          onBlur={blurHandler}
         >
           <div className="w3-container w3-cell w3-center">
             <img
@@ -99,7 +111,6 @@ function MainNav() {
           to="/lunar_ii_club"
           activeClassName="active"
           onClick={clickHandler}
-          onBlur={blurHandler}
         >
           <div className="w3-container w3-cell w3-center">
             <img
