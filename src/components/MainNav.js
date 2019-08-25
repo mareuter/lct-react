@@ -16,7 +16,7 @@ function clickHandler(event) {
     if (navs[i].className === "active") {
       let activemage = navs[i].childNodes[0].childNodes[0];
       // console.log(activemage.alt);
-      changeSelectedIcon(activemage, getLinkName(activemage), false);
+      changeSelectedIcon(activemage, false);
     }
   }
   let target = event.target ? event.target : event.srcElement;
@@ -31,10 +31,11 @@ function clickHandler(event) {
   if (target.nodeName === "DIV") {
     image = target.childNodes[0];
   }
-  changeSelectedIcon(image, getLinkName(image), true);
+  changeSelectedIcon(image, true);
 }
 
-function changeSelectedIcon(img, name, isSelected) {
+function changeSelectedIcon(img, isSelected) {
+  let name = getLinkName(img);
   switch (name) {
     case "Moon Info":
       if (isSelected) {
@@ -74,7 +75,7 @@ function MainNav() {
     for (var i = 0; i < navs.length; i++) {
       if (navs[i].className === "active") {
         let activemage = navs[i].childNodes[0].childNodes[0];
-        changeSelectedIcon(activemage, getLinkName(activemage), true);
+        changeSelectedIcon(activemage, true);
       }
     }
   });
