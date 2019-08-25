@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./MainNav.css";
@@ -67,14 +67,18 @@ function getLinkName(img) {
   return img.alt.slice(0, pos);
 }
 
-// function blurHandler(event) {
-//   let target = event.target ? event.target : event.srcElement;
-//   if (target.className === "active") {
-//     return;
-//   }
-// }
-
 function MainNav() {
+
+  useEffect(() => {
+    let navs = document.getElementsByTagName("a");
+    for (var i = 0; i < navs.length; i++) {
+      if (navs[i].className === "active") {
+        let activemage = navs[i].childNodes[0].childNodes[0];
+        changeSelectedIcon(activemage, getLinkName(activemage), true);
+      }
+    }
+  });
+
   return (
     <header className="w3-container w3-center main-nav">
       <nav>
