@@ -3,6 +3,12 @@
 }
 
 .phase-image {
-    height: 100px;
-    width: 100px;
+    height: 25vw;
+    width: 25vw;
+}
+
+@media only screen and (min-width: 768px) {
+    .phase {
+        padding: 30px 15px;
+    }
 }

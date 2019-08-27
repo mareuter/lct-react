@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./FeatureList.css";
+
 import Error from "./Error";
 import Feature from "./Feature";
 
