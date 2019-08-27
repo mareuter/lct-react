@@ -1,6 +1,18 @@
 {
-  "name": "lct-react",
+  "name": "lct",
   "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Michael Reuter",
+    "email": "mareuternh@gmail.com"
+  },
+  "description": "This program provides general lunar information and availability of features related to the Astronomical League Lunar and Lunar II observing clubs.",
+  "repository": "github:mareuter/lct-react",
+  "keywords": [
+    "astronomy",
+    "lunar observing",
+    "react"
+  ],
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.1",
