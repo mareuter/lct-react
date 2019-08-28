@@ -1,14 +1,13 @@
 import { DateTime } from "luxon";
 
-const formatDoubleValue = value => {
-  const decimalPlaces = 2;
+const formatDoubleValue = (value, precision) => {
   return Number(
-    Math.round(parseFloat(value + "e" + decimalPlaces)) + "e-" + decimalPlaces
-  ).toFixed(decimalPlaces);
+    Math.round(parseFloat(value + "e" + precision)) + "e-" + precision
+  ).toFixed(precision);
 };
 
-export const formatDoubleLabel = (value, backCaption) => {
-  const formatNum = formatDoubleValue(value);
+export const formatDoubleLabel = (value, backCaption, precision=2) => {
+  const formatNum = formatDoubleValue(value, precision);
   return formatNum + backCaption;
 };
 

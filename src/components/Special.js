@@ -19,7 +19,7 @@ function checkMoonTime(moonTime, cutoffTime, phaseTime) {
     let timeLabel;
     let indicatorState;
     if (moonTime <= cutoffTime) {
-        timeLabel = formatDoubleLabel(moonTime, " hours");
+        timeLabel = formatDoubleLabel(moonTime, " hours", 1);
         if (moonTime > phaseTime) {
             indicatorState = 2;
         } else {
@@ -95,10 +95,10 @@ function Special(props) {
           </div>
           <div className="compact">
           <div className="w3-row">
-            <div className="w3-col s10">
+            <div className="w3-col s8">
               <p>Time from New Moon:</p>
             </div>
-            <div className="w3-col s2 w3-right-align">
+            <div className="w3-col s4 w3-right-align">
               <p>{timeFromNew}</p>
             </div>
           </div>
@@ -120,10 +120,10 @@ function Special(props) {
           </div>
           <hr />
           <div className="w3-row">
-            <div className="w3-col s10">
+            <div className="w3-col s7">
               <p>Time to New Moon:</p>
             </div>
-            <div className="w3-col s2 w3-right-align">
+            <div className="w3-col s5 w3-right-align">
               <p>{timeToNew}</p>
             </div>
           </div>

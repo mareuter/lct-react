@@ -19,6 +19,10 @@ describe("Formatting Double Labels", () => {
   test("Integer Label", () => {
     expect(formatDoubleLabel(30, " hours")).toBe("30.00 hours");
   });
+
+  test("Standard Label with Single Precision", () => {
+    expect(formatDoubleLabel(25.356, " days", 1)).toBe("25.4 days");
+  });
 });
 
 describe("Formatting Coordinate Labels", () => {
