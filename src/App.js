@@ -75,7 +75,7 @@ function App() {
     }
 
     navigator.geolocation.getCurrentPosition(setLocation, showError);
-  }, [coordinates, timezone]);
+  }, [coordinates.latitude, coordinates.longitude, coordinates.good, timezone]);
 
   return (
     <div className="App">
