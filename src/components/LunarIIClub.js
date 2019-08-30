@@ -5,8 +5,11 @@ import FeatureList from "./FeatureList";
 
 import lunarTwoInfoJson from "../data/lunarTwoInfo.json";
 
+const LUNAR_TWO_INFO_LOCAL = "lunarClubInfo";
+
 function LunarIIClub(props) {
-  const [lunarIIClubInfo, setLunarIIClubInfo] = useState(lunarTwoInfoJson);
+  let lunarTwoInfoState = localStorage.getItem(LUNAR_TWO_INFO_LOCAL) ? JSON.parse(localStorage.getItem(LUNAR_TWO_INFO_LOCAL)) : lunarTwoInfoJson;
+  const [lunarIIClubInfo, setLunarIIClubInfo] = useState(lunarTwoInfoState);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -25,6 +28,7 @@ function LunarIIClub(props) {
       .then(response => {
         setLunarIIClubInfo(response.data);
         setError(false);
+        localStorage.setItem(LUNAR_TWO_INFO_LOCAL, JSON.stringify(response.data));
       })
       .catch(error => {
         if (error.toString() !== "Cancel") {

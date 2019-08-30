@@ -10,11 +10,19 @@ import "./MoonInformation.css"
 
 import moonInfoJson from "../data/moonInfo.json";
 
+const MOON_INFO_LOCAL = "moonInfo";
+
 function MoonInformation(props) {
-  var [moonInfo, setMoonInfo] = useState(moonInfoJson);
+  console.log("Creating MoonInformation UI");
+  let moonInfoState = localStorage.getItem(MOON_INFO_LOCAL) ? JSON.parse(localStorage.getItem(MOON_INFO_LOCAL)) : moonInfoJson;
+  var [moonInfo, setMoonInfo] = useState(moonInfoState);
   var [error, setError] = useState(false);
 
   useEffect(() => {
+    console.log("Fetch Moon Info Data");
+    console.log(props.date);
+    console.log(props.timezone);
+    console.log(props.latitude, props.longitude);
     let axiosCancelSource = axios.CancelToken.source();
 
     const config = {
@@ -31,6 +39,7 @@ function MoonInformation(props) {
       .then(response => {
         setMoonInfo(response.data);
         setError(false);
+        localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(response.data));
       })
       .catch(error => {
         if (error.toString() !== "Cancel") {
@@ -43,14 +52,16 @@ function MoonInformation(props) {
   }, [props.date, props.timezone, props.latitude, props.longitude]);
 
   useEffect(() => {
-      let divs = document.getElementsByClassName("coord-check");
-      for (var i = 0; i < divs.length; i++) {
-        if (props.coordinatesGood) {
-          divs[i].className = divs[i].className.replace(" bad-coords", "");
-        } else {
-          divs[i].className += " bad-coords";
-        }
+    console.log("Check for Bad Coordinates");
+    console.log(props.coordinatesGood);
+    let divs = document.getElementsByClassName("coord-check");
+    for (var i = 0; i < divs.length; i++) {
+      if (props.coordinatesGood) {
+        divs[i].className = divs[i].className.replace(" bad-coords", "");
+      } else {
+        divs[i].className += " bad-coords";
       }
+    }
   }, [props.coordinatesGood]);
 
   return (

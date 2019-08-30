@@ -6,8 +6,11 @@ import Special from "./Special";
 
 import lunarClubInfoJson from "../data/lunarClubInfo.json";
 
+const LUNAR_CLUB_INFO_LOCAL = "lunarClubInfo";
+
 function LunarClub(props) {
-  const [lunarClubInfo, setLunarClubInfo] = useState(lunarClubInfoJson);
+  let lunarClubInfoState = localStorage.getItem(LUNAR_CLUB_INFO_LOCAL) ? JSON.parse(localStorage.getItem(LUNAR_CLUB_INFO_LOCAL)) : lunarClubInfoJson;
+  const [lunarClubInfo, setLunarClubInfo] = useState(lunarClubInfoState);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -26,6 +29,7 @@ function LunarClub(props) {
       .then(response => {
         setLunarClubInfo(response.data);
         setError(false);
+        localStorage.setItem(LUNAR_CLUB_INFO_LOCAL, JSON.stringify(response.data));
       })
       .catch(error => {
         if (error.toString() !== "Cancel") {
