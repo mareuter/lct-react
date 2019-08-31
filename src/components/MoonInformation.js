@@ -13,16 +13,11 @@ import moonInfoJson from "../data/moonInfo.json";
 const MOON_INFO_LOCAL = "moonInfo";
 
 function MoonInformation(props) {
-  console.log("Creating MoonInformation UI");
   let moonInfoState = localStorage.getItem(MOON_INFO_LOCAL) ? JSON.parse(localStorage.getItem(MOON_INFO_LOCAL)) : moonInfoJson;
   var [moonInfo, setMoonInfo] = useState(moonInfoState);
   var [error, setError] = useState(false);
 
   useEffect(() => {
-    console.log("Fetch Moon Info Data");
-    console.log(props.date);
-    console.log(props.timezone);
-    console.log(props.latitude, props.longitude);
     let axiosCancelSource = axios.CancelToken.source();
 
     const config = {
@@ -52,8 +47,6 @@ function MoonInformation(props) {
   }, [props.date, props.timezone, props.latitude, props.longitude]);
 
   useEffect(() => {
-    console.log("Check for Bad Coordinates");
-    console.log(props.coordinatesGood);
     let divs = document.getElementsByClassName("coord-check");
     for (var i = 0; i < divs.length; i++) {
       if (props.coordinatesGood) {
