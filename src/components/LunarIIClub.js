@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import "./LunarIIClub.css";
+
 import FeatureList from "./FeatureList";
 
 import lunarTwoInfoJson from "../data/lunarTwoInfo.json";
@@ -40,6 +42,20 @@ function LunarIIClub(props) {
     };
   }, [props.date, props.latitude, props.longitude]);
 
+  useEffect(() => {
+    let div = document.getElementsByClassName("outer")[0];
+    let divP = div.childNodes[0];
+    divP.style = "";
+    let viewportBottom = document.documentElement.clientHeight;
+    let diff = viewportBottom - div.getBoundingClientRect().top;
+    if (diff < 0) {
+      divP.style = "display: hidden; margin: 0;";
+    } else {
+      let str = "flex-grow: 1; height: " + diff.toString() + "px;";
+      divP.style = str;
+    }
+  });
+
   return (
     <div className="w3-container">
       <FeatureList
@@ -52,6 +68,9 @@ function LunarIIClub(props) {
         features={lunarIIClubInfo.landing_sites}
         error={error}
       />
+      <div className="outer">
+        <p />
+      </div>
     </div>
   );
 }
