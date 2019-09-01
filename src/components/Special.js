@@ -93,7 +93,6 @@ function Special(props) {
           <div className="w3-row w3-center">
             <h1>Special</h1>
           </div>
-          <div className="compact">
           <div className="w3-row">
             <div className="w3-col s8">
               <p>Time from New Moon:</p>
@@ -175,7 +174,6 @@ function Special(props) {
             <div className="w3-col s2 w3-right-align at-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-          </div>
           </div>
         </div>
       ) : (
