@@ -51,7 +51,8 @@ function LunarIIClub(props) {
     if (diff < 0) {
       divP.style = "display: hidden; margin: 0;";
     } else {
-      let str = "flex-grow: 1; height: " + diff.toString() + "px;";
+      let height = "height: calc(" + diff.toString() + "px + 10vw)";
+      let str = "flex-grow: 1; " + height;
       divP.style = str;
     }
   });

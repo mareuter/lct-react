@@ -1,7 +1,6 @@
 .App {
   background-color: #282c34;
-  /* font-size: calc(10px + 2vmin); */
-  font-size: 5.1vw;
+  font-size: calc(1em + 1vmin);
   color: white;
   overflow: auto;
 }
@@ -13,5 +12,16 @@
 }
 
 h1 {
-  font-size: 7.5vw;
+  font-size: 7vw;
+  margin: 5px;
+}
+
+p {
+  margin: 5px 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 5vw;
+  }
 }

@@ -29,7 +29,7 @@ function Ephemeris(props) {
           </div>
           <div className="w3-row">
             <div className="w3-col s3">
-              <p>Location:&nbsp;</p>
+              <p>Location:</p>
             </div>
             <div className="w3-col s9 w3-right-align">
               <p>
@@ -41,7 +41,7 @@ function Ephemeris(props) {
           </div>
           <div className="w3-row">
             <div className="w3-col s4">
-              <p>Date ({localTimeZone}):</p>
+              <p>Date&nbsp;({localTimeZone}):</p>
             </div>
             <div className="w3-col s8 w3-right-align">
               <p>{localDateTime}</p>
@@ -49,7 +49,7 @@ function Ephemeris(props) {
           </div>
           <div className="w3-row">
             <div className="w3-col s4">
-              <p>Date (UTC):</p>
+              <p>Date&nbsp;(UTC):</p>
             </div>
             <div className="w3-col s8 w3-right-align">
               <p>{utcTime}</p>
@@ -107,7 +107,7 @@ function Ephemeris(props) {
           </div>
           <div className="w3-row">
             <div className="w3-col s5">
-              <p>Angular Size:</p>
+              <p>Angular&nbsp;Size:</p>
             </div>
             <div className="w3-col s7 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.angular_size, "°")}</p>

@@ -1,5 +1,6 @@
 .phase {
     padding: 10px 5px;
+    font-size: calc(1em + 1.5vmin);
 }
 
 .phase-image {
@@ -10,5 +11,10 @@
 @media only screen and (min-width: 768px) {
     .phase {
         padding: 30px 15px;
+    }
+
+    .phase-image {
+        height: 20vw;
+        width: 20vw;
     }
 }
