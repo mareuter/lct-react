@@ -6,6 +6,14 @@ const formatDoubleValue = (value, precision) => {
   ).toFixed(precision);
 };
 
+const getDirectionLabel = (coordinate, direction) => {
+  if (coordinate < 0) {
+    return direction[1];
+  } else {
+    return direction[0];
+  }
+};
+
 export const formatDoubleLabel = (value, backCaption, precision=2) => {
   const formatNum = formatDoubleValue(value, precision);
   return formatNum + backCaption;
@@ -92,3 +100,10 @@ export const formatRightAscension = value => {
   const minutesString = minutes.toString().padStart(2, "0") + "m";
   return hoursString + " " + minutesString;
 };
+
+export const formatDoubleCoordinateLabel = (coordinate, direction) => {
+  let coordinateValue = formatDoubleValue(Math.abs(coordinate), 2);
+  let coordinateString = coordinateValue.toString() + "°";
+  let directionString = getDirectionLabel(coordinate, direction);
+  return coordinateString + " " + directionString;
+}

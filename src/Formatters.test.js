@@ -1,10 +1,12 @@
 import {
   formatCoordinateLabel,
+  formatDoubleCoordinateLabel,
   formatDoubleLabel,
   formatRightAscension,
   formatTimeOnly,
   formatTimeWithMinutes,
-  formatTimeWithSeconds
+  formatTimeWithSeconds,
+  
 } from "./Formatters";
 
 describe("Formatting Double Labels", () => {
@@ -36,6 +38,14 @@ describe("Formatting Coordinate Labels", () => {
 
   test("No Direction Coordinate Label", () => {
     expect(formatCoordinateLabel(32.75349234, null)).toBe("32° 45.21'");
+  });
+
+  test("Positive Double Coordinate Label", () => {
+    expect(formatDoubleCoordinateLabel(145.5, "NS")).toBe("145.50° N");
+  });
+
+  test("Negative Double Coordinate Label", () => {
+    expect(formatDoubleCoordinateLabel(-56.75416, "EW")).toBe("56.75° W");
   });
 });
 
