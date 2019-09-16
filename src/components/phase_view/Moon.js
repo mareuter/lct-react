@@ -20,7 +20,7 @@ function Moon(props) {
       visible
       position={[0, 0, 0]}
       rotation={[librationLatRad, OFFSET_Y_ROTATION - librationLonRad, 0]}
-      geometry={new THREE.SphereGeometry(1, numMoonSegments, numMoonSegments)}
+      geometry={new THREE.SphereGeometry(props.moonRadius, numMoonSegments, numMoonSegments)}
       material={
         new THREE.MeshPhongMaterial({
           map: moonMap,

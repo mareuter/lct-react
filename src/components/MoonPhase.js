@@ -6,10 +6,12 @@ import ErrorBoundary from "./ErrorBoundary";
 
 import Camera from "./phase_view/Camera";
 import EarthShine from "./phase_view/EarthShine";
+import LibrationArrow from "./phase_view/LibrationArrow";
 import Moon from "./phase_view/Moon";
 import Sun from "./phase_view/Sun";
 
-const maxCameraZoomOut = 75.0;
+const maxCameraZoomOut = 70.0;
+const moonRadius = 1;
 
 function MoonPhase(props) {
   return (
@@ -33,7 +35,8 @@ function MoonPhase(props) {
           subSolarLatitude={props.subSolarLatitude}
         />
         <EarthShine />
-        <Moon libration={props.libration} />
+        <Moon moonRadius={moonRadius} libration={props.libration} />
+        <LibrationArrow moonRadius={moonRadius} libration={props.libration} />
       </Canvas>
     </ErrorBoundary>
   );
