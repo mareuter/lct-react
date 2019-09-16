@@ -28,9 +28,12 @@ function MoonPhase(props) {
         }}
       >
         {/* <Camera /> */}
-        <Sun />
+        <Sun
+          solarElongation={props.solarElongation}
+          subSolarLatitude={props.subSolarLatitude}
+        />
         <EarthShine />
-        <Moon />
+        <Moon libration={props.libration} />
       </Canvas>
     </ErrorBoundary>
   );

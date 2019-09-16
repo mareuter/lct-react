@@ -12,11 +12,14 @@ function Moon(props) {
   let moonMap = useMemo(() => new THREE.TextureLoader().load(Moon_map), []);
   let moonElevationMap = useMemo(() => new THREE.TextureLoader().load(Moon_elevation_map), []);
 
+  let librationLonRad = THREE.Math.degToRad(props.libration.lon);
+  let librationLatRad = THREE.Math.degToRad(props.libration.lat);
+
   return (
     <mesh
       visible
       position={[0, 0, 0]}
-      rotation={[0, OFFSET_Y_ROTATION, 0]}
+      rotation={[librationLatRad, OFFSET_Y_ROTATION - librationLonRad, 0]}
       geometry={new THREE.SphereGeometry(1, numMoonSegments, numMoonSegments)}
       material={
         new THREE.MeshPhongMaterial({
