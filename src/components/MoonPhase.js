@@ -17,6 +17,7 @@ function MoonPhase(props) {
   return (
     <ErrorBoundary>
       <Canvas
+        invalidateFrameloop={true}
         orthographic={true}
         camera={{
           left: -5,
