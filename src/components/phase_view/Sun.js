@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import * as THREE from "three";
 
 const sunRadius = 1000;
 
 function Sun(props) {
-  let phaseAngle = props.solarElongation + 180.0;
-  if (phaseAngle > 360.0) {
-    phaseAngle -= 360.0;
-  }
+  let [sunXPosition, setSunXPosition] = useState(0);
+  let [sunYPosition, setSunYPosition] = useState(0);
+  let [sunZPosition, setSunZPosition] = useState(sunRadius);
 
-  let phaseAngleRad = THREE.Math.degToRad(-phaseAngle);
-  let subSolarLatRad = THREE.Math.degToRad(props.subSolarLatitude);
+  useEffect(() => {
+    let phaseAngle = props.solarElongation + 180.0;
+    if (phaseAngle > 360.0) {
+      phaseAngle -= 360.0;
+    }
 
-  let sunXPosition = sunRadius * Math.sin(phaseAngleRad);
-  let sunYPosition = sunRadius * Math.sin(subSolarLatRad);
-  let sunZPosition = sunRadius * Math.cos(phaseAngleRad);
+    let phaseAngleRad = THREE.Math.degToRad(-phaseAngle);
+    let subSolarLatRad = THREE.Math.degToRad(props.subSolarLatitude);
+
+    setSunXPosition(sunRadius * Math.sin(phaseAngleRad));
+    setSunYPosition(sunRadius * Math.sin(subSolarLatRad));
+    setSunZPosition(sunRadius * Math.cos(phaseAngleRad));
+  }, [props.solarElongation, props.subSolarLatitude]);
 
   return (
     <pointLight

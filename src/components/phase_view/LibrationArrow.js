@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import * as THREE from "three";
 
@@ -12,15 +12,21 @@ const COLOR = 0x00ffff;
 const ARROW_MATERIAL = { color: COLOR };
 
 function LibrationArrow(props) {
-  let arrowRadius = props.moonRadius + ARROW_RADIUS_OFFSET;
+  let [originXPosition, setOriginXPosition] = useState(0);
+  let [originYPosition, setOriginYPosition] = useState(0);
+  let [originZRotation, setOriginZRotation] = useState(0);
 
-  let librationLonRad = THREE.Math.degToRad(props.libration.lon);
-  let librationLatRad = THREE.Math.degToRad(props.libration.lat);
-  let librationPhaseAngRad = Math.atan2(librationLatRad, librationLonRad);
+  useEffect(() => {
+    let arrowRadius = props.moonRadius + ARROW_RADIUS_OFFSET;
 
-  let originXPosition = arrowRadius * Math.cos(librationPhaseAngRad);
-  let originYPosition = arrowRadius * Math.sin(librationPhaseAngRad);
-  let originZRotation = THREE.Math.degToRad(90) + librationPhaseAngRad;
+    let librationLonRad = THREE.Math.degToRad(props.libration.lon);
+    let librationLatRad = THREE.Math.degToRad(props.libration.lat);
+    let librationPhaseAngRad = Math.atan2(librationLatRad, librationLonRad);
+
+    setOriginXPosition(arrowRadius * Math.cos(librationPhaseAngRad));
+    setOriginYPosition(arrowRadius * Math.sin(librationPhaseAngRad));
+    setOriginZRotation(THREE.Math.degToRad(90) + librationPhaseAngRad);
+  }, [props.libration.lon, props.libration.lat, props.moonRadius]);
 
   return (
     <group
