@@ -13,12 +13,9 @@ import Sun from "./phase_view/Sun";
 const moonRadius = 100;
 
 function MoonPhase(props) {
-
   return (
     <ErrorBoundary>
-      <Canvas
-        invalidateFrameloop={true}
-      >
+      <Canvas invalidateFrameloop={true}>
         <Camera />
         <Sun
           solarElongation={props.solarElongation}

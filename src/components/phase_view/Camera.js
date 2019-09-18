@@ -17,7 +17,9 @@ function Camera(props) {
   useEffect(() => {
     let div = document.getElementsByClassName("canvas")[0];
     setAspect(div.clientWidth / div.clientHeight);
-    setMaxCameraZoomOut(BASE_ZOOM * Math.min(div.clientHeight, div.clientWidth) / BOX);
+    setMaxCameraZoomOut(
+      (BASE_ZOOM * Math.min(div.clientHeight, div.clientWidth)) / BOX
+    );
     camera.current.updateProjectionMatrix();
   }, [aspect]);
 
