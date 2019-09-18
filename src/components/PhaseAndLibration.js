@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./PhaseAndLibration.css";
+
 import Error from "./Error";
 import { formatDoubleLabel } from "../Formatters";
 import MoonPhase from "./MoonPhase";
@@ -14,14 +16,16 @@ function PhaseAndLibration(props) {
           <div className="w3-row w3-center">
             <h1>Phase and Libration</h1>
           </div>
-          <MoonPhase
-            libration={{
-              lon: props.moonInfo.libration_lon,
-              lat: props.moonInfo.libration_lat
-            }}
-            solarElongation={props.moonInfo.elongation}
-            subSolarLatitude={props.moonInfo.subsolar_lat}
-          />
+          <div className="w3-row canvas">
+            <MoonPhase
+              libration={{
+                lon: props.moonInfo.libration_lon,
+                lat: props.moonInfo.libration_lat
+              }}
+              solarElongation={props.moonInfo.elongation}
+              subSolarLatitude={props.moonInfo.subsolar_lat}
+            />
+          </div>
           <div className="w3-row">
             <div className="w3-col s8">
               <p>Libration Latitude:</p>
