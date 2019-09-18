@@ -38,7 +38,7 @@ function Moon(props) {
         new THREE.MeshPhongMaterial({
           map: moonMap,
           bumpMap: moonElevationMap,
-          bumpScale: 0.05,
+          bumpScale: 0.03,
           shininess: 0
         })
       }

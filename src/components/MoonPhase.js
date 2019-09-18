@@ -10,27 +10,16 @@ import LibrationArrow from "./phase_view/LibrationArrow";
 import Moon from "./phase_view/Moon";
 import Sun from "./phase_view/Sun";
 
-const maxCameraZoomOut = 70.0;
-const moonRadius = 1;
+const moonRadius = 100;
 
 function MoonPhase(props) {
+
   return (
     <ErrorBoundary>
       <Canvas
         invalidateFrameloop={true}
-        orthographic={true}
-        camera={{
-          left: -5,
-          right: 5,
-          top: 5,
-          bottom: -5,
-          near: 0.1,
-          far: 100,
-          position: [0, 0, 5],
-          zoom: maxCameraZoomOut
-        }}
       >
-        {/* <Camera /> */}
+        <Camera />
         <Sun
           solarElongation={props.solarElongation}
           subSolarLatitude={props.subSolarLatitude}

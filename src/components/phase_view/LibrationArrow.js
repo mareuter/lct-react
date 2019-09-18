@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 
 import * as THREE from "three";
 
-const ARROW_RADIUS_OFFSET = 0.1;
+const ARROW_RADIUS_OFFSET = 1.15;
 const SEGMENTS = 32;
-const CYLINDER_RADIUS = 0.01;
-const CYLINDER_HEIGHT = 0.1;
+const CYLINDER_RADIUS = 1.5;
+const CYLINDER_HEIGHT = 12;
 const CONE_RADIUS = 3 * CYLINDER_RADIUS;
-const CONE_HEIGHT = 0.05;
+const CONE_HEIGHT = 7;
 const COLOR = 0x00ffff;
 const ARROW_MATERIAL = { color: COLOR };
 
@@ -17,7 +17,7 @@ function LibrationArrow(props) {
   let [originZRotation, setOriginZRotation] = useState(0);
 
   useEffect(() => {
-    let arrowRadius = props.moonRadius + ARROW_RADIUS_OFFSET;
+    let arrowRadius = props.moonRadius * ARROW_RADIUS_OFFSET;
 
     let librationLonRad = THREE.Math.degToRad(props.libration.lon);
     let librationLatRad = THREE.Math.degToRad(props.libration.lat);

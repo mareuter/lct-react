@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import * as THREE from "three";
 
-const sunRadius = 1000;
+const sunRadius = 5000;
 
 function Sun(props) {
   let [sunXPosition, setSunXPosition] = useState(0);
@@ -25,7 +25,7 @@ function Sun(props) {
 
   return (
     <pointLight
-      intensity={2.5}
+      intensity={3.25}
       position={[sunXPosition, sunYPosition, sunZPosition]}
     />
   );
