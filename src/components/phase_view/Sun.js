@@ -25,7 +25,7 @@ function Sun(props) {
 
   return (
     <pointLight
-      intensity={3.25}
+      intensity={5.0}
       position={[sunXPosition, sunYPosition, sunZPosition]}
     />
   );

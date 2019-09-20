@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import * as THREE from "three";
 
-const ARROW_RADIUS_OFFSET = 1.15;
+const ARROW_RADIUS_OFFSET = 1.12;
 const SEGMENTS = 32;
 const CYLINDER_RADIUS = 1.5;
 const CYLINDER_HEIGHT = 12;
