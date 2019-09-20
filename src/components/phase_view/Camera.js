@@ -12,16 +12,22 @@ function Camera(props) {
   let [aspect, setAspect] = useState(1);
   let [maxCameraZoomOut, setMaxCameraZoomOut] = useState(BASE_ZOOM);
 
-  useEffect(() => void setDefaultCamera(camera.current), [setDefaultCamera]);
-
-  useEffect(() => {
+  function onResize() {
     let div = document.getElementsByClassName("canvas")[0];
     setAspect(div.clientWidth / div.clientHeight);
     setMaxCameraZoomOut(
       (BASE_ZOOM * Math.min(div.clientHeight, div.clientWidth)) / BOX
     );
     camera.current.updateProjectionMatrix();
-  }, [aspect]);
+  }
+
+  useEffect(() => void setDefaultCamera(camera.current), [setDefaultCamera]);
+
+  useEffect(() => {
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
     <orthographicCamera
