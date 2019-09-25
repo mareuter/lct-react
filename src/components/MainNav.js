@@ -5,6 +5,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "./MainNav.css";
 
+import { useModal } from "./Hooks";
+import DateTimeChangeDialog from "./DateTimeChangeDialog";
+
 import moon_info_tab from "../images/moon_info_tab.png";
 import moon_info_tab_sel from "../images/moon_info_tab_sel.png";
 import lunar_club_tab from "../images/lunar_club_tab.png";
@@ -80,6 +83,8 @@ function onClickHamburger(event) {
 }
 
 function MainNav() {
+  let [isShowing, toggle] = useModal();
+
   useEffect(() => {
     let navs = document.getElementsByTagName("a");
     for (var i = 0; i < navs.length; i++) {
@@ -90,8 +95,16 @@ function MainNav() {
     }
   });
 
+  function showDateTimeChange(event) {
+    let target = event.target ? event.target : event.srcElement;
+    console.log("A: " + target.nodeName);
+    onClickHamburger(event);
+    toggle();
+  }
+
   return (
     <div className="w3-top main-nav">
+      <DateTimeChangeDialog isShowing={isShowing} hide={toggle} />
       <div className="w3-bar">
         <div className="w3-bar-item">
           <NavLink
@@ -147,7 +160,9 @@ function MainNav() {
             <FontAwesomeIcon icon={faBars} className="bars" />
           </button>
           <div id="menu" className="dropdown-hide">
-            <button className="menu-button">Change</button>
+            <button className="menu-button" onClick={showDateTimeChange}>
+              Change
+            </button>
           </div>
         </div>
       </div>
