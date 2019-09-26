@@ -1,0 +1,73 @@
+.content > input,
+[type="text"] {
+  background-color: #282c34;
+  color: #aaa;
+  border: 1px solid;
+  border-color: #aaa;
+  text-align: center;
+}
+
+.react-datepicker__input-container {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #282c34;
+  color: #aaa;
+}
+
+.react-datepicker {
+  background-color: #282c34;
+  color: #aaa;
+}
+
+.content > .react-datepicker > button,
+[type="button"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: none;
+  border-color: #aaa;
+}
+
+.react-datepicker__time-container--with-today-button {
+  right: -85px;
+}
+
+.react-datepicker__input-time-container
+  .react-datepicker-time__input-container
+  .react-datepicker-time__input
+  input[type="time"] {
+  -moz-appearance: none;
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+  background-color: #282c34;
+}
+
+.react-datepicker__header {
+  background-color: #282c34;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: #aaa;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: #aaa;
+}
+
+.react-datepicker__today-button {
+  background-color: #282c34;
+}
+
+.react-datepicker__day--selected {
+  color: #fff;
+}
+
+.update-button {
+    color: #aaa;
+    background-color: #282c34;
+    border-color: #aaa;
+}

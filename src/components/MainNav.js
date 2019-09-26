@@ -155,7 +155,7 @@ function MainNav() {
             </div>
           </NavLink>
         </div>
-        <div className="w3-bar-item w3-right">
+        <div className="w3-bar-item w3-right hamburger-menu">
           <button className="hamburger-button" onClick={onClickHamburger}>
             <FontAwesomeIcon icon={faBars} className="bars" />
           </button>
