@@ -5,9 +5,13 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
+import { DateProvider } from "./DateContext";
+
 ReactDOM.render(
   <Router>
-    <App />
+    <DateProvider>
+      <App />
+    </DateProvider>
   </Router>,
   document.getElementById("root")
 );

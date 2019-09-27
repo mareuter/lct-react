@@ -96,8 +96,6 @@ function MainNav() {
   });
 
   function showDateTimeChange(event) {
-    let target = event.target ? event.target : event.srcElement;
-    console.log("A: " + target.nodeName);
     onClickHamburger(event);
     toggle();
   }

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import DatePicker from "react-datepicker";
+import { useDateValue } from "../DateContext";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./Modal.css";
@@ -11,14 +12,16 @@ import "./DateTimeChangeDialog.css";
 let domElement = document.getElementById("root");
 
 function DateTimeChangeDialog(props) {
-  let [newDate, setNewDate] = useState(new Date());
+  let {date, setDate} = useDateValue();
+  let [newDate, setNewDate] = useState(date);
 
   function onChange(value) {
     setNewDate(value);
   }
 
-  function updateContext(event) {
-      props.hide();
+  function changeDate() {
+    setDate(newDate);
+    props.hide();
   }
 
   return (
@@ -52,7 +55,7 @@ function DateTimeChangeDialog(props) {
                     />
                   </div>
                   <div className="w3-col w3-center s4">
-                    <button className="update-button" onClick={updateContext}>
+                    <button className="update-button" onClick={changeDate}>
                       Update
                     </button>
                   </div>
