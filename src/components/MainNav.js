@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "./MainNav.css";
+
+import { useModal } from "./Hooks";
+import DateTimeChangeDialog from "./DateTimeChangeDialog";
 
 import moon_info_tab from "../images/moon_info_tab.png";
 import moon_info_tab_sel from "../images/moon_info_tab_sel.png";
@@ -68,7 +73,17 @@ function getLinkName(img) {
   return img.alt.slice(0, pos);
 }
 
+function onClickHamburger(event) {
+  let div = document.getElementById("menu");
+  if (div.className.search("dropdown-hide") === -1) {
+    div.className = "dropdown-hide";
+  } else {
+    div.className = "dropdown-show";
+  }
+}
+
 function MainNav() {
+  let [isShowing, toggle] = useModal();
 
   useEffect(() => {
     let navs = document.getElementsByTagName("a");
@@ -80,54 +95,76 @@ function MainNav() {
     }
   });
 
+  function showDateTimeChange(event) {
+    onClickHamburger(event);
+    toggle();
+  }
+
   return (
-    <header className="w3-container w3-center main-nav">
-      <nav>
-        <NavLink
-          to="/moon_info"
-          exact
-          activeClassName="active"
-          onClick={clickHandler}
-        >
-          <div className="w3-container w3-cell w3-center">
-            <img
-              className="main-nav-img"
-              src={moon_info_tab}
-              alt="Moon Info Tab"
-            />
-            <p className="main-nav-p">Moon Info</p>
+    <div className="w3-top main-nav">
+      <DateTimeChangeDialog isShowing={isShowing} hide={toggle} />
+      <div className="w3-bar">
+        <div className="w3-bar-item">
+          <NavLink
+            to="/moon_info"
+            exact
+            activeClassName="active"
+            onClick={clickHandler}
+          >
+            <div className="w3-container w3-cell w3-center">
+              <img
+                className="main-nav-img"
+                src={moon_info_tab}
+                alt="Moon Info Tab"
+              />
+              <p className="main-nav-p">Moon Info</p>
+            </div>
+          </NavLink>
+        </div>
+        <div className="w3-bar-item">
+          <NavLink
+            to="/lunar_club"
+            activeClassName="active"
+            onClick={clickHandler}
+          >
+            <div className="w3-container w3-cell w3-center">
+              <img
+                className="main-nav-img"
+                src={lunar_club_tab}
+                alt="Lunar Club Tab"
+              />
+              <p className="main-nav-p">Lunar Club</p>
+            </div>
+          </NavLink>
+        </div>
+        <div className="w3-bar-item">
+          <NavLink
+            to="/lunar_ii_club"
+            activeClassName="active"
+            onClick={clickHandler}
+          >
+            <div className="w3-container w3-cell w3-center">
+              <img
+                className="main-nav-img"
+                src={lunar_2_club_tab}
+                alt="Lunar 2 Club Tab"
+              />
+              <p className="main-nav-p">Lunar II Club</p>
+            </div>
+          </NavLink>
+        </div>
+        <div className="w3-bar-item w3-right hamburger-menu">
+          <button className="hamburger-button" onClick={onClickHamburger}>
+            <FontAwesomeIcon icon={faBars} className="bars" />
+          </button>
+          <div id="menu" className="dropdown-hide">
+            <button className="menu-button" onClick={showDateTimeChange}>
+              Change
+            </button>
           </div>
-        </NavLink>
-        <NavLink
-          to="/lunar_club"
-          activeClassName="active"
-          onClick={clickHandler}
-        >
-          <div className="w3-container w3-cell w3-center">
-            <img
-              className="main-nav-img"
-              src={lunar_club_tab}
-              alt="Lunar Club Tab"
-            />
-            <p className="main-nav-p">Lunar Club</p>
-          </div>
-        </NavLink>
-        <NavLink
-          to="/lunar_ii_club"
-          activeClassName="active"
-          onClick={clickHandler}
-        >
-          <div className="w3-container w3-cell w3-center">
-            <img
-              className="main-nav-img"
-              src={lunar_2_club_tab}
-              alt="Lunar 2 Club Tab"
-            />
-            <p className="main-nav-p">Lunar II Club</p>
-          </div>
-        </NavLink>
-      </nav>
-    </header>
+        </div>
+      </div>
+    </div>
   );
 }
 

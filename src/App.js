@@ -10,30 +10,21 @@ import MoonInformation from "./components/MoonInformation";
 import LunarClub from "./components/LunarClub";
 import LunarIIClub from "./components/LunarIIClub";
 
+import { useDateValue } from "./DateContext";
 import { getAverageTimezoneCoordinates } from "./AverageTimezoneCoordinates";
 
-function getDate() {
-  return new Date();
-  // Near New Moon (old)
-  // return new Date(2019, 7, 28, 4, 0, 0);
-  // Near New Moon (new)
-  //return new Date(2019, 8, 2, 7, 0, 0);
-  // Near Full Moon
-  // return new Date(2019, 7, 13, 4, 0, 0);
-}
-
-function getSecondsTimestamp(date) {
-  return date.current.getTime() / 1000;
-}
-
 function App() {
-  var date = useRef(getDate());
+  let date = useDateValue().date;
   var timezone = useRef(jstz.determine());
   var [coordinates, setCoordinates] = useState({
     latitude: 0.0,
     longitude: 0.0,
     good: false
   });
+
+  function getSecondsTimestamp(dt) {
+    return dt.getTime() / 1000;
+  }
 
   useEffect(() => {
     function setLocation(position) {

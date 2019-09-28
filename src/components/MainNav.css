@@ -1,43 +1,99 @@
 .main-nav {
-    /* display: -ms-flexbox;
-    display: flex; */
-    width: 100%;
-    position: fixed;
-    height: 9vw;
-    background: #282c34;
-    z-index: 1;
+  width: 100%;
+  /* position: fixed; */
+  height: 9vw;
+  background: #282c34;
+  z-index: 1;
 }
 
-/* .main-nav nav {
-    -ms-flex: 1;
-    flex: 1;
-    overflow: auto;
-} */
+.main-nav .w3-bar-item {
+  padding: 0;
+}
+
+.main-nav .w3-container {
+  padding: 3px 5px;
+}
 
 .main-nav-img {
-    height: 5vw;
-    width: 5vw;
-    padding: 0.5vw 0.5vw;
+  height: 5vw;
+  width: 5vw;
+  padding: 0.3vw 0.3vw;
 }
 
 .main-nav-p {
-    line-height: 1.0;
-    margin: 0;
+  line-height: 1;
+  margin: 0;
 }
 
-.main-nav nav a {
-    display: inline-block;
-    /* padding: 0.3em 0.8em; */
-    color: #aaa;
-    text-decoration: none;
-    font-size: 3vw;
-  }
-  
-.main-nav nav a:hover {
-    background-color: #eee;
+.main-nav a {
+  display: inline-block;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 3vw;
 }
 
-.main-nav nav a.active {
-    background-color: #555;
-    color: #0db2f2;
+.main-nav a:hover {
+  background-color: #eee;
+}
+
+.main-nav a.active {
+  background-color: #555;
+  color: #0db2f2;
+}
+
+.main-nav .dropdown-hide {
+  display: none;
+}
+
+.main-nav .dropdown-show {
+  position: absolute;
+  display: flex;
+  align-items: stretch;
+  right: 0;
+  z-index: 1;
+}
+
+.main-nav button:hover {
+  background-color: #eee;
+}
+
+.hamburger-button {
+  padding: 0px 7px;
+  vertical-align: text-top;
+}
+
+.bars {
+  color: white;
+  height: 5vw;
+  width: 5vw;
+}
+
+.main-nav button:focus {
+  outline: none;
+  background-color: #282c34;
+}
+
+.main-nav > button,
+[type="button"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #282c34;
+  border-color: #282c34;
+  border: none;
+}
+
+.hamburger-menu > button,
+[type="button"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #282c34;
+  border-color: #282c34;
+  border: none;
+}
+
+.menu-button {
+  font-size: 3vw;
+  color: #aaa;
 }
