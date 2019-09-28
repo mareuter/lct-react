@@ -1,5 +1,5 @@
 .content > input,
-[type="text"] {
+[type="time"] {
   background-color: #282c34;
   color: #aaa;
   border: 1px solid;
@@ -64,6 +64,10 @@
 
 .react-datepicker__day--selected {
   color: #fff;
+}
+
+.button-div {
+  padding-bottom: 10px;
 }
 
 .update-button {

@@ -12,7 +12,7 @@ import "./DateTimeChangeDialog.css";
 let domElement = document.getElementById("root");
 
 function DateTimeChangeDialog(props) {
-  let {date, setDate} = useDateValue();
+  let { date, setDate } = useDateValue();
   let [newDate, setNewDate] = useState(date);
 
   function onChange(value) {
@@ -39,26 +39,25 @@ function DateTimeChangeDialog(props) {
                   <button className="close w3-right" onClick={props.hide}>
                     <FontAwesomeIcon icon={faWindowClose} />
                   </button>
-                  <h1>Change Date/Time</h1>
+                  <h1 className="w3-center">Change Date/Time</h1>
                 </div>
-                <div className="w3-row">
-                  <div className="w3-col w3-center s8">
-                    <DatePicker
-                      selected={newDate}
-                      onChange={onChange}
-                      todayButton="Today"
-                      showTimeSelect
-                      timeFormat="HH:mm"
-                      timeIntervals={1}
-                      timeCaption="Time"
-                      dateFormat="MM/dd/yyyy HH:mm"
-                    />
-                  </div>
-                  <div className="w3-col w3-center s4">
+                <div className="w3-center">
+                  <div className="button-div">
                     <button className="update-button" onClick={changeDate}>
                       Update
                     </button>
                   </div>
+                  <DatePicker
+                    selected={newDate}
+                    onChange={onChange}
+                    todayButton="Today"
+                    showTimeInput
+                    inline
+                    timeFormat="HH:mm"
+                    timeIntervals={1}
+                    timeCaption="Time"
+                    dateFormat="MM/dd/yyyy HH:mm"
+                  />
                 </div>
               </div>
             </div>,
