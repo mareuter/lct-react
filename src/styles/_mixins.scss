@@ -1,0 +1,10 @@
+@mixin remove-appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin make-square($value) {
+    height: $value;
+    width: $value;
+}

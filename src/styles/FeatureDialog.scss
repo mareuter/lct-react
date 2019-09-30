@@ -1,10 +1,9 @@
 @import './variables.scss';
+@import './mixins';
 
 button,
 [type="button"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  @include remove-appearance;
   background-color: $background-color;
   border-color: $background-color;
 }

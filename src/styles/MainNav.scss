@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './_mixins';
 
 .main-nav {
   width: 100%;
@@ -77,9 +78,7 @@
 
 .main-nav > button,
 [type="button"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  @include remove-appearance;
   background-color: $background-color;
   border-color: $background-color;
   border: none;
@@ -87,9 +86,7 @@
 
 .hamburger-menu > button,
 [type="button"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  @include remove-appearance;
   background-color: $background-color;
   border-color: $background-color;
   border: none;
