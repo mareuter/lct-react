@@ -1,12 +1,17 @@
-@import './variables.scss';
-@import './mixins';
+@import "./variables.scss";
+@import "./mixins";
+@import "./Modal.scss";
 
-.content > input,
+.content-dt {
+  @extend .content;
+  height: 60vh;
+}
+
+.content-dt > input,
 [type="time"] {
   background-color: $background-color;
   color: $navtype-color;
-  border: 1px solid;
-  border-color: $navtype-color;
+  border: 1px solid $navtype-color;
   text-align: center;
 }
 
@@ -21,11 +26,22 @@
   color: $navtype-color;
 }
 
-.content > .react-datepicker > button,
+.react-datepicker__triangle > button,
 [type="button"] {
-  @include remove-appearance;
-  background-color: none;
-  border-color: $navtype-color;
+  border-color: transparent;
+}
+
+:-moz-focusring {
+  color: none;
+  outline: none;
+}
+
+.react-datepicker__navigation--previous {
+  border-right-color: $navtype-color;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: $navtype-color;
 }
 
 .react-datepicker__time-container--with-today-button {
@@ -36,7 +52,7 @@
   .react-datepicker-time__input-container
   .react-datepicker-time__input
   input[type="time"] {
-    @include remove-appearance;
+  @include remove-appearance;
 }
 
 .react-datepicker__time-container .react-datepicker__time {
@@ -72,7 +88,7 @@
 }
 
 .update-button {
-    color: $navtype-color;
-    background-color: $background-color;
-    border-color: $navtype-color;
+  color: $navtype-color;
+  background-color: $background-color;
+  border-color: $navtype-color;
 }

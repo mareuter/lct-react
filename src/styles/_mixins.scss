@@ -5,6 +5,13 @@
 }
 
 @mixin make-square($value) {
-    height: $value;
-    width: $value;
+  height: $value;
+  width: $value;
+}
+
+@mixin animation($type, $duration) {
+  -webkit-animation-name: $type;
+  -webkit-animation-duration: $duration;
+  animation-name: $type;
+  animation-duration: $duration;
 }

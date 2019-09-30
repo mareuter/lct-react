@@ -6,7 +6,6 @@ import DatePicker from "react-datepicker";
 import { useDateValue } from "../DateContext";
 
 import "react-datepicker/dist/react-datepicker.css";
-import "../styles/Modal.scss";
 import "../styles/DateTimeChangeDialog.scss";
 
 let domElement = document.getElementById("root");
@@ -30,7 +29,7 @@ function DateTimeChangeDialog(props) {
         ? ReactDOM.createPortal(
             <div className="modal">
               <div
-                className="w3-container content"
+                className="w3-container content-dt"
                 aria-modal
                 aria-hidden
                 role="dialog"
