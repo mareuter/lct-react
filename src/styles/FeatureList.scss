@@ -1,11 +1,13 @@
-.w3-ul li{
-    padding:8px 0px;
-}
+@import "./variables.scss";
 
-.w3-ul li:first-child {
-    border-top: 1px solid #ddd;
-}
-
-.w3-ul li:last-child {
-    border-bottom: 1px solid #ddd;
+.w3-ul {
+  li {
+    padding: 8px 0px;
+  }
+  li:first-child {
+    border-top: $feature-border;
+  }
+  li:last-child {
+    border-bottom: $feature-border;
+  }
 }
