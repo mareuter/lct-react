@@ -4,7 +4,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import Error from "./Error";
 
-import "./Special.css";
+import "../styles/Special.scss";
 
 import { formatDoubleLabel } from "../Formatters";
 

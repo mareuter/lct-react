@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import "./MainNav.css";
+import "../styles/MainNav.scss";
 
 import { useModal } from "./Hooks";
 import DateTimeChangeDialog from "./DateTimeChangeDialog";

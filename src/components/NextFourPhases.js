@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Error from "./Error";
 import { formatTimeWithMinutes } from "../Formatters";
 
-import "./NextFourPhases.css";
+import "../styles/NextFourPhases.scss";
 
 import phase_placeholder from "../images/phase_placeholder.png";
 import first_quarter from "../images/first_quarter.png";

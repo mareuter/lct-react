@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Route } from "react-router-dom";
 import jstz from "jstz";
 
-import "./App.css";
+import "./styles/App.scss";
 
 import MainNav from "./components/MainNav";
 import Welcome from "./components/Welcome";

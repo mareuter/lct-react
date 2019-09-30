@@ -6,8 +6,8 @@ import DatePicker from "react-datepicker";
 import { useDateValue } from "../DateContext";
 
 import "react-datepicker/dist/react-datepicker.css";
-import "./Modal.css";
-import "./DateTimeChangeDialog.css";
+import "../styles/Modal.scss";
+import "../styles/DateTimeChangeDialog.scss";
 
 let domElement = document.getElementById("root");
 

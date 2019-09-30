@@ -6,7 +6,7 @@ import NextFourPhases from "./NextFourPhases";
 import PhaseAndLibration from "./PhaseAndLibration";
 import SkyPosition from "./SkyPosition";
 
-import "./MoonInformation.css"
+import "../styles/MoonInformation.scss"
 
 import moonInfoJson from "../data/moonInfo.json";
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import "./LunarIIClub.css";
+import "../styles/LunarIIClub.scss";
 
 import FeatureList from "./FeatureList";
 

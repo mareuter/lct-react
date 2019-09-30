@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./PhaseAndLibration.css";
+import "../styles/PhaseAndLibration.scss";
 
 import Error from "./Error";
 import { formatDoubleLabel } from "../Formatters";

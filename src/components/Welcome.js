@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Welcome.css";
+import "../styles/Welcome.scss";
 
 import launcher_screen from "../images/launcher_screen.png";
 
