@@ -1,9 +1,11 @@
+@import './variables.scss';
+
 .close {
-  color: #0db2f2;
+  color: $button-color;
 }
 
 .close:hover {
-  color: white;
+  color: $standard-color;
 }
 
 .content {
@@ -14,8 +16,8 @@
   width: 100%;
   font-size: calc(1em + 1vmin);
   overflow: auto;
-  background-color: #282c34;
-  color: white;
+  background-color: $background-color;
+  color: $standard-color;
   z-index: 100;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;

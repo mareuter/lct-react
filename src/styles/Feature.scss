@@ -1,7 +1,9 @@
+@import './variables.scss';
+
 .info {
-    color: #0db2f2;
+    color: $button-color;
 }
 
 .info:hover {
-    color: white;
+    color: $standard-color;
 }

@@ -1,18 +1,20 @@
+@import './variables.scss';
+
 button,
 [type="button"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: #282c34;
-  border-color: #282c34;
+  background-color: $background-color;
+  border-color: $background-color;
 }
 
 .close {
-  color: #0db2f2;
+  color: $button-color;
 }
 
 .close:hover {
-  color: white;
+  color: $standard-color;
 }
 
 .content {
@@ -22,8 +24,8 @@ button,
   width: 100%;
   font-size: calc(1em + 1vmin);
   overflow: auto;
-  background-color: #282c34;
-  color: white;
+  background-color: $background-color;
+  color: $standard-color;
   z-index: 999;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;

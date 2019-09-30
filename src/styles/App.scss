@@ -1,7 +1,9 @@
+@import './variables.scss';
+
 .App {
-  background-color: #282c34;
+  background-color: $background-color;
   font-size: calc(1em + 1vmin);
-  color: white;
+  color: $standard-color;
   overflow: auto;
 }
 

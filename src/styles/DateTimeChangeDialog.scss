@@ -1,22 +1,24 @@
+@import './variables.scss';
+
 .content > input,
 [type="time"] {
-  background-color: #282c34;
-  color: #aaa;
+  background-color: $background-color;
+  color: $navtype-color;
   border: 1px solid;
-  border-color: #aaa;
+  border-color: $navtype-color;
   text-align: center;
 }
 
 .react-datepicker__input-container {
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: #282c34;
-  color: #aaa;
+  background-color: $background-color;
+  color: $navtype-color;
 }
 
 .react-datepicker {
-  background-color: #282c34;
-  color: #aaa;
+  background-color: $background-color;
+  color: $navtype-color;
 }
 
 .content > .react-datepicker > button,
@@ -24,7 +26,7 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: none;
-  border-color: #aaa;
+  border-color: $navtype-color;
 }
 
 .react-datepicker__time-container--with-today-button {
@@ -39,31 +41,31 @@
 }
 
 .react-datepicker__time-container .react-datepicker__time {
-  background-color: #282c34;
+  background-color: $background-color;
 }
 
 .react-datepicker__header {
-  background-color: #282c34;
+  background-color: $background-color;
 }
 
 .react-datepicker__day-name,
 .react-datepicker__day,
 .react-datepicker__time-name {
-  color: #aaa;
+  color: $navtype-color;
 }
 
 .react-datepicker__current-month,
 .react-datepicker-time__header,
 .react-datepicker-year-header {
-  color: #aaa;
+  color: $navtype-color;
 }
 
 .react-datepicker__today-button {
-  background-color: #282c34;
+  background-color: $background-color;
 }
 
 .react-datepicker__day--selected {
-  color: #fff;
+  color: $standard-color;
 }
 
 .button-div {
@@ -71,7 +73,7 @@
 }
 
 .update-button {
-    color: #aaa;
-    background-color: #282c34;
-    border-color: #aaa;
+    color: $navtype-color;
+    background-color: $background-color;
+    border-color: $navtype-color;
 }
