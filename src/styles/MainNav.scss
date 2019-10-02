@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import './_mixins';
+@import "./variables.scss";
+@import "./mixins";
 
 .main-nav {
   width: 100%;
@@ -36,11 +36,11 @@
 }
 
 .main-nav a:hover {
-  background-color: #eee;
+  background-color: $hover-button-color;
 }
 
 .main-nav a.active {
-  background-color: #555;
+  background-color: $active-button-color;
   color: $button-color;
 }
 
@@ -56,10 +56,6 @@
   z-index: 1;
 }
 
-.main-nav button:hover {
-  background-color: #eee;
-}
-
 .hamburger-button {
   padding: 0px 7px;
   vertical-align: text-top;
@@ -71,19 +67,6 @@
   width: 5vw;
 }
 
-.main-nav button:focus {
-  outline: none;
-  background-color: $background-color;
-}
-
-.main-nav > button,
-[type="button"] {
-  @include remove-appearance;
-  background-color: $background-color;
-  border-color: $background-color;
-  border: none;
-}
-
 .hamburger-menu > button,
 [type="button"] {
   @include remove-appearance;
@@ -92,7 +75,29 @@
   border: none;
 }
 
+.hamburger-menu {
+  button:hover {
+    background-color: $hover-button-color;
+  }
+  button.active {
+    background-color: $active-button-color;
+  }
+  button:focus {
+    outline: none;
+    background-color: $background-color;
+  }
+}
+
 .menu-button {
+  @include remove-appearance;
+  text-decoration: none;
   font-size: 3vw;
   color: $navtype-color;
+  background-color: $background-color;
+  border-color: $active-button-color;
+  padding: 1px 5px;
+}
+
+.change {
+  padding: 0 2px 0 5px;
 }

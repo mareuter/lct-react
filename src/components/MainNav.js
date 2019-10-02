@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/MainNav.scss";
 
@@ -159,7 +159,8 @@ function MainNav() {
           </button>
           <div id="menu" className="dropdown-hide">
             <button className="menu-button" onClick={showDateTimeChange}>
-              Change
+              <FontAwesomeIcon icon={faCalendarAlt} />
+              <span className="change">Change</span>
             </button>
           </div>
         </div>

@@ -1,8 +1,13 @@
 @import './variables.scss';
 @import './mixins';
 
-.close {
+.header > button,
+[type="button"] {
+  @include remove-appearance;
+  background-color: $background-color;
   color: $button-color;
+  border-color: $background-color;
+  border: none;
 }
 
 .close:hover {
