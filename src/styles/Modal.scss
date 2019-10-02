@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import './mixins';
+@import "./variables.scss";
+@import "./mixins";
 
 .header > button,
 [type="button"] {
@@ -80,14 +80,14 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $tablet) {
   .content {
     left: 20vw;
     width: 60vw;
   }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: $laptop) {
   .content {
     left: 30vw;
     width: 40vw;
