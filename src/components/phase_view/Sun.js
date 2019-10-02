@@ -25,8 +25,9 @@ function Sun(props) {
 
   return (
     <pointLight
-      intensity={5.0}
+      intensity={2.0}
       position={[sunXPosition, sunYPosition, sunZPosition]}
+      decay={2}
     />
   );
 }

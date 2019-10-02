@@ -7,7 +7,7 @@ import Moon_elevation_map from "../../images/moon_elevation_map.png";
 
 const NUM_MOON_SEGMENTS = 32;
 const OFFSET_Y_ROTATION = -THREE.Math.degToRad(90);
-const ANISOTROPY_LEVEL = 10;
+const ANISOTROPY_LEVEL = 20;
 
 function Moon(props) {
   let moonMap = useMemo(() => new THREE.TextureLoader().load(Moon_map), []);
@@ -40,12 +40,12 @@ function Moon(props) {
         )
       }
       material={
-        new THREE.MeshPhongMaterial({
-          color: 0x7f7f7f,
+        new THREE.MeshStandardMaterial({
           map: moonMap,
           bumpMap: moonElevationMap,
-          bumpScale: 0.03,
-          shininess: 0
+          bumpScale: 0.5,
+          metalness: 0,
+          roughness: 1.0,
         })
       }
     />
