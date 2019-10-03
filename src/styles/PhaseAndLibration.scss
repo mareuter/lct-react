@@ -1,22 +1,24 @@
+@import "./variables";
+
 .canvas {
-    width: 100%;
-    height: 334px;
+  width: 100%;
+  height: 334px;
 }
 
-@media only screen and (min-height: 768px) {
-    .canvas {
-        height: 384px;
-    }
+@media only screen and (min-height: $tablet) {
+  .canvas {
+    height: 384px;
+  }
 }
 
-@media only screen and (min-height: 900px) {
-    .canvas {
-        height: 450px;
-    }
+@media only screen and (min-height: $tablap) {
+  .canvas {
+    height: 450px;
+  }
 }
 
-@media only screen and (min-height: 1024px) {
-    .canvas {
-        height: 512px;
-    }
+@media only screen and (min-height: $laptop) {
+  .canvas {
+    height: 512px;
+  }
 }
