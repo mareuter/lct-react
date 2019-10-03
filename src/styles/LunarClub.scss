@@ -1,0 +1,36 @@
+@import "./variables";
+@import "./mixins";
+
+.lc-container {
+  @include small-grid-container;
+  grid-template-areas:
+    "special"
+    "ne"
+    "bino"
+    "tele";
+}
+
+.special-item {
+  grid-area: special;
+}
+
+.naked-eye-item {
+  grid-area: ne;
+}
+
+.bino-item {
+  grid-area: bino;
+}
+
+.tele-item {
+  grid-area: tele;
+}
+
+@media only screen and (min-width: $tablet) {
+  .lc-container {
+    @include medium-grid-container;
+    grid-template-areas:
+      "special ne"
+      "bino tele";
+  }
+}

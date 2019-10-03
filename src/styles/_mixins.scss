@@ -15,3 +15,14 @@
   animation-name: $type;
   animation-duration: $duration;
 }
+
+@mixin small-grid-container {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 100vmin;
+  grid-template-rows: auto;
+}
+
+@mixin medium-grid-container {
+  grid-template-columns: repeat(2, auto);
+}

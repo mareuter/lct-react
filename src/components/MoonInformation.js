@@ -6,14 +6,16 @@ import NextFourPhases from "./NextFourPhases";
 import PhaseAndLibration from "./PhaseAndLibration";
 import SkyPosition from "./SkyPosition";
 
-import "../styles/MoonInformation.scss"
+import "../styles/MoonInformation.scss";
 
 import moonInfoJson from "../data/moonInfo.json";
 
 const MOON_INFO_LOCAL = "moonInfo";
 
 function MoonInformation(props) {
-  let moonInfoState = localStorage.getItem(MOON_INFO_LOCAL) ? JSON.parse(localStorage.getItem(MOON_INFO_LOCAL)) : moonInfoJson;
+  let moonInfoState = localStorage.getItem(MOON_INFO_LOCAL)
+    ? JSON.parse(localStorage.getItem(MOON_INFO_LOCAL))
+    : moonInfoJson;
   var [moonInfo, setMoonInfo] = useState(moonInfoState);
   var [error, setError] = useState(false);
 
@@ -28,7 +30,7 @@ function MoonInformation(props) {
         lat: props.latitude,
         lon: props.longitude
       },
-      cancelToken: axiosCancelSource.token,
+      cancelToken: axiosCancelSource.token
     };
     axios(config)
       .then(response => {
@@ -58,28 +60,30 @@ function MoonInformation(props) {
   }, [props.coordinatesGood]);
 
   return (
-    <div className="w3-container">
-      <Ephemeris
-        datetime={props.date}
-        timezone={props.timezone}
-        latitude={props.latitude}
-        longitude={props.longitude}
-        moonInfo={moonInfo}
-        error={error}
-      />
-      <NextFourPhases
-        timezone={props.timezone}
-        moonInfo={moonInfo}
-        error={error}
-      />
-      <PhaseAndLibration
-        moonInfo={moonInfo}
-        error={error}
-      />
-      <SkyPosition
-        moonInfo={moonInfo}
-        error={error}
-      />
+    <div className="mi-container">
+      <div className="mi-item">
+        <Ephemeris
+          datetime={props.date}
+          timezone={props.timezone}
+          latitude={props.latitude}
+          longitude={props.longitude}
+          moonInfo={moonInfo}
+          error={error}
+        />
+      </div>
+      <div className="nfp-item">
+        <NextFourPhases
+          timezone={props.timezone}
+          moonInfo={moonInfo}
+          error={error}
+        />
+      </div>
+      <div className="pal-item">
+        <PhaseAndLibration moonInfo={moonInfo} error={error} />
+      </div>
+      <div className="sp-item">
+        <SkyPosition moonInfo={moonInfo} error={error} />
+      </div>
     </div>
   );
 }

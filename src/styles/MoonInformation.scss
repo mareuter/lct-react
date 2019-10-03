@@ -1,3 +1,40 @@
+@import "./variables";
+@import "./mixins";
+
+.mi-container {
+  @include small-grid-container;
+  grid-template-areas:
+    "mi"
+    "nfp"
+    "pal"
+    "sp";
+}
+
+.mi-item {
+  grid-area: mi;
+}
+
+.nfp-item {
+  grid-area: nfp;
+}
+
+.pal-item {
+  grid-area: pal;
+}
+
+.sp-item {
+  grid-area: sp;
+}
+
 .bad-coords {
   font-style: italic;
+}
+
+@media only screen and (min-width: $tablet) {
+  .mi-container {
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas:
+      "mi pal"
+      "nfp sp";
+  }
 }

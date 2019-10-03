@@ -1,4 +1,24 @@
-.outer {
-  display: flex;
-  flex-direction: column;
+@import "./variables";
+@import "./mixins";
+
+.lc2-container {
+  @include small-grid-container;
+  grid-template-areas:
+    "features"
+    "landing";
+}
+
+.features-item {
+  grid-area: features;
+}
+
+.landing-item {
+  grid-area: landing;
+}
+
+@media only screen and (min-width: $tablet) {
+  .lc2-container {
+    @include medium-grid-container;
+    grid-template-areas: "features landing";
+  }
 }

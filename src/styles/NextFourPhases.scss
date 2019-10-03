@@ -13,9 +13,10 @@
 @media only screen and (min-width: $tablet) {
   .phase {
     padding: 30px 15px;
+    font-size: 24px;
   }
 
   .phase-image {
-    @include make-square(20vw);
+    @include make-square(12vw);
   }
 }
