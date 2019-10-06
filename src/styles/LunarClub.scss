@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./mixins";
+@import "./media_mixins";
 
 .lc-container {
   @include small-grid-container;
@@ -26,7 +27,7 @@
   grid-area: tele;
 }
 
-@media only screen and (min-width: $tablet) {
+@include for-tablet-portrait-up {
   .lc-container {
     @include medium-grid-container;
     grid-template-areas:

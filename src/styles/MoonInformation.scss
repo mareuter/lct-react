@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./mixins";
+@import "./media_mixins";
 
 .mi-container {
   @include small-grid-container;
@@ -30,7 +31,7 @@
   font-style: italic;
 }
 
-@media only screen and (min-width: $phone-land) {
+@include for-tablet-portrait-up {
   .mi-container {
     @include medium-grid-container;
     grid-template-areas:
