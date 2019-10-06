@@ -30,9 +30,9 @@
   font-style: italic;
 }
 
-@media only screen and (min-width: $tablet) {
+@media only screen and (min-width: $phone-land) {
   .mi-container {
-    grid-template-columns: repeat(2, auto);
+    @include medium-grid-container;
     grid-template-areas:
       "mi pal"
       "nfp sp";
