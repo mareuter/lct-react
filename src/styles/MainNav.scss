@@ -7,53 +7,45 @@
   height: 9vw;
   background: $background-color;
   z-index: 1;
-}
 
-.main-nav .w3-bar-item {
-  padding: 0;
-}
-
-.main-nav .w3-container {
-  padding: 3px 5px;
-}
-
-.main-nav-img {
-  height: 5vw;
-  width: 5vw;
-  padding: 0.3vw 0.3vw;
-}
-
-.main-nav-p {
-  line-height: 1;
-  margin: 0;
-}
-
-.main-nav a {
-  display: inline-block;
-  color: $navtype-color;
-  text-decoration: none;
-  font-size: 3vw;
-}
-
-.main-nav a:hover {
-  background-color: $hover-button-color;
-}
-
-.main-nav a.active {
-  background-color: $active-button-color;
-  color: $button-color;
-}
-
-.main-nav .dropdown-hide {
-  display: none;
-}
-
-.main-nav .dropdown-show {
-  position: absolute;
-  display: flex;
-  align-items: stretch;
-  right: 0;
-  z-index: 1;
+  .w3-bar-item {
+    padding: 0;
+  }
+  .w3-container {
+    padding: 3px 5px;
+  }
+  img {
+    height: 5vw;
+    width: 5vw;
+    padding: 0.3vw 0.3vw;
+  }
+  p {
+    line-height: 1;
+    margin: 0;
+  }
+  a {
+    display: inline-block;
+    color: $navtype-color;
+    text-decoration: none;
+    font-size: 3vw;
+  }
+  a:hover {
+    background-color: $hover-button-color;
+  }
+  a.active {
+    background-color: $active-button-color;
+    color: $button-color;
+  }
+  .dropdown-hide {
+    display: none;
+  }
+  .dropdown-show {
+    position: absolute;
+    display: flex;
+    align-items: stretch;
+    right: 0;
+    z-index: 1;
+  }
 }
 
 .hamburger-button {

@@ -113,11 +113,10 @@ function MainNav() {
           >
             <div className="w3-container w3-cell w3-center">
               <img
-                className="main-nav-img"
                 src={moon_info_tab}
                 alt="Moon Info Tab"
               />
-              <p className="main-nav-p">Moon Info</p>
+              <p>Moon Info</p>
             </div>
           </NavLink>
         </div>
@@ -129,11 +128,10 @@ function MainNav() {
           >
             <div className="w3-container w3-cell w3-center">
               <img
-                className="main-nav-img"
                 src={lunar_club_tab}
                 alt="Lunar Club Tab"
               />
-              <p className="main-nav-p">Lunar Club</p>
+              <p>Lunar Club</p>
             </div>
           </NavLink>
         </div>
@@ -145,11 +143,10 @@ function MainNav() {
           >
             <div className="w3-container w3-cell w3-center">
               <img
-                className="main-nav-img"
                 src={lunar_2_club_tab}
                 alt="Lunar 2 Club Tab"
               />
-              <p className="main-nav-p">Lunar II Club</p>
+              <p>Lunar II Club</p>
             </div>
           </NavLink>
         </div>
