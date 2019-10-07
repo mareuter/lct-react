@@ -1,5 +1,7 @@
 @import "./variables";
 @import "./mixins";
+@import "./media_mixins";
+@import "./modal_mixins";
 
 .header > button,
 [type="button"] {
@@ -16,10 +18,9 @@
 
 .content {
   position: fixed;
-  top: 25vh;
   left: 0;
   width: 100%;
-  font-size: calc(1em + 1vmin);
+  font-size: 18px;
   overflow: auto;
   background-color: $background-color;
   color: $standard-color;
@@ -58,38 +59,36 @@
   }
 }
 
-@-webkit-keyframes slideIn {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-  to {
-    top: 25vh;
-    opacity: 1;
-  }
+$slide-in-top: 8vh;
+@include slide-in-scaling($slide-in-top);
+@include content-top($slide-in-top);
+
+@include small-vertical {
+  $slide-in-top: 25vh;
+  @include slide-in-scaling($slide-in-top);
+  @include content-top($slide-in-top);
 }
 
-@keyframes slideIn {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-  to {
-    top: 25vh;
-    opacity: 1;
-  }
+@include medium-vertical {
+  $slide-in-top: 30vh;
+  @include slide-in-scaling($slide-in-top);
+  @include content-top($slide-in-top);
 }
 
-@media only screen and (min-width: $tablet) {
-  .content {
-    left: 20vw;
-    width: 60vw;
-  }
+@include large-vertical {
+  $slide-in-top: 32vh;
+  @include slide-in-scaling($slide-in-top);
+  @include content-top($slide-in-top);
 }
 
-@media only screen and (min-width: $laptop) {
-  .content {
-    left: 30vw;
-    width: 40vw;
-  }
+@include for-tablet-portrait-up {
+  @include content-scaling(20vw, 60vw, 18px);
+}
+
+@include for-tablet-landscape-up {
+  @include content-scaling(20vw, 60vw, 25px);
+}
+
+@include for-desktop-up {
+  @include content-scaling(25vw, 50vw, 30px);
 }

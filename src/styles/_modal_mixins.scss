@@ -1,0 +1,37 @@
+@mixin slide-in-scaling($top) {
+  @-webkit-keyframes slideIn {
+    from {
+      top: 0;
+      opacity: 0;
+    }
+    to {
+      top: $top;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      top: 0;
+      opacity: 0;
+    }
+    to {
+      top: $top;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin content-top($top) {
+  .content {
+    top: $top;
+  }
+}
+
+@mixin content-scaling($left, $width, $fsize) {
+  .content {
+    left: $left;
+    width: $width;
+    font-size: $fsize;
+  }
+}
