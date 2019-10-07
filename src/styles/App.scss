@@ -1,20 +1,22 @@
-@import './variables';
+@import "./variables";
+@import "./media_mixins";
+@import "./app_mixins";
 
 .App {
   background-color: $background-color;
-  font-size: calc(1em + 1vmin);
+  font-size: 18px;
   color: $standard-color;
   overflow: auto;
 }
 
 .App-main {
-  top: 10vw;
+  top: 40px;
   position: relative;
   z-index: 0;
 }
 
 h1 {
-  font-size: 7vw;
+  font-size: 26px;
   margin: 5px;
 }
 
@@ -27,14 +29,16 @@ p {
   flex-direction: column;
 }
 
-@media only screen and (min-width: $tablet) {
-  h1 {
-    font-size: 5vw;
+@include for-tablet-portrait-up {
+  .App-main {
+    top: 50px;
   }
 }
 
-@media only screen and (min-width: $laptop) {
-  h1 {
-    font-size: 3.5vw;
-  }
+@include for-tablet-landscape-up {
+  @include scaling(25px, 35px, 55px);
+}
+
+@include for-desktop-up {
+  @include scaling(30px, 45px, 75px);
 }
