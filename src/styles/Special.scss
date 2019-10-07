@@ -1,3 +1,5 @@
+@import "./media_mixins";
+
 .star-active {
   color: orange;
 }
@@ -6,5 +8,15 @@
 .to-new,
 .near-full,
 .at-full {
-  margin: 1.1vw 0;
+  margin: 5px 0;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+@include for-desktop-up {
+  hr {
+    margin: 20px 0;
+  }
 }
