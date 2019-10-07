@@ -1,22 +1,16 @@
-@import "./variables";
-@import "./mixins";
+@import "./media_mixins";
+@import "./next_four_phase_mixins";
 
-.phase {
-  padding: 10px 5px;
-  font-size: calc(1em + 1.5vmin);
+@include scaling(94px, 24px, 10px);
+
+@include for-tablet-portrait-up {
+  @include scaling(80px, 18px, 8px);
 }
 
-.phase-image {
-  @include make-square(25vw);
+@include for-tablet-landscape-up {
+  @include scaling(90px, 25px, 10px);
 }
 
-@media only screen and (min-width: $tablet) {
-  .phase {
-    padding: 30px 15px;
-    font-size: 24px;
-  }
-
-  .phase-image {
-    @include make-square(12vw);
-  }
+@include for-desktop-up {
+  @include scaling(115px, 30px, 28px);
 }

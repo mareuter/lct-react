@@ -1,0 +1,11 @@
+@import "./mixins";
+
+@mixin scaling($isize, $fsize, $psize) {
+  .phase {
+    padding: $psize calc(#{$psize / 2});
+    font-size: $fsize;
+  }
+  .phase-image {
+    @include make-square($isize);
+  }
+}
