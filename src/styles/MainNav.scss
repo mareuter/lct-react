@@ -1,10 +1,10 @@
 @import "./variables";
 @import "./mixins";
+@import "./media_mixins";
+@import "./main_nav_mixins";
 
 .main-nav {
   width: 100%;
-  /* position: fixed; */
-  height: 9vw;
   background: $background-color;
   z-index: 1;
 
@@ -12,12 +12,11 @@
     padding: 0;
   }
   .w3-container {
-    padding: 3px 5px;
+    padding: 3px 6px;
   }
   img {
-    height: 5vw;
-    width: 5vw;
-    padding: 0.3vw 0.3vw;
+    @include make-square(20px);
+    padding: 1px;
   }
   p {
     line-height: 1;
@@ -27,7 +26,7 @@
     display: inline-block;
     color: $navtype-color;
     text-decoration: none;
-    font-size: 3vw;
+    font-size: 11px;
   }
   a:hover {
     background-color: $hover-button-color;
@@ -55,8 +54,7 @@
 
 .bars {
   color: $standard-color;
-  height: 5vw;
-  width: 5vw;
+  @include make-square(20px);
 }
 
 .hamburger-menu > button,
@@ -83,7 +81,7 @@
 .menu-button {
   @include remove-appearance;
   text-decoration: none;
-  font-size: 3vw;
+  font-size: 11px;
   color: $navtype-color;
   background-color: $background-color;
   border-color: $active-button-color;
@@ -92,4 +90,12 @@
 
 .change {
   padding: 0 2px 0 5px;
+}
+
+@include for-tablet-portrait-up {
+  @include scaling(30px, 15px, 3px);
+}
+
+@include for-desktop-up {
+  @include scaling(45px, 25px, 4px);
 }
