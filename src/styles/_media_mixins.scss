@@ -20,8 +20,14 @@
   }
 }
 
+@mixin medium-small-vertical {
+  @media only screen and (min-height: 750px) {
+    @content;
+  }
+}
+
 @mixin medium-vertical {
-  @media only screen and (min-height: 810) {
+  @media only screen and (min-height: 810px) {
     @content;
   }
 }

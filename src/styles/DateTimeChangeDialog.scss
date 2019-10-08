@@ -1,10 +1,56 @@
-@import "./variables";
-@import "./mixins";
 @import "./Modal.scss";
+@import "./media_mixins";
+@import "./modal_mixins";
+@import "./animation_mixins";
+
+$slide-in-left: 25vw;
+$animationName: slideInTopDt;
 
 .content-dt {
   @extend .content;
-  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: $slide-in-left;
+  height: 100%;
+  width: 50vw;
+  @include animation(slideInLeft, 0.45s);
+}
+
+@include slide-in-left($slide-in-left);
+
+@include small-vertical {
+  $slide-in-top: 20vh;
+  .content-dt {
+    left: 10vw;
+    height: 60vh;
+    width: 80vw;
+    @include animation($animationName, 0.45s);
+  }
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include medium-small-vertical {
+  $slide-in-top: 25vh;
+  .content-dt {
+    left: 30vw;
+    height: 55vh;
+    width: 40vw;
+    @include animation($animationName, 0.45s);
+  }
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include large-vertical {
+  $slide-in-top: 30vh;
+  .content-dt {
+    height: 40vh;
+    @include animation($animationName, 0.45s);
+  }
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
 }
 
 .content-dt > input,
@@ -84,7 +130,7 @@
 }
 
 .button-div {
-  padding-bottom: 10px;
+  padding-bottom: 2px;
 }
 
 .update-button {

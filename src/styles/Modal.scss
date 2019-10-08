@@ -1,7 +1,5 @@
 @import "./variables";
 @import "./mixins";
-@import "./media_mixins";
-@import "./modal_mixins";
 
 .header > button,
 [type="button"] {
@@ -18,14 +16,10 @@
 
 .content {
   position: fixed;
-  left: 0;
-  width: 100%;
-  font-size: 18px;
   overflow: auto;
   background-color: $background-color;
   color: $standard-color;
   z-index: 100;
-  @include animation(slideIn, 0.4s);
 }
 
 .modal {
@@ -57,38 +51,4 @@
   to {
     opacity: 1;
   }
-}
-
-$slide-in-top: 8vh;
-@include slide-in-scaling($slide-in-top);
-@include content-top($slide-in-top);
-
-@include small-vertical {
-  $slide-in-top: 25vh;
-  @include slide-in-scaling($slide-in-top);
-  @include content-top($slide-in-top);
-}
-
-@include medium-vertical {
-  $slide-in-top: 30vh;
-  @include slide-in-scaling($slide-in-top);
-  @include content-top($slide-in-top);
-}
-
-@include large-vertical {
-  $slide-in-top: 32vh;
-  @include slide-in-scaling($slide-in-top);
-  @include content-top($slide-in-top);
-}
-
-@include for-tablet-portrait-up {
-  @include content-scaling(20vw, 60vw, 18px);
-}
-
-@include for-tablet-landscape-up {
-  @include content-scaling(20vw, 60vw, 25px);
-}
-
-@include for-desktop-up {
-  @include content-scaling(25vw, 50vw, 30px);
 }

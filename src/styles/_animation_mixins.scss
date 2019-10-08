@@ -1,0 +1,27 @@
+@import "./keyframes_mixins";
+
+@mixin slide-in-top($name, $top) {
+  @include keyframes($name) {
+    from {
+      top: 0;
+      opacity: 0;
+    }
+    to {
+      top: $top;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slide-in-left($left) {
+  @include keyframes(slideInLeft) {
+    from {
+      left: 0;
+      opacity: 0;
+    }
+    to {
+      left: $left;
+      opacity: 1;
+    }
+  }
+}

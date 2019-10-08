@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 
-import "../styles/Modal.scss";
+import "../styles/FeatureDialog.scss";
 
 import { formatDoubleCoordinateLabel, formatDoubleLabel } from "../Formatters";
 
@@ -16,7 +16,7 @@ function FeatureDialog(props) {
         ? ReactDOM.createPortal(
             <div className="modal">
               <div
-                className="w3-container content"
+                className="w3-container content-fd"
                 aria-modal
                 aria-hidden
                 role="dialog"
