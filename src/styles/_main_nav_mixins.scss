@@ -3,7 +3,7 @@
 @mixin scaling($isize, $fsize, $psize) {
   .main-nav {
     .w3-container {
-      padding: $psize calc($psize * 2);
+      padding: $psize calc(#{$psize} * 2);
     }
     img {
       @include make-square($isize);
