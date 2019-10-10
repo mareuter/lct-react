@@ -29,7 +29,8 @@ function NextFourPhases(props) {
       const phase = value["phase"];
       const formattedDateTime = formatTimeWithMinutes(
         value["datetime"],
-        props.timezone
+        props.timezone,
+        true
       );
       nextFourPhases.push([phase, formattedDateTime]);
     }

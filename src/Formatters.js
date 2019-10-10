@@ -14,7 +14,7 @@ const getDirectionLabel = (coordinate, direction) => {
   }
 };
 
-export const formatDoubleLabel = (value, backCaption, precision=2) => {
+export const formatDoubleLabel = (value, backCaption, precision = 2) => {
   const formatNum = formatDoubleValue(value, precision);
   return formatNum + backCaption;
 };
@@ -56,7 +56,7 @@ export function formatTimeWithSeconds(
   return dateString;
 }
 
-export const formatTimeWithMinutes = (timeTuple, timezone) => {
+export const formatTimeWithMinutes = (timeTuple, timezone, useNbsp = false) => {
   const seconds = Math.trunc(timeTuple[5]);
   const milliseconds = (timeTuple[5] - seconds) * 1000;
   const local = DateTime.utc(
@@ -70,7 +70,11 @@ export const formatTimeWithMinutes = (timeTuple, timezone) => {
   );
   const localForTimezone = local.setZone(timezone);
   var dateString = localForTimezone.toFormat("y-MM-dd HH:mm");
-  dateString += " " + localForTimezone.offsetNameShort;
+  let separator = " ";
+  if (useNbsp) {
+    separator = "&nbsp;";
+  }
+  dateString += separator + localForTimezone.offsetNameShort;
   return dateString;
 };
 
@@ -106,4 +110,4 @@ export const formatDoubleCoordinateLabel = (coordinate, direction) => {
   let coordinateString = coordinateValue.toString() + "°";
   let directionString = getDirectionLabel(coordinate, direction);
   return coordinateString + " " + directionString;
-}
+};
