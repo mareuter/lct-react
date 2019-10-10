@@ -80,9 +80,6 @@ function LunarClub(props) {
           error={error}
         />
       </div>
-      <div className="outer">
-        <p />
-      </div>
     </div>
   );
 }

@@ -47,21 +47,6 @@ function LunarIIClub(props) {
     };
   }, [props.date, props.latitude, props.longitude]);
 
-  useEffect(() => {
-    let div = document.getElementsByClassName("outer")[0];
-    let divP = div.childNodes[0];
-    divP.style = "";
-    let viewportBottom = document.documentElement.clientHeight;
-    let diff = viewportBottom - div.getBoundingClientRect().top;
-    if (diff < 0) {
-      divP.style = "display: hidden; margin: 0;";
-    } else {
-      let height = "height: calc(" + diff.toString() + "px + 10vw)";
-      let str = "flex-grow: 1; " + height;
-      divP.style = str;
-    }
-  });
-
   return (
     <div className="lc2-container">
       <div className="features-item">
@@ -77,9 +62,6 @@ function LunarIIClub(props) {
           features={lunarIIClubInfo.landing_sites}
           error={error}
         />
-      </div>
-      <div className="outer">
-        <p />
       </div>
     </div>
   );
