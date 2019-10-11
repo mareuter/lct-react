@@ -57,8 +57,7 @@
   @include make-square(20px);
 }
 
-.hamburger-menu > button,
-[type="button"] {
+.hamburger-menu > button {
   @include remove-appearance;
   background-color: $background-color;
   border-color: $background-color;

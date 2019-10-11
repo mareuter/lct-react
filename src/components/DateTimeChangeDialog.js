@@ -38,7 +38,7 @@ function DateTimeChangeDialog(props) {
                   <button className="close w3-right" onClick={props.hide}>
                     <FontAwesomeIcon icon={faWindowClose} />
                   </button>
-                  <h1 className="w3-center">Change Date/Time</h1>
+                  <h1>Change Date/Time</h1>
                 </div>
                 <div className="w3-center">
                   <div className="button-div">

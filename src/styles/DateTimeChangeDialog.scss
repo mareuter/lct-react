@@ -72,8 +72,7 @@ $animationName: slideInTopDt;
   color: $navtype-color;
 }
 
-.react-datepicker__triangle > button,
-[type="button"] {
+.react-datepicker__triangle > button {
   border-color: transparent;
 }
 
@@ -99,6 +98,7 @@ $animationName: slideInTopDt;
   .react-datepicker-time__input
   input[type="time"] {
   @include remove-appearance;
+  font: inherit;
 }
 
 .react-datepicker__time-container .react-datepicker__time {

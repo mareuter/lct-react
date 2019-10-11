@@ -1,13 +1,13 @@
 @import "./variables";
 @import "./mixins";
 
-.header > button,
-[type="button"] {
+.header > .close {
   @include remove-appearance;
   background-color: $background-color;
   color: $button-color;
   border-color: $background-color;
   border: none;
+  padding: 10px 5px 10px 10px;
 }
 
 .close:hover {
