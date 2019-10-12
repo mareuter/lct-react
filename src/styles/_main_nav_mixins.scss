@@ -1,6 +1,6 @@
 @import "./mixins";
 
-@mixin scaling($isize, $fsize, $psize) {
+@mixin nav-button-scaling($isize, $fsize, $psize) {
   .main-nav {
     .w3-container {
       padding: $psize calc(#{$psize} * 2);
@@ -12,10 +12,22 @@
       font-size: $fsize;
     }
   }
-  .menu-button {
-    font-size: $fsize;
-  }
-  .bars {
-    @include make-square($isize);
+}
+
+@mixin menu-button-scaling($fsize, $hsize, $psize) {
+  .main-nav {
+    .hamburger-button {
+      padding: $psize calc(#{$psize} * 2);
+    }
+    .bars {
+      font-size: $fsize;
+      height: $hsize;
+    }
+    .calendar {
+      font-size: $fsize;
+    }
+    .change {
+      font-size: $fsize;
+    }
   }
 }

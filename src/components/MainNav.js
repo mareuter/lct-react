@@ -156,7 +156,7 @@ function MainNav() {
           </button>
           <div id="menu" className="dropdown-hide">
             <button className="menu-button" onClick={showDateTimeChange}>
-              <FontAwesomeIcon icon={faCalendarAlt} />
+              <FontAwesomeIcon icon={faCalendarAlt} className="calendar" />
               <span className="change">Change</span>
             </button>
           </div>

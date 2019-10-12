@@ -3,6 +3,8 @@
 @import "./media_mixins";
 @import "./main_nav_mixins";
 
+$menu-font: 20px;
+
 .main-nav {
   width: 100%;
   background: $background-color;
@@ -48,13 +50,14 @@
 }
 
 .hamburger-button {
-  padding: 0px 7px;
+  padding: 5px 10px;
   vertical-align: text-top;
 }
 
 .bars {
   color: $standard-color;
-  @include make-square(20px);
+  font-size: $menu-font;
+  height: 30px;
 }
 
 .hamburger-menu > button {
@@ -80,21 +83,26 @@
 .menu-button {
   @include remove-appearance;
   text-decoration: none;
-  font-size: 11px;
   color: $navtype-color;
   background-color: $background-color;
   border-color: $active-button-color;
-  padding: 1px 5px;
+}
+
+.calendar {
+  font-size: $menu-font;
 }
 
 .change {
   padding: 0 2px 0 5px;
+  font-size: $menu-font;
 }
 
 @include for-tablet-portrait-up {
-  @include scaling(30px, 15px, 3px);
+  @include nav-button-scaling(30px, 15px, 3px);
+  @include menu-button-scaling(30px, 45px, 5px);
 }
 
 @include for-desktop-up {
-  @include scaling(45px, 25px, 4px);
+  @include nav-button-scaling(45px, 25px, 4px);
+  @include menu-button-scaling(45px, 60px, 10px);
 }
