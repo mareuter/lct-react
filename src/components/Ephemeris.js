@@ -20,9 +20,7 @@ function Ephemeris(props) {
   const localTimeZone = localTime.slice(pos + 1, localTime.length);
   const utcTime = formatTimeWithSeconds(props.datetime, "UTC");
   let latitude = formatCoordinateLabel(props.latitude, "N S");
-  latitude.replace(" ", "&nbsp;");
   let longitude = formatCoordinateLabel(props.longitude, "E W");
-  longitude.replace(" ", "&nbsp");
   let coordinateStr = latitude + " " + longitude;
 
   return (
