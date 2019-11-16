@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mixins";
+@import "./media_mixins";
+
+.lc2-container {
+  @include small-grid-container;
+  grid-template-areas:
+    "features"
+    "landing";
+}
+
+.features-item {
+  grid-area: features;
+}
+
+.landing-item {
+  grid-area: landing;
+}
+
+@include for-tablet-portrait-up {
+  .lc2-container {
+    @include medium-grid-container;
+    grid-template-areas: "features landing";
+  }
+}

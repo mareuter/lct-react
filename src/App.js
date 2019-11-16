@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Route } from "react-router-dom";
 import jstz from "jstz";
 
-import "./App.css";
+import "./styles/App.scss";
 
 import MainNav from "./components/MainNav";
 import Welcome from "./components/Welcome";
@@ -68,6 +68,21 @@ function App() {
     navigator.geolocation.getCurrentPosition(setLocation, showError);
   }, [coordinates.latitude, coordinates.longitude, coordinates.good, timezone]);
 
+  useEffect(() => {
+    let div = document.getElementsByClassName("outer")[0];
+    let divP = div.childNodes[0];
+    divP.style = "";
+    let viewportBottom = document.documentElement.clientHeight;
+    let diff = viewportBottom - div.getBoundingClientRect().top;
+    if (diff < 0) {
+      divP.style = "display: hidden; margin: 0;";
+    } else {
+      let height = "height: calc(" + diff.toString() + "px + 10vw)";
+      let str = "flex-grow: 1; " + height;
+      divP.style = str;
+    }
+  });
+
   return (
     <div className="App">
       <MainNav />
@@ -109,6 +124,9 @@ function App() {
           )}
         />
       </main>
+      <div className="outer">
+        <p />
+      </div>
     </div>
   );
 }

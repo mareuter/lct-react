@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./FeatureList.css";
+import "../styles/FeatureList.scss";
 
 import Error from "./Error";
 import Feature from "./Feature";

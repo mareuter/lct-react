@@ -1,0 +1,48 @@
+@import "./Modal.scss";
+@import "./media_mixins";
+@import "./modal_mixins";
+@import "./animation_mixins";
+
+$animationName: slideInTopFd;
+
+.content-fd {
+  @extend .content;
+  left: 0;
+  width: 100%;
+  font-size: 18px;
+  @include animation($animationName, 0.4s);
+}
+
+$slide-in-top: 8vh;
+@include slide-in-top($animationName, $slide-in-top);
+@include content-fd-top($slide-in-top);
+
+@include small-vertical {
+  $slide-in-top: 25vh;
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-fd-top($slide-in-top);
+}
+
+@include medium-vertical {
+  $slide-in-top: 30vh;
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-fd-top($slide-in-top);
+}
+
+@include large-vertical {
+  $slide-in-top: 32vh;
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-fd-top($slide-in-top);
+}
+
+@include for-tablet-portrait-up {
+  @include content-fd-scaling(20vw, 60vw, 18px);
+}
+
+@include for-tablet-landscape-up {
+  @include content-fd-scaling(20vw, 60vw, 25px);
+}
+
+@include for-desktop-up {
+  @include content-fd-scaling(25vw, 50vw, 30px);
+}

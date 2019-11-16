@@ -1,0 +1,30 @@
+@import "./mixins";
+
+@mixin content-fd-top($top) {
+  .content-fd {
+    top: $top;
+  }
+}
+
+@mixin content-dt-top($top) {
+  .content-dt {
+    top: $top;
+  }
+}
+
+@mixin content-fd-scaling($left, $width, $fsize) {
+  .content-fd {
+    left: $left;
+    width: $width;
+    font-size: $fsize;
+  }
+}
+
+@mixin content-dt-scaling($left, $height, $width, $animName) {
+  .content-dt {
+    left: 30vw;
+    height: 40vh;
+    width: 40vw;
+    @include animation($animName, 0.45s);
+  }
+}

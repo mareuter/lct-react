@@ -1,0 +1,13 @@
+@import "./variables";
+
+.w3-ul {
+  li {
+    padding: 8px 0px;
+  }
+  li:first-child {
+    border-top: $feature-border;
+  }
+  li:last-child {
+    border-bottom: $feature-border;
+  }
+}

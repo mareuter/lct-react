@@ -1,0 +1,41 @@
+@import "./variables";
+@import "./mixins";
+@import "./media_mixins";
+
+.mi-container {
+  @include small-grid-container;
+  grid-template-areas:
+    "mi"
+    "nfp"
+    "pal"
+    "sp";
+}
+
+.mi-item {
+  grid-area: mi;
+}
+
+.nfp-item {
+  grid-area: nfp;
+}
+
+.pal-item {
+  grid-area: pal;
+}
+
+.sp-item {
+  grid-area: sp;
+}
+
+.bad-coords {
+  font-style: italic;
+}
+
+@include for-tablet-portrait-up {
+  .mi-container {
+    @include medium-grid-container;
+    grid-template-areas:
+      "mi pal"
+      "nfp sp";
+  }
+}

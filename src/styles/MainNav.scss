@@ -1,0 +1,108 @@
+@import "./variables";
+@import "./mixins";
+@import "./media_mixins";
+@import "./main_nav_mixins";
+
+$menu-font: 20px;
+
+.main-nav {
+  width: 100%;
+  background: $background-color;
+  z-index: 1;
+
+  .w3-bar-item {
+    padding: 0;
+  }
+  .w3-container {
+    padding: 3px 6px;
+  }
+  img {
+    @include make-square(20px);
+    padding: 1px;
+  }
+  p {
+    line-height: 1;
+    margin: 0;
+  }
+  a {
+    display: inline-block;
+    color: $navtype-color;
+    text-decoration: none;
+    font-size: 11px;
+  }
+  a:hover {
+    background-color: $hover-button-color;
+  }
+  a.active {
+    background-color: $active-button-color;
+    color: $button-color;
+  }
+  .dropdown-hide {
+    display: none;
+  }
+  .dropdown-show {
+    position: absolute;
+    display: flex;
+    align-items: stretch;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.hamburger-button {
+  padding: 5px 10px;
+  vertical-align: text-top;
+}
+
+.bars {
+  color: $standard-color;
+  font-size: $menu-font;
+  height: 30px;
+}
+
+.hamburger-menu > button {
+  @include remove-appearance;
+  background-color: $background-color;
+  border-color: $background-color;
+  border: none;
+}
+
+.hamburger-menu {
+  button:hover {
+    background-color: $hover-button-color;
+  }
+  button.active {
+    background-color: $active-button-color;
+  }
+  button:focus {
+    outline: none;
+    background-color: $background-color;
+  }
+}
+
+.menu-button {
+  @include remove-appearance;
+  text-decoration: none;
+  color: $navtype-color;
+  background-color: $background-color;
+  border-color: $active-button-color;
+}
+
+.calendar {
+  font-size: $menu-font;
+}
+
+.change {
+  padding: 0 2px 0 5px;
+  font-size: $menu-font;
+}
+
+@include for-tablet-portrait-up {
+  @include nav-button-scaling(30px, 15px, 3px);
+  @include menu-button-scaling(30px, 45px, 5px);
+}
+
+@include for-desktop-up {
+  @include nav-button-scaling(45px, 25px, 4px);
+  @include menu-button-scaling(45px, 60px, 10px);
+}

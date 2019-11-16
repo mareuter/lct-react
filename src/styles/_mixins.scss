@@ -1,0 +1,28 @@
+@mixin remove-appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin make-square($value) {
+  height: $value;
+  width: $value;
+}
+
+@mixin animation($type, $duration) {
+  -webkit-animation-name: $type;
+  -webkit-animation-duration: $duration;
+  animation-name: $type;
+  animation-duration: $duration;
+}
+
+@mixin small-grid-container {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+@mixin medium-grid-container {
+  grid-template-columns: 1fr 1fr;
+}

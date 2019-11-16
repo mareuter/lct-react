@@ -95,6 +95,11 @@ describe("Formatting Time Labels", () => {
     const output = "2019-06-07 19:30 EDT";
     expect(formatTimeWithMinutes(timeTuple2, timezone)).toBe(output);
   });
+
+  test("Local Time with Minutes Only, Short Timezone Label and NSBP Separator", () => {
+    const output = "2019-06-07 19:30&nbsp;EDT";
+    expect(formatTimeWithMinutes(timeTuple, timezone, true)).toBe(output);
+  });
 });
 
 describe("Formatting Right Ascension", () => {

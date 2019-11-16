@@ -1,0 +1,9 @@
+@import "./variables";
+
+.info {
+  color: $button-color;
+}
+
+.info:hover {
+  color: $standard-color;
+}

@@ -1,0 +1,45 @@
+@import "./variables";
+@import "./media_mixins";
+@import "./app_mixins";
+
+.App {
+  background-color: $background-color;
+  font-size: 18px;
+  color: $standard-color;
+  overflow: auto;
+}
+
+.App-main {
+  top: 40px;
+  position: relative;
+  z-index: 0;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 26px;
+  margin: 5px;
+}
+
+p {
+  margin: 5px 2px;
+}
+
+.outer {
+  display: flex;
+  flex-direction: column;
+}
+
+@include for-tablet-portrait-up {
+  .App-main {
+    top: 50px;
+  }
+}
+
+@include for-tablet-landscape-up {
+  @include scaling(25px, 35px, 55px);
+}
+
+@include for-desktop-up {
+  @include scaling(30px, 45px, 75px);
+}

@@ -19,6 +19,9 @@ function Ephemeris(props) {
   const localDateTime = localTime.slice(0, pos);
   const localTimeZone = localTime.slice(pos + 1, localTime.length);
   const utcTime = formatTimeWithSeconds(props.datetime, "UTC");
+  let latitude = formatCoordinateLabel(props.latitude, "N S");
+  let longitude = formatCoordinateLabel(props.longitude, "E W");
+  let coordinateStr = latitude + " " + longitude;
 
   return (
     <div>
@@ -32,11 +35,7 @@ function Ephemeris(props) {
               <p>Location:</p>
             </div>
             <div className="w3-col s9 w3-right-align">
-              <p>
-                {formatCoordinateLabel(props.latitude, "N S")}
-                &nbsp;
-                {formatCoordinateLabel(props.longitude, "E W")}
-              </p>
+              <p>{coordinateStr}</p>
             </div>
           </div>
           <div className="w3-row">

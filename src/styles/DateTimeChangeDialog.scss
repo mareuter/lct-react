@@ -1,0 +1,140 @@
+@import "./Modal.scss";
+@import "./media_mixins";
+@import "./modal_mixins";
+@import "./animation_mixins";
+
+$slide-in-left: 25vw;
+$animationName: slideInTopDt;
+
+.content-dt {
+  @extend .content;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: $slide-in-left;
+  height: 100%;
+  width: 50vw;
+  @include animation(slideInLeft, 0.45s);
+}
+
+@include slide-in-left($slide-in-left);
+
+@include small-vertical {
+  $slide-in-top: 20vh;
+  .content-dt {
+    left: 10vw;
+    height: 60vh;
+    width: 80vw;
+    @include animation($animationName, 0.45s);
+  }
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include medium-small-vertical {
+  $slide-in-top: 25vh;
+  .content-dt {
+    left: 30vw;
+    height: 55vh;
+    width: 40vw;
+    @include animation($animationName, 0.45s);
+  }
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include large-vertical {
+  $slide-in-top: 30vh;
+  .content-dt {
+    height: 40vh;
+    @include animation($animationName, 0.45s);
+  }
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+.content-dt > input,
+[type="time"] {
+  background-color: $background-color;
+  color: $navtype-color;
+  border: 1px solid $navtype-color;
+  text-align: center;
+}
+
+.react-datepicker__input-container {
+  @include remove-appearance;
+  background-color: $background-color;
+  color: $navtype-color;
+}
+
+.react-datepicker {
+  background-color: $background-color;
+  color: $navtype-color;
+}
+
+.react-datepicker__triangle > button {
+  border-color: transparent;
+}
+
+:-moz-focusring {
+  color: none;
+  outline: none;
+}
+
+.react-datepicker__navigation--previous {
+  border-right-color: $navtype-color;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: $navtype-color;
+}
+
+.react-datepicker__time-container--with-today-button {
+  right: -85px;
+}
+
+.react-datepicker__input-time-container
+  .react-datepicker-time__input-container
+  .react-datepicker-time__input
+  input[type="time"] {
+  @include remove-appearance;
+  font: inherit;
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+  background-color: $background-color;
+}
+
+.react-datepicker__header {
+  background-color: $background-color;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: $navtype-color;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: $navtype-color;
+}
+
+.react-datepicker__today-button {
+  background-color: $background-color;
+}
+
+.react-datepicker__day--selected {
+  color: $standard-color;
+}
+
+.button-div {
+  padding-bottom: 2px;
+}
+
+.update-button {
+  color: $navtype-color;
+  background-color: $background-color;
+  border-color: $navtype-color;
+}

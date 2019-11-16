@@ -1,0 +1,11 @@
+@mixin scaling($fsize, $h1-fsize, $top) {
+  .App {
+    font-size: $fsize;
+  }
+  .App-main {
+    top: $top;
+  }
+  h1 {
+    font-size: $h1-fsize;
+  }
+}
