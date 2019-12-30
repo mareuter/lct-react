@@ -58,7 +58,7 @@ export function formatTimeWithSeconds(
 
 export const formatTimeWithMinutes = (timeTuple, timezone, useNbsp = false) => {
   const seconds = Math.trunc(timeTuple[5]);
-  const milliseconds = (timeTuple[5] - seconds) * 1000;
+  const milliseconds = Math.round((timeTuple[5] - seconds) * 1000);
   const local = DateTime.utc(
     timeTuple[0],
     timeTuple[1],
@@ -80,7 +80,7 @@ export const formatTimeWithMinutes = (timeTuple, timezone, useNbsp = false) => {
 
 export const formatTimeOnly = timeTuple => {
   const seconds = Math.trunc(timeTuple[5]);
-  const milliseconds = (timeTuple[5] - seconds) * 1000;
+  const milliseconds = Math.round((timeTuple[5] - seconds) * 1000);
   const local = DateTime.local(
     timeTuple[0],
     timeTuple[1],
