@@ -4,7 +4,7 @@ import { useThree } from "react-three-fiber";
 
 const POSITION = [0, 0, 250];
 const BOX = 200;
-const BASE_ZOOM = 0.836;
+const BASE_ZOOM = 0.8;
 const HEIGHT_PERCENT_CHANGE = 10;
 
 function Camera(props) {
@@ -17,8 +17,8 @@ function Camera(props) {
   const resizeCallback = useCallback(() => {
     let div = document.getElementsByClassName("canvas")[0];
     let percentHeightChange =
-      (200 * Math.abs(currentHeight - div.clientHeight)) /
-      (currentHeight + div.clientHeight);
+      100 * (Math.abs(currentHeight - div.clientHeight) /
+      (currentHeight + div.clientHeight));
     if (percentHeightChange > HEIGHT_PERCENT_CHANGE) {
       setAspect(div.clientWidth / div.clientHeight);
       setMaxCameraZoomOut(
