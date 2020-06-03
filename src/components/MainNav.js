@@ -19,21 +19,21 @@ function clickHandler(event) {
   let navs = document.getElementsByTagName("a");
   for (var i = 0; i < navs.length; i++) {
     if (navs[i].className === "active") {
-      let activemage = navs[i].childNodes[0].childNodes[0];
-      // console.log(activemage.alt);
+      let activemage = navs[i].childNodes[0];
+      // console.log("A:", activemage.alt);
       changeSelectedIcon(activemage, false);
     }
   }
   let target = event.target ? event.target : event.srcElement;
   let image;
-  // console.log(target.nodeName);
+  // console.log("B:", target.nodeName);
   if (target.nodeName === "P") {
     image = target.previousSibling;
   }
   if (target.nodeName === "IMG") {
     image = target;
   }
-  if (target.nodeName === "DIV") {
+  if (target.nodeName === "A") {
     image = target.childNodes[0];
   }
   changeSelectedIcon(image, true);
@@ -89,7 +89,7 @@ function MainNav() {
     let navs = document.getElementsByTagName("a");
     for (var i = 0; i < navs.length; i++) {
       if (navs[i].className === "active") {
-        let activemage = navs[i].childNodes[0].childNodes[0];
+        let activemage = navs[i].childNodes[0];
         changeSelectedIcon(activemage, true);
       }
     }
@@ -101,65 +101,48 @@ function MainNav() {
   }
 
   return (
-    <div className="w3-top main-nav">
+    <div className="main-nav">
       <DateTimeChangeDialog isShowing={isShowing} hide={toggle} />
-      <div className="w3-bar">
-        <div className="w3-bar-item">
-          <NavLink
-            to="/moon_info"
-            exact
-            activeClassName="active"
-            onClick={clickHandler}
-          >
-            <div className="w3-container w3-cell w3-center">
-              <img
-                src={moon_info_tab}
-                alt="Moon Info Tab"
-              />
-              <p>Moon Info</p>
-            </div>
-          </NavLink>
-        </div>
-        <div className="w3-bar-item">
-          <NavLink
-            to="/lunar_club"
-            activeClassName="active"
-            onClick={clickHandler}
-          >
-            <div className="w3-container w3-cell w3-center">
-              <img
-                src={lunar_club_tab}
-                alt="Lunar Club Tab"
-              />
-              <p>Lunar Club</p>
-            </div>
-          </NavLink>
-        </div>
-        <div className="w3-bar-item">
-          <NavLink
-            to="/lunar_ii_club"
-            activeClassName="active"
-            onClick={clickHandler}
-          >
-            <div className="w3-container w3-cell w3-center">
-              <img
-                src={lunar_2_club_tab}
-                alt="Lunar 2 Club Tab"
-              />
-              <p>Lunar II Club</p>
-            </div>
-          </NavLink>
-        </div>
-        <div className="w3-bar-item w3-right hamburger-menu">
-          <button className="hamburger-button" onClick={onClickHamburger}>
-            <FontAwesomeIcon icon={faBars} className="bars" />
+      <div className="nav-item">
+        <NavLink
+          to="/moon_info"
+          exact
+          activeClassName="active"
+          onClick={clickHandler}
+        >
+          <img src={moon_info_tab} alt="Moon Info Tab" />
+          <p>Moon Info</p>
+        </NavLink>
+      </div>
+      <div className="nav-item">
+        <NavLink
+          to="/lunar_club"
+          activeClassName="active"
+          onClick={clickHandler}
+        >
+          <img src={lunar_club_tab} alt="Lunar Club Tab" />
+          <p>Lunar Club</p>
+        </NavLink>
+      </div>
+      <div className="nav-item">
+        <NavLink
+          to="/lunar_ii_club"
+          activeClassName="active"
+          onClick={clickHandler}
+        >
+          <img src={lunar_2_club_tab} alt="Lunar 2 Club Tab" />
+          <p>Lunar II Club</p>
+        </NavLink>
+      </div>
+      <div className="hamburger-menu">
+        <button className="hamburger-button" onClick={onClickHamburger}>
+          <FontAwesomeIcon icon={faBars} className="bars" />
+        </button>
+        <div id="menu" className="dropdown-hide">
+          <button className="menu-button" onClick={showDateTimeChange}>
+            <FontAwesomeIcon icon={faCalendarAlt} className="calendar" />
+            <span className="change">Change</span>
           </button>
-          <div id="menu" className="dropdown-hide">
-            <button className="menu-button" onClick={showDateTimeChange}>
-              <FontAwesomeIcon icon={faCalendarAlt} className="calendar" />
-              <span className="change">Change</span>
-            </button>
-          </div>
         </div>
       </div>
     </div>
