@@ -16,84 +16,56 @@ function FeatureDialog(props) {
         ? ReactDOM.createPortal(
             <div className="modal">
               <div
-                className="w3-container content-fd"
+                className="content-fd"
                 aria-modal
                 aria-hidden
                 role="dialog"
                 onClick={props.hide}
               >
-                <div className="header">
-                  <button className="close w3-right" onClick={props.hide}>
+                <div className="header info-row">
+                  <h1>Feature Information</h1>
+                  <button className="close" onClick={props.hide}>
                     <FontAwesomeIcon icon={faWindowClose} />
                   </button>
-                  <h1>Feature Information</h1>
                 </div>
-                <div className="w3-container">
-                  <div className="w3-row">
-                    <div className="w3-col s4">
-                      <p>Name:</p>
-                    </div>
-                    <div className="w3-col s8 w3-right-align">
-                      <p>{props.feature.name}</p>
-                    </div>
+                <div className="info-container">
+                  <div className="info-row">
+                    <p>Name:</p>
+                    <p>{props.feature.name}</p>
                   </div>
-                  <div className="w3-row">
-                    <div className="w3-col s6">
-                      <p>Type:</p>
-                    </div>
-                    <div className="w3-col s6 w3-right-align">
-                      <p>{props.feature.type}</p>
-                    </div>
+                  <div className="info-row">
+                    <p>Type:</p>
+                    <p>{props.feature.type}</p>
                   </div>
-                  <div className="w3-row">
-                    <div className="w3-col s6">
-                      <p>Latitude:</p>
-                    </div>
-                    <div className="w3-col s6 w3-right-align">
-                      <p>
-                        {formatDoubleCoordinateLabel(
-                          props.feature.latitude,
-                          "NS"
-                        )}
-                      </p>
-                    </div>
+                  <div className="info-row">
+                    <p>Latitude:</p>
+                    <p>
+                      {formatDoubleCoordinateLabel(
+                        props.feature.latitude,
+                        "NS"
+                      )}
+                    </p>
                   </div>
-                  <div className="w3-row">
-                    <div className="w3-col s6">
-                      <p>Longitude:</p>
-                    </div>
-                    <div className="w3-col s6 w3-right-align">
-                      <p>
-                        {formatDoubleCoordinateLabel(
-                          props.feature.longitude,
-                          "EW"
-                        )}
-                      </p>
-                    </div>
+                  <div className="info-row">
+                    <p>Longitude:</p>
+                    <p>
+                      {formatDoubleCoordinateLabel(
+                        props.feature.longitude,
+                        "EW"
+                      )}
+                    </p>
                   </div>
-                  <div className="w3-row">
-                    <div className="w3-col s6">
-                      <p>Diameter:</p>
-                    </div>
-                    <div className="w3-col s6 w3-right-align">
-                      <p>{formatDoubleLabel(props.feature.diameter, " km")}</p>
-                    </div>
+                  <div className="info-row">
+                    <p>Diameter:</p>
+                    <p>{formatDoubleLabel(props.feature.diameter, " km")}</p>
                   </div>
-                  <div className="w3-row">
-                    <div className="w3-col s6">
-                      <p>Quad Name:</p>
-                    </div>
-                    <div className="w3-col s6 w3-right-align">
-                      <p>{props.feature.quadName}</p>
-                    </div>
+                  <div className="info-row">
+                    <p>Quad Name:</p>
+                    <p>{props.feature.quadName}</p>
                   </div>
-                  <div className="w3-row">
-                    <div className="w3-col s6">
-                      <p>Quad Code:</p>
-                    </div>
-                    <div className="w3-col s6 w3-right-align">
-                      <p>{props.feature.quadCode}</p>
-                    </div>
+                  <div className="info-row">
+                    <p>Quad Code:</p>
+                    <p>{props.feature.quadCode}</p>
                   </div>
                 </div>
               </div>

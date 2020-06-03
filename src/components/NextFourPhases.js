@@ -15,7 +15,7 @@ const moonPhaseIcons = {
   new_moon: new_moon,
   first_quarter: first_quarter,
   full_moon: full_moon,
-  last_quarter: third_quarter
+  last_quarter: third_quarter,
 };
 
 function NextFourPhases(props) {
@@ -38,7 +38,7 @@ function NextFourPhases(props) {
     var phaseSpans = document.getElementsByClassName("phase");
     nextFourPhases.forEach((value, index) => {
       if (phaseSpans[index].id === index.toString()) {
-        var image = phaseSpans[index].childNodes[0].childNodes[0];
+        var image = phaseSpans[index].childNodes[0];
         var dateTime = phaseSpans[index].childNodes[1];
         image.src = moonPhaseIcons[value[0]];
         image.alt = value[0];
@@ -50,55 +50,39 @@ function NextFourPhases(props) {
   return (
     <div>
       {!hasError ? (
-        <div className="w3-container">
-          <div className="w3-row w3-center">
-            <h1>Next Four Phases</h1>
-          </div>
-          <div id="0" className="w3-cell-row phase">
-            <div className="w3-container w3-cell w3-center">
+        <div>
+          <h1>Next Four Phases</h1>
+          <div className="info-container">
+            <div id="0" className="phase">
               <img
                 className="phase-image"
                 src={phase_placeholder}
                 alt="placeholder"
               />
-            </div>
-            <div className="w3-container w3-cell w3-cell-middle w3-center">
               <p>{emptyTime}</p>
             </div>
-          </div>
-          <div id="1" className="w3-cell-row phase">
-            <div className="w3-container w3-cell w3-center">
+            <div id="1" className="phase">
               <img
                 className="phase-image"
                 src={phase_placeholder}
                 alt="placeholder"
               />
-            </div>
-            <div className="w3-container w3-cell w3-cell-middle w3-center">
               <p>{emptyTime}</p>
             </div>
-          </div>
-          <div id="2" className="w3-cell-row phase">
-            <div className="w3-container w3-cell w3-center">
+            <div id="2" className="phase">
               <img
                 className="phase-image"
                 src={phase_placeholder}
                 alt="placeholder"
               />
-            </div>
-            <div className="w3-container w3-cell w3-cell-middle w3-center">
               <p>{emptyTime}</p>
             </div>
-          </div>
-          <div id="3" className="w3-cell-row phase">
-            <div className="w3-container w3-cell w3-center">
+            <div id="3" className="phase">
               <img
                 className="phase-image"
                 src={phase_placeholder}
                 alt="placeholder"
               />
-            </div>
-            <div className="w3-container w3-cell w3-cell-middle w3-center">
               <p>{emptyTime}</p>
             </div>
           </div>

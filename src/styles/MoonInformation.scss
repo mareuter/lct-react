@@ -39,3 +39,12 @@
       "nfp sp";
   }
 }
+
+@include for-desktop-up {
+  .mi-container {
+    @include large-grid-container;
+    grid-template-areas:
+      "mi nfp pal"
+      ". sp .";
+  }
+}

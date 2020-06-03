@@ -35,3 +35,12 @@
       "bino tele";
   }
 }
+
+@include for-desktop-up {
+  .lc-container {
+    @include large-grid-container;
+    grid-template-areas:
+      "special ne bino"
+      ". tele .";
+  }
+}

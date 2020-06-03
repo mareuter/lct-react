@@ -6,12 +6,10 @@ import "../styles/Feature.scss";
 
 function Feature(props) {
   return (
-    <li className="w3-bar">
-      <span className="w3-right info-button">
+    <li className="info-row">
+      <div>{props.name}</div>
+      <div className="info-button">
         <FontAwesomeIcon icon={faInfoCircle} className="info" />
-      </span>
-      <div>
-        <span>{props.name}</span>
       </div>
     </li>
   );
