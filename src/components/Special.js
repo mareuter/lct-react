@@ -16,55 +16,68 @@ let fullMoonFraction = 0.987;
 let noTime = "----";
 
 function checkMoonTime(moonTime, cutoffTime, phaseTime) {
-    let timeLabel;
-    let indicatorState;
-    if (moonTime <= cutoffTime) {
-        timeLabel = formatDoubleLabel(moonTime, " hours", 1);
-        if (moonTime > phaseTime) {
-            indicatorState = 2;
-        } else {
-            indicatorState = 1;
-        }
+  let timeLabel;
+  let indicatorState;
+  if (moonTime <= cutoffTime) {
+    timeLabel = formatDoubleLabel(moonTime, " hours", 1);
+    if (moonTime > phaseTime) {
+      indicatorState = 2;
     } else {
-        timeLabel = noTime;
-        indicatorState = 0;
+      indicatorState = 1;
     }
-    return [timeLabel, indicatorState];
-};
+  } else {
+    timeLabel = noTime;
+    indicatorState = 0;
+  }
+  return [timeLabel, indicatorState];
+}
 
 function useCheckFullMoonStars(name, indicator) {
-    useEffect(() => {
-        let starDivs = document.getElementsByClassName(name);
-        let isActive;
-        if (name.search('near') >= 0) {
-            isActive = (indicator >= timeCowJumping[0] && indicator <= timeCowJumping[1]);
-        }
-        if (name.search('at') >= 0) {
-            isActive = (indicator >= fullMoonFraction);
-        }
-        for (var i = 0; i < starDivs.length; i++) {
-            var icon = starDivs[i].childNodes[0];
-            if (isActive) {
-                icon.className.baseVal = icon.className.baseVal.replace("star-inactive", "star-active");
-            } else {
-                icon.className.baseVal = icon.className.baseVal.replace("star-active", "star-inactive");
-            }
-        }
-    }, [indicator, name]);
+  useEffect(() => {
+    let starDivs = document.getElementsByClassName(name);
+    let isActive;
+    if (name.search("near") >= 0) {
+      isActive =
+        indicator >= timeCowJumping[0] && indicator <= timeCowJumping[1];
+    }
+    if (name.search("at") >= 0) {
+      isActive = indicator >= fullMoonFraction;
+    }
+    for (var i = 0; i < starDivs.length; i++) {
+      var icon = starDivs[i].childNodes[1];
+      if (isActive) {
+        icon.className.baseVal = icon.className.baseVal.replace(
+          "star-inactive",
+          "star-active"
+        );
+      } else {
+        icon.className.baseVal = icon.className.baseVal.replace(
+          "star-active",
+          "star-inactive"
+        );
+      }
+    }
+  }, [indicator, name]);
 }
 
 function useCheckNewMoonStars(name, indicator) {
-    useEffect(() => {
-        let starDivs = document.getElementsByClassName(name);
-        for (var i = 0; i < starDivs.length; i++) {
-            var icon = starDivs[i].childNodes[0];
-            if (starDivs[i].id === indicator.toString()) {
-                icon.className.baseVal = icon.className.baseVal.replace("star-inactive", "star-active");
-            } else {
-                icon.className.baseVal = icon.className.baseVal.replace("star-active", "star-inactive");
-            }
-        }
-    }, [indicator, name]);
+  useEffect(() => {
+    let starDivs = document.getElementsByClassName(name);
+    for (var i = 0; i < starDivs.length; i++) {
+      var icon = starDivs[i].childNodes[1];
+      if (starDivs[i].id === indicator.toString()) {
+        icon.className.baseVal = icon.className.baseVal.replace(
+          "star-inactive",
+          "star-active"
+        );
+      } else {
+        icon.className.baseVal = icon.className.baseVal.replace(
+          "star-active",
+          "star-inactive"
+        );
+      }
+    }
+  }, [indicator, name]);
 }
 
 function Special(props) {
@@ -89,89 +102,49 @@ function Special(props) {
   return (
     <div>
       {!hasError ? (
-        <div className="w3-container">
-          <div className="w3-row w3-center">
-            <h1>Special</h1>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s8">
+        <div>
+          <h1>Special</h1>
+          <div className="info-container">
+            <div className="info-row">
               <p>Time from New Moon:</p>
-            </div>
-            <div className="w3-col s4 w3-right-align">
               <p>{timeFromNew}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s10">
+            <div id="1" className="info-row from-new">
               <p>Cresent Moon, Waxing</p>
-            </div>
-            <div id="1" className="w3-col s2 w3-right-align from-new">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s11">
+            <div id="2" className="info-row from-new">
               <p>Old Moon in New Moon's Arms</p>
+              <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-            <div id="2" className="w3-col s1 w3-right-align from-new">
-              <FontAwesomeIcon icon={faStar} className="star-inactive"/>
-            </div>
-          </div>
-          <hr />
-          <div className="w3-row">
-            <div className="w3-col s7">
+            <hr />
+            <div className="info-row">
               <p>Time to New Moon:</p>
-            </div>
-            <div className="w3-col s5 w3-right-align">
               <p>{timeToNew}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s10">
+            <div id="1" className="info-row to-new">
               <p>Cresent Moon, Waning</p>
-            </div>
-            <div id="1" className="w3-col s2 w3-right-align to-new">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s11">
+            <div id="2" className="info-row to-new">
               <p>New Moon in Old Moon's Arms</p>
-            </div>
-            <div id="2" className="w3-col s1 w3-right-align to-new">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-          </div>
-          <hr />
-          <div className="w3-row">
-            <div className="w3-col s10">
+            <hr />
+            <div className="info-row near-full">
               <p>Cow Jumping over the Moon</p>
-            </div>
-            <div className="w3-col s2 w3-right-align near-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s10">
+            <div className="info-row at-full">
               <p>Woman in the Moon</p>
-            </div>
-            <div className="w3-col s2 w3-right-align at-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s10">
+            <div className="info-row at-full">
               <p>Man in the Moon</p>
-            </div>
-            <div className="w3-col s2 w3-right-align at-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s10">
+            <div className="info-row at-full">
               <p>Rabbit in the Moon</p>
-            </div>
-            <div className="w3-col s2 w3-right-align at-full">
               <FontAwesomeIcon icon={faStar} className="star-inactive" />
             </div>
           </div>
