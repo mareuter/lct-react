@@ -12,41 +12,29 @@ function PhaseAndLibration(props) {
   return (
     <div>
       {!hasError ? (
-        <div className="w3-container">
-          <div className="w3-row w3-center">
-            <h1>Phase and Libration</h1>
-          </div>
-          <div className="w3-row canvas">
+        <div>
+          <h1>Phase and Libration</h1>
+          <div className="canvas">
             <MoonPhase
               libration={{
                 lon: props.moonInfo.libration_lon,
-                lat: props.moonInfo.libration_lat
+                lat: props.moonInfo.libration_lat,
               }}
               solarElongation={props.moonInfo.elongation}
               subSolarLatitude={props.moonInfo.subsolar_lat}
             />
           </div>
-          <div className="w3-row">
-            <div className="w3-col s8">
+          <div className="info-container">
+            <div className="info-row">
               <p>Libration Latitude:</p>
-            </div>
-            <div className="w3-col s4 w3-right-align">
               <p>{formatDoubleLabel(props.moonInfo.libration_lat, "°")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s8">
+            <div className="info-row">
               <p>Libration Longitude:</p>
-            </div>
-            <div className="w3-col s4 w3-right-align">
               <p>{formatDoubleLabel(props.moonInfo.libration_lon, "°")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s8">
+            <div className="info-row">
               <p>SubSolar Latitude:</p>
-            </div>
-            <div className="w3-col s4 w3-right-align">
               <p>{formatDoubleLabel(props.moonInfo.subsolar_lat, "°")}</p>
             </div>
           </div>

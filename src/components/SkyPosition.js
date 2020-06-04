@@ -4,7 +4,7 @@ import Error from "./Error";
 import {
   formatDoubleLabel,
   formatRightAscension,
-  formatTimeOnly
+  formatTimeOnly,
 } from "../Formatters";
 
 function SkyPosition(props) {
@@ -44,63 +44,35 @@ function SkyPosition(props) {
   return (
     <div>
       {!hasError ? (
-        <div className="w3-container">
-          <div className="w3-row w3-center">
-            <h1>Sky Position</h1>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+        <div>
+          <h1>Sky Position</h1>
+          <div className="info-container">
+            <div className="info-row coord-check">
               <p>Altitude:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.altitude, "°")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row coord-check">
               <p>Azimuth:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.azimuth, "°")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s6">
+            <div className="info-row coord-check">
               <p>Right Ascension:</p>
-            </div>
-            <div className="w3-col s6 w3-right-align coord-check">
               <p>{formatRightAscension(props.moonInfo.ra)}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row coord-check">
               <p>Declination:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.dec, "°")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row coord-check">
               <p>Rise Time:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align coord-check">
               <p>{riseTime}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s5">
+            <div className="info-row coord-check">
               <p>Transit Time:</p>
-            </div>
-            <div className="w3-col s7 w3-right-align coord-check">
               <p>{transitTime}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row coord-check">
               <p>Set Time:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align coord-check">
               <p>{setTime}</p>
             </div>
           </div>

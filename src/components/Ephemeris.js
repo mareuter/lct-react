@@ -4,7 +4,7 @@ import Error from "./Error";
 import {
   formatCoordinateLabel,
   formatDoubleLabel,
-  formatTimeWithSeconds
+  formatTimeWithSeconds,
 } from "../Formatters";
 
 function Ephemeris(props) {
@@ -26,97 +26,53 @@ function Ephemeris(props) {
   return (
     <div>
       {!hasError ? (
-        <div className="w3-container">
-          <div className="w3-row w3-center">
-            <h1>Ephemeris</h1>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s3">
+        <div>
+          <h1>Ephemeris</h1>
+          <div className="info-container">
+            <div className="info-row">
               <p>Location:</p>
-            </div>
-            <div className="w3-col s9 w3-right-align">
               <p>{coordinateStr}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row">
               <p>Date&nbsp;({localTimeZone}):</p>
-            </div>
-            <div className="w3-col s8 w3-right-align">
               <p>{localDateTime}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row">
               <p>Date&nbsp;(UTC):</p>
-            </div>
-            <div className="w3-col s8 w3-right-align">
               <p>{utcTime}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s3">
+            <div className="info-row">
               <p>Age:</p>
-            </div>
-            <div className="w3-col s9 w3-right-align">
               <p>{formatDoubleLabel(props.moonInfo.age, " days")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s3">
+            <div className="info-row">
               <p>Phase:</p>
-            </div>
-            <div className="w3-col s9 w3-right-align">
               <p>{props.moonInfo.phase}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row">
               <p>Illumination:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align">
               <p>
                 {formatDoubleLabel(props.moonInfo.fractional_phase * 100, "%")}
               </p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s5">
+            <div className="info-row">
               <p>Colongitude:</p>
-            </div>
-            <div className="w3-col s7 w3-right-align ">
               <p>{formatCoordinateLabel(props.moonInfo.colong, null)}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row">
               <p>Elongation:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align">
               <p>{formatCoordinateLabel(props.moonInfo.elongation, null)}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row coord-check">
               <p>Distance:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.earth_distance, " km")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s5">
+            <div className="info-row coord-check">
               <p>Angular&nbsp;Size:</p>
-            </div>
-            <div className="w3-col s7 w3-right-align coord-check">
               <p>{formatDoubleLabel(props.moonInfo.angular_size, "°")}</p>
             </div>
-          </div>
-          <div className="w3-row">
-            <div className="w3-col s4">
+            <div className="info-row">
               <p>Magnitude:</p>
-            </div>
-            <div className="w3-col s8 w3-right-align">
               <p>{formatDoubleLabel(props.moonInfo.magnitude, "")}</p>
             </div>
           </div>
