@@ -1,7 +1,14 @@
 @import "./media_mixins";
 @import "./next_four_phase_mixins";
 
-@include scaling(94px, 24px, 10px);
+.phase {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@include scaling(70px, 18px, 8px);
 
 @include for-tablet-portrait-up {
   @include scaling(80px, 18px, 8px);
