@@ -28,24 +28,17 @@ function DateTimeChangeDialog(props) {
       {props.isShowing
         ? ReactDOM.createPortal(
             <div className="modal">
-              <div
-                className="w3-container content-dt"
-                aria-modal
-                aria-hidden
-                role="dialog"
-              >
-                <div className="header">
-                  <button className="close w3-right" onClick={props.hide}>
+              <div className="content-dt" aria-modal aria-hidden role="dialog">
+                <div className="header info-row">
+                  <h1>Change Date/Time</h1>
+                  <button className="close" onClick={props.hide}>
                     <FontAwesomeIcon icon={faWindowClose} />
                   </button>
-                  <h1>Change Date/Time</h1>
                 </div>
-                <div className="w3-center">
-                  <div className="button-div">
-                    <button className="update-button" onClick={changeDate}>
-                      Update
-                    </button>
-                  </div>
+                <div className="widget-dt">
+                  <button className="update-button" onClick={changeDate}>
+                    Update
+                  </button>
                   <DatePicker
                     selected={newDate}
                     onChange={onChange}
@@ -54,8 +47,7 @@ function DateTimeChangeDialog(props) {
                     inline
                     timeFormat="HH:mm"
                     timeIntervals={1}
-                    timeCaption="Time"
-                    dateFormat="MM/dd/yyyy HH:mm"
+                    dateFormat="yyyy/MM/dd HH:mm"
                   />
                 </div>
               </div>
