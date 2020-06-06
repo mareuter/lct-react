@@ -4,6 +4,7 @@ import "../styles/FeatureList.scss";
 
 import Error from "./Error";
 import Feature from "./Feature";
+import NoFeaturesVisible from "./NoFeaturesVisible";
 
 import { useModal } from "./Hooks";
 import FeatureDialog from "./FeatureDialog";
@@ -47,9 +48,12 @@ function FeatureList(props) {
               feature={featureToShow}
             />
             <ul className="" onClick={showFeature}>
-              {featureArray.map((feature) => (
+              {featureArray.length !== 0 ? (
+              featureArray.map((feature) => (
                 <Feature key={feature.key} name={feature.name} />
-              ))}
+              ))) : (
+                <NoFeaturesVisible />
+              )}
             </ul>
           </div>
         </div>
