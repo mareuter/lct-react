@@ -39,11 +39,6 @@ p {
   justify-content: space-between;
 }
 
-.outer {
-  display: flex;
-  flex-direction: column;
-}
-
 @include for-tablet-portrait-up {
   .App-main {
     top: 50px;

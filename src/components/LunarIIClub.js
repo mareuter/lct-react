@@ -24,12 +24,12 @@ function LunarIIClub(props) {
       params: {
         date: props.date,
         lat: props.latitude,
-        lon: props.longitude
+        lon: props.longitude,
       },
-      cancelToken: axiosCancelSource.token
+      cancelToken: axiosCancelSource.token,
     };
     axios(config)
-      .then(response => {
+      .then((response) => {
         setLunarIIClubInfo(response.data);
         setError(false);
         localStorage.setItem(
@@ -37,7 +37,7 @@ function LunarIIClub(props) {
           JSON.stringify(response.data)
         );
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.toString() !== "Cancel") {
           setError(true);
         }
@@ -46,6 +46,23 @@ function LunarIIClub(props) {
       axiosCancelSource.cancel();
     };
   }, [props.date, props.latitude, props.longitude]);
+
+  useEffect(() => {
+    let div = document.getElementsByClassName("outer")[0];
+    let divP = div.childNodes[0];
+    divP.style = "";
+    let viewportBottom = document.documentElement.clientHeight;
+    let diff = viewportBottom - div.getBoundingClientRect().top;
+    // console.log("B1:", viewportBottom)
+    // console.log("B2:", div.getBoundingClientRect().top)
+    if (diff < 0) {
+      divP.style = "display: hidden; margin: 0;";
+    } else {
+      let height = "height: calc(" + diff.toString() + "px + 10vw)";
+      let str = "flex-grow: 1; " + height;
+      divP.style = str;
+    }
+  });
 
   return (
     <div className="lc2-container">
@@ -62,6 +79,9 @@ function LunarIIClub(props) {
           features={lunarIIClubInfo.landing_sites}
           error={error}
         />
+      </div>
+      <div className="outer">
+        <p />
       </div>
     </div>
   );
