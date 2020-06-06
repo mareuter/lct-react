@@ -28,17 +28,17 @@ function MoonInformation(props) {
         date: props.date,
         tz: props.timezone,
         lat: props.latitude,
-        lon: props.longitude
+        lon: props.longitude,
       },
-      cancelToken: axiosCancelSource.token
+      cancelToken: axiosCancelSource.token,
     };
     axios(config)
-      .then(response => {
+      .then((response) => {
         setMoonInfo(response.data);
         setError(false);
         localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(response.data));
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.toString() !== "Cancel") {
           setError(true);
         }
@@ -58,6 +58,23 @@ function MoonInformation(props) {
       }
     }
   }, [props.coordinatesGood]);
+
+  useEffect(() => {
+    let div = document.getElementsByClassName("outer")[0];
+    let divP = div.childNodes[0];
+    divP.style = "";
+    let viewportBottom = document.documentElement.clientHeight;
+    let diff = viewportBottom - div.getBoundingClientRect().top;
+    // console.log("B1:", viewportBottom)
+    // console.log("B2:", div.getBoundingClientRect().top)
+    if (diff < 0) {
+      divP.style = "display: hidden; margin: 0;";
+    } else {
+      let height = "height: calc(" + diff.toString() + "px + 10vw)";
+      let str = "flex-grow: 1; " + height;
+      divP.style = str;
+    }
+  });
 
   return (
     <div className="mi-container">
@@ -83,6 +100,9 @@ function MoonInformation(props) {
       </div>
       <div className="sp-item">
         <SkyPosition moonInfo={moonInfo} error={error} />
+      </div>
+      <div className="outer">
+        <p />
       </div>
     </div>
   );

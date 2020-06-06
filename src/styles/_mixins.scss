@@ -25,3 +25,7 @@
 @mixin medium-grid-container {
   grid-template-columns: 1fr 1fr;
 }
+
+@mixin large-grid-container {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
