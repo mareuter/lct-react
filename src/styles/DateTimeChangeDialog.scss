@@ -3,15 +3,15 @@
 @import "./modal_mixins";
 @import "./animation_mixins";
 
-$slide-in-left: 25vw;
+$slide-in-left: 10vw;
 $animationName: slideInTopDt;
 
 .content-dt {
   @extend .content;
-  top: 0;
+  top: 15vh;
   left: $slide-in-left;
-  height: 100%;
-  width: 50vw;
+  height: 82vh;
+  width: 80vw;
   @include animation(slideInLeft, 0.45s);
 }
 
@@ -73,6 +73,8 @@ $animationName: slideInTopDt;
 .react-datepicker__day,
 .react-datepicker__time-name {
   color: $navtype-color;
+  width: 1rem;
+  line-height: 1rem;
 }
 
 .react-datepicker__current-month,
@@ -93,34 +95,93 @@ $animationName: slideInTopDt;
 
 @include small-vertical {
   $slide-in-top: 20vh;
-  .content-dt {
-    left: 10vw;
-    height: 60vh;
-    width: 80vw;
-    @include animation($animationName, 0.45s);
-  }
+  // @include content-dt-scaling(10vw, 60vh, 80vw, $animationName); 
+  @include content-dt-vh-scaling(60vh, $animationName);
   @include slide-in-top($animationName, $slide-in-top);
   @include content-dt-top($slide-in-top);
+
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    width: 1.7rem;
+    line-height: 1.7rem;
+  }
 }
 
 @include medium-small-vertical {
   $slide-in-top: 25vh;
-  .content-dt {
-    left: 30vw;
-    height: 55vh;
-    width: 40vw;
-    @include animation($animationName, 0.45s);
-  }
+  // @include content-dt-scaling(30vw, 50vh, 40vw, $animationName);
+  @include content-dt-vh-scaling(50vh, $animationName);
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include medium-vertical {
+  $slide-in-top: 25vh;
+  @include content-dt-vh-scaling(45vh, $animationName);
   @include slide-in-top($animationName, $slide-in-top);
   @include content-dt-top($slide-in-top);
 }
 
 @include large-vertical {
   $slide-in-top: 30vh;
-  .content-dt {
-    height: 40vh;
-    @include animation($animationName, 0.45s);
-  }
+  // @include content-dt-scaling(30vw, 40vh, 40vw, $animationName);
+  @include content-dt-vh-scaling(40vh, $animationName);
   @include slide-in-top($animationName, $slide-in-top);
   @include content-dt-top($slide-in-top);
+}
+
+@include extra-large-vertical {
+  $slide-in-top: 30vh;
+  // @include content-dt-scaling(30vw, 30vh, 40vw, $animationName);
+  @include content-dt-vh-scaling(35vh, $animationName);
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include extra-extra-large-vertical {
+  $slide-in-top: 30vh;
+  @include content-dt-vh-scaling(30vh, $animationName);
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include extra-extra-extra-large-vertical {
+  $slide-in-top: 30vh;
+  @include content-dt-vh-scaling(27vh, $animationName);
+  @include slide-in-top($animationName, $slide-in-top);
+  @include content-dt-top($slide-in-top);
+}
+
+@include extra-small-horizontal {
+  $slide-in-left: 25vw;
+  @include slide-in-left($slide-in-left);
+  @include content-dt-vw-scaling(15vw, 70vw);
+}
+
+@include small-horizontal {
+  $slide-in-left: 25vw;
+  @include slide-in-left($slide-in-left);
+  @include content-dt-vw-scaling(25vw, 45vw);
+}
+
+@include medium-small-horizontal {
+  $slide-in-left: 25vw;
+  @include slide-in-left($slide-in-left);
+  @include content-dt-vw-scaling(25vw, 42vw);
+  @include update-button-scaling(15vw);
+}
+
+@include large-horizontal {
+  $slide-in-left: 25vw;
+  @include slide-in-left($slide-in-left);
+  @include content-dt-vw-scaling(25vw, 35vw);
+  @include update-button-scaling(10vw);
+}
+
+@include extra-large-horizontal {
+  $slide-in-left: 35vw;
+  @include slide-in-left($slide-in-left);
+  @include content-dt-vw-scaling(35vw, 32vw);
+  @include update-button-scaling(7vw);
 }
