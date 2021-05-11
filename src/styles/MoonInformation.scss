@@ -41,9 +41,14 @@
 }
 
 @include for-desktop-up {
-  .mi-container {
-    @include large-grid-container;
-    grid-template-areas:
-      "mi nfp pal sp";
-  }
+  grid-column-gap: 2000px;
 }
+
+// @include for-desktop-up {
+//   .mi-container {
+//     @include large-grid-container;
+//     grid-template-areas:
+//       "mi nfp pal"
+//       ". sp .";
+//   }
+// }
