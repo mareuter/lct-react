@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import { useThree } from "react-three-fiber";
+import { useThree } from "@react-three/fiber";
 
 const POSITION = [0, 0, 250];
 const BOX = 200;
@@ -9,7 +9,7 @@ const HEIGHT_PERCENT_CHANGE = 10;
 
 function Camera(props) {
   let camera = useRef();
-  let { setDefaultCamera } = useThree();
+  const set = useThree(state => state.set);
   let [aspect, setAspect] = useState(1);
   let [maxCameraZoomOut, setMaxCameraZoomOut] = useState(BASE_ZOOM);
   let [currentHeight, setCurrentHeight] = useState(0);
@@ -29,7 +29,7 @@ function Camera(props) {
     }
   }, [currentHeight]);
 
-  useEffect(() => void setDefaultCamera(camera.current), [setDefaultCamera]);
+  useEffect(() => void set({ camera: camera.current }), [set]);
 
   useEffect(() => {
     resizeCallback();
