@@ -3,7 +3,7 @@
 @import "./media_mixins";
 @import "./main_nav_mixins";
 
-$menu-font: 20px;
+$menu-font: 15px;
 
 .main-nav {
   display: flex;
@@ -102,10 +102,10 @@ $menu-font: 20px;
 
 @include for-tablet-portrait-up {
   @include nav-button-scaling(30px, 15px, 3px);
-  @include menu-button-scaling(30px, 45px, 5px);
+  @include menu-button-scaling(25px, 45px, 5px);
 }
 
 @include for-desktop-up {
   @include nav-button-scaling(45px, 25px, 4px);
-  @include menu-button-scaling(45px, 60px, 10px);
+  @include menu-button-scaling(35px, 60px, 10px);
 }
