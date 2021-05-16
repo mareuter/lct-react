@@ -19,5 +19,5 @@
 }
 
 @include for-desktop-up {
-  @include scaling(115px, 30px, 28px);
+  @include scaling(100px, 28px, 20px);
 }

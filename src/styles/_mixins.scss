@@ -18,8 +18,8 @@
 @mixin small-grid-container {
   display: grid;
   align-content: center;
-  grid-template-columns: 1fr;
   grid-template-rows: auto;
+  grid-template-columns: 1fr;
 }
 
 @mixin medium-grid-container {

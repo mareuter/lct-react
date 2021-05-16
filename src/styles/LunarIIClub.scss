@@ -27,6 +27,6 @@
 @include for-desktop-up {
   .lc2-container {
     @include large-grid-container;
-    grid-template-areas: ". features landing .";
+    grid-template-areas: "features landing . ";
   }
 }

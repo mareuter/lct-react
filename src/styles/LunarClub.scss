@@ -39,6 +39,8 @@
 @include for-desktop-up {
   .lc-container {
     @include large-grid-container;
-    grid-template-areas: "special ne bino tele";
+    grid-template-areas:
+      "special ne bino"
+      ". tele .";
   }
 }
