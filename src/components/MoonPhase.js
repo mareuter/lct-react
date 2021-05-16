@@ -15,7 +15,7 @@ const moonRadius = 100;
 function MoonPhase(props) {
   return (
     <ErrorBoundary>
-      <Canvas invalidateFrameloop={true}>
+      <Canvas frameloop="demand">
         <Camera />
         <Sun
           solarElongation={props.solarElongation}

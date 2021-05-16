@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-
-import { useThree } from "@react-three/fiber";
+import React, { useState } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import { OrthographicCamera } from "@react-three/drei";
 
 const POSITION = [0, 0, 250];
 const BOX = 200;
@@ -8,50 +8,29 @@ const BASE_ZOOM = 0.8;
 const HEIGHT_PERCENT_CHANGE = 10;
 
 function Camera(props) {
-  let camera = useRef();
-  const set = useThree(state => state.set);
-  let [aspect, setAspect] = useState(1);
+  const canvasSize = useThree((state) => state.size);
   let [maxCameraZoomOut, setMaxCameraZoomOut] = useState(BASE_ZOOM);
   let [currentHeight, setCurrentHeight] = useState(0);
 
-  const resizeCallback = useCallback(() => {
-    let div = document.getElementsByClassName("canvas")[0];
+  useFrame(() => {
     let percentHeightChange =
-      100 * (Math.abs(currentHeight - div.clientHeight) /
-      (currentHeight + div.clientHeight));
+      100 *
+      (Math.abs(currentHeight - canvasSize.height) /
+        (currentHeight + canvasSize.height));
     if (percentHeightChange > HEIGHT_PERCENT_CHANGE) {
-      setAspect(div.clientWidth / div.clientHeight);
       setMaxCameraZoomOut(
-        (BASE_ZOOM * Math.min(div.clientHeight, div.clientWidth)) / BOX
+        (BASE_ZOOM * Math.min(canvasSize.height, canvasSize.width)) / BOX
       );
-      camera.current.updateProjectionMatrix();
-      setCurrentHeight(div.clientHeight);
+      setCurrentHeight(canvasSize.height);
     }
-  }, [currentHeight]);
-
-  useEffect(() => void set({ camera: camera.current }), [set]);
-
-  useEffect(() => {
-    resizeCallback();
-    window.addEventListener("resize", resizeCallback);
-    return () => window.removeEventListener("resize", resizeCallback);
-  }, [resizeCallback]);
+  });
 
   return (
-    <orthographicCamera
-      ref={camera}
+    <OrthographicCamera
+      makeDefault
       position={POSITION}
-      left={-BOX}
-      right={BOX}
-      top={BOX}
-      bottom={BOX}
-      near={0.1}
-      far={1000}
-      aspect={aspect}
       zoom={maxCameraZoomOut}
-      {...props}
     />
   );
 }
-
 export default Camera;
