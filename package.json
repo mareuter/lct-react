@@ -1,6 +1,6 @@
 {
   "name": "lct-react",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "license": "MIT",
   "author": {
     "name": "Michael Reuter",
@@ -61,5 +61,6 @@
     "path-parse": "^1.0.7",
     "set-value": "^4.0.1",
     "ws": "^6.2.2"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }
