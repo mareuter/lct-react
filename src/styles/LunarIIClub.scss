@@ -23,3 +23,10 @@
     grid-template-areas: "features landing";
   }
 }
+
+@include for-desktop-up {
+  .lc2-container {
+    @include large-grid-container;
+    grid-template-areas: "features landing . ";
+  }
+}

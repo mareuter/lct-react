@@ -4,6 +4,7 @@ import "../styles/FeatureList.scss";
 
 import Error from "./Error";
 import Feature from "./Feature";
+import NoFeaturesVisible from "./NoFeaturesVisible";
 
 import { useModal } from "./Hooks";
 import FeatureDialog from "./FeatureDialog";
@@ -28,28 +29,33 @@ function FeatureList(props) {
     if (span === null) {
       return;
     }
-    let featureName = span.nextSibling.childNodes[0].innerHTML;
-    setFeatureToShow(featureArray.find(f => f.name === featureName));
+
+    let featureName = span.previousSibling.childNodes[0].data;
+    setFeatureToShow(featureArray.find((f) => f.name === featureName));
     toggle();
   }
 
   return (
     <div>
       {!hasError ? (
-        <div className="w3-container">
-          <div className="w3-row w3-center">
-            <h1>{props.title}</h1>
+        <div>
+          <h1>{props.title}</h1>
+          <div className="info-container">
+            <div className="dialog"></div>
+            <FeatureDialog
+              isShowing={isShowing}
+              hide={toggle}
+              feature={featureToShow}
+            />
+            <ul className="" onClick={showFeature}>
+              {featureArray.length !== 0 ? (
+              featureArray.map((feature) => (
+                <Feature key={feature.key} name={feature.name} />
+              ))) : (
+                <NoFeaturesVisible />
+              )}
+            </ul>
           </div>
-          <FeatureDialog
-            isShowing={isShowing}
-            hide={toggle}
-            feature={featureToShow}
-          />
-          <ul className="w3-ul" onClick={showFeature}>
-            {featureArray.map(feature => (
-              <Feature key={feature.key} name={feature.name} />
-            ))}
-          </ul>
         </div>
       ) : (
         <div>

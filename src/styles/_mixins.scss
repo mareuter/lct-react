@@ -1,7 +1,6 @@
 @mixin remove-appearance {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
 }
 
 @mixin make-square($value) {
@@ -19,10 +18,14 @@
 @mixin small-grid-container {
   display: grid;
   align-content: center;
-  grid-template-columns: 1fr;
   grid-template-rows: auto;
+  grid-template-columns: 1fr;
 }
 
 @mixin medium-grid-container {
   grid-template-columns: 1fr 1fr;
+}
+
+@mixin large-grid-container {
+  grid-template-columns: 1fr 1fr 1fr;
 }

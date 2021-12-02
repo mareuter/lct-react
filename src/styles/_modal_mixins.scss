@@ -22,9 +22,29 @@
 
 @mixin content-dt-scaling($left, $height, $width, $animName) {
   .content-dt {
-    left: 30vw;
-    height: 40vh;
-    width: 40vw;
+    left: $left;
+    height: $height;
+    width: $width;
     @include animation($animName, 0.45s);
+  }
+}
+
+@mixin content-dt-vw-scaling($left, $width) {
+  .content-dt {
+    left: $left;
+    width: $width;
+  }
+}
+
+@mixin content-dt-vh-scaling($height, $animName) {
+  .content-dt {
+    height: $height;
+    @include animation($animName, 0.45s);
+  }
+}
+
+@mixin update-button-scaling($width) {
+  .update-button {
+    width: $width;
   }
 }

@@ -19,27 +19,35 @@ h1 {
   font-weight: 500;
   font-size: 26px;
   margin: 5px;
+  text-align: center;
 }
 
 p {
   margin: 5px 2px;
 }
 
-.outer {
+.info-container {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
-@include for-tablet-portrait-up {
-  .App-main {
-    top: 50px;
-  }
+.info-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@include for-tablet-landscape-up {
+@include medium-small-horizontal {
+  @include scaling(18px, 26px, 50px);
+}
+
+@include large-horizontal {
   @include scaling(25px, 35px, 55px);
 }
 
-@include for-desktop-up {
+@include extra-large-horizontal {
   @include scaling(30px, 45px, 75px);
 }
