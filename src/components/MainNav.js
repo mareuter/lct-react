@@ -106,8 +106,7 @@ function MainNav() {
       <div className="nav-item">
         <NavLink
           to="/moon_info"
-          exact
-          activeClassName="active"
+          activeclassname="active"
           onClick={clickHandler}
         >
           <img src={moon_info_tab} alt="Moon Info Tab" />
@@ -117,7 +116,7 @@ function MainNav() {
       <div className="nav-item">
         <NavLink
           to="/lunar_club"
-          activeClassName="active"
+          activeclassname="active"
           onClick={clickHandler}
         >
           <img src={lunar_club_tab} alt="Lunar Club Tab" />
@@ -127,7 +126,7 @@ function MainNav() {
       <div className="nav-item">
         <NavLink
           to="/lunar_ii_club"
-          activeClassName="active"
+          activeclassname="active"
           onClick={clickHandler}
         >
           <img src={lunar_2_club_tab} alt="Lunar 2 Club Tab" />
