@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^13.1.1",
     "sass": "^1.50.0"
   },
   "dependenciesMeta": {
