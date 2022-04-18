@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import jstz from "jstz";
 
 import "./styles/App.scss";
@@ -72,42 +72,41 @@ function App() {
     <div className="App">
       <MainNav />
       <main className="App-main">
-        <Route exact path="/" component={Welcome} />
-        <Route
-          path="/moon_info"
-          render={(props) => (
-            <MoonInformation
-              {...props}
-              date={getSecondsTimestamp(date)}
-              timezone={timezone.current.name()}
-              latitude={coordinates.latitude}
-              longitude={coordinates.longitude}
-              coordinatesGood={coordinates.good}
-            />
-          )}
-        />
-        <Route
-          path="/lunar_club"
-          render={(props) => (
-            <LunarClub
-              {...props}
-              date={getSecondsTimestamp(date)}
-              latitude={coordinates.latitude}
-              longitude={coordinates.longitude}
-            />
-          )}
-        />
-        <Route
-          path="/lunar_ii_club"
-          render={(props) => (
-            <LunarIIClub
-              {...props}
-              date={getSecondsTimestamp(date)}
-              latitude={coordinates.latitude}
-              longitude={coordinates.longitude}
-            />
-          )}
-        />
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route
+            path="/moon_info"
+            element={
+              <MoonInformation
+                date={getSecondsTimestamp(date)}
+                timezone={timezone.current.name()}
+                latitude={coordinates.latitude}
+                longitude={coordinates.longitude}
+                coordinatesGood={coordinates.good}
+              />
+            }
+          />
+          <Route
+            path="/lunar_club"
+            element={
+              <LunarClub
+                date={getSecondsTimestamp(date)}
+                latitude={coordinates.latitude}
+                longitude={coordinates.longitude}
+              />
+            }
+          />
+          <Route
+            path="/lunar_ii_club"
+            element={
+              <LunarIIClub
+                date={getSecondsTimestamp(date)}
+                latitude={coordinates.latitude}
+                longitude={coordinates.longitude}
+              />
+            }
+          />
+        </Routes>
       </main>
     </div>
   );
