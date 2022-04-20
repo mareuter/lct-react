@@ -8,8 +8,8 @@ export const createFeatureArray = features => {
       longitude: features[index][3],
       type: features[index][6],
       diameter: features[index][1],
-      quadCode: features[index][7],
-      quadName: features[index][8],
+      quadCode: features[index][8],
+      quadName: features[index][7],
       key: key
     });
     key = key + 1;
