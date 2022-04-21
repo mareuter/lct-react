@@ -26,20 +26,18 @@ const AllTheProviders = ({ children }) => {
 const customRender = (ui, options) =>
   render(ui, { wrapper: AllTheProviders, ...options });
 
-describe("Does the app render", () => {
+describe("Does the app render default route", () => {
   test("Renders default route", () => {
     customRender(<App />);
     const links = screen.getAllByRole("link");
-    // for (var key in links[0]) {
-    //   console.log(key + " -> " + links[0].innerHTML[key]);
-    // }
     expect(links).toHaveLength(3);
-    // const LINK_NAMES = ["Moon Info Tab", "Lunar Club Tab", "Lunar 2 Club Tab"];
-    // links.forEach((link) => {
-    //   // console.log(link);
-    //   expect(LINK_NAMES.includes(link.name)).toBe(true);
-    // });
-    // expect(screen.getByRole("img", { name: "Lunar Club Tools" })).toHaveLength(1);
+    const LINK_NAMES = ["Moon Info", "Lunar Club", "Lunar II Club"];
+    links.forEach((link) => {
+      expect(LINK_NAMES).toContain(link.text);
+    });
+    let MAIN_IMAGE = "Lunar Club Tools";
+    const mainImage = screen.getByRole("img", { name: MAIN_IMAGE });
+    expect(mainImage.alt).toBe(MAIN_IMAGE);
   });
 
   test("Renders Moon Info tab route", async () => {
@@ -49,15 +47,15 @@ describe("Does the app render", () => {
     );
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(4);
-    // const DIV_NAMES = [
-    //   "Ephemeris",
-    //   "Next Four Phases",
-    //   "Phase and Libration",
-    //   "Sky Position",
-    // ];
-    // headings.forEach((heading) => {
-    //   expect(DIV_NAMES.includes(heading.outerText)).toBe(true);
-    // });
+    const DIV_NAMES = [
+      "Ephemeris",
+      "Next Four Phases",
+      "Phase and Libration",
+      "Sky Position",
+    ];
+    headings.forEach((heading) => {
+      expect(DIV_NAMES).toContain(heading.innerHTML);
+    });
   });
 
   test("Renders Lunar Club tab route", async () => {
@@ -66,12 +64,11 @@ describe("Does the app render", () => {
       screen.getByRole("link", { name: "Lunar Club Tab Lunar Club" })
     );
     const headings = screen.getAllByRole("heading", { level: 1 });
-    // console.log(headings)
-    expect(headings.length).toBe(4);
-    // const DIV_NAMES = ["Special", "Naked Eye", "Binocular", "Tele"];
-    // headings.forEach((heading) => {
-    //   expect(DIV_NAMES.includes(heading.name));
-    // });
+    expect(headings).toHaveLength(4);
+    const DIV_NAMES = ["Special", "Naked Eye", "Binocular", "Telescope"];
+    headings.forEach((heading) => {
+      expect(DIV_NAMES).toContain(heading.innerHTML);
+    });
   });
 
   test("Renders Lunar 2 Club tab route", async () => {
@@ -80,11 +77,10 @@ describe("Does the app render", () => {
       screen.getByRole("link", { name: "Lunar 2 Club Tab Lunar II Club" })
     );
     const headings = screen.getAllByRole("heading", { level: 1 });
-    // console.log(headings)
-    expect(headings.length).toBe(2);
-    // const DIV_NAMES = ["Special", "Naked Eye", "Binocular", "Tele"];
-    // headings.forEach((heading) => {
-    //   expect(DIV_NAMES.includes(heading.name));
-    // });
+    expect(headings).toHaveLength(2);
+    const DIV_NAMES = ["Features", "Landing Sites"];
+    headings.forEach((heading, index) => {
+      expect(DIV_NAMES).toContain(heading.innerHTML);
+    });
   });
 });
