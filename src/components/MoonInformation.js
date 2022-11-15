@@ -23,7 +23,7 @@ function MoonInformation(props) {
     let axiosCancelSource = axios.CancelToken.source();
 
     const config = {
-      url: "https://lct-web-stage.herokuapp.com/moon_info",
+      url: "https://lct-web.onrender.com/moon_info",
       params: {
         date: props.date,
         tz: props.timezone,

@@ -20,7 +20,7 @@ function LunarIIClub(props) {
     let axiosCancelSource = axios.CancelToken.source();
 
     const config = {
-      url: "https://lct-web-stage.herokuapp.com/lunar_two",
+      url: "https://lct-web.onrender.com/lunar_two",
       params: {
         date: props.date,
         lat: props.latitude,
