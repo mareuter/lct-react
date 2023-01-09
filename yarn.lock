@@ -8269,7 +8269,7 @@ __metadata:
     "@testing-library/user-event": ^14.1.1
     axios: ^0.26.1
     jstz: ^2.1.1
-    luxon: 1.26.0
+    luxon: 2.5.2
     react: 18.0.0
     react-datepicker: ^4.7.0
     react-dom: 18.0.0
@@ -8479,10 +8479,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:1.26.0":
-  version: 1.26.0
-  resolution: "luxon@npm:1.26.0"
-  checksum: 06706c615863f52f13bed0ba2b522150935c13d59f18cf924357d1fe621691cb5996e9275d19e5628a6cbccf5a2a8495b6b34ec462dc9462ed0fe0313c809019
+"luxon@npm:2.5.2":
+  version: 2.5.2
+  resolution: "luxon@npm:2.5.2"
+  checksum: d8b671ffd2ff0b438af862ac11082a81b3aedd9f8b6a4ca636f944224f8dd381125cd4d274ca0a8aedcaf2cfca0fc2ca96fe4cc1b16a28b7af701afb95c0bff8
   languageName: node
   linkType: hard
 
