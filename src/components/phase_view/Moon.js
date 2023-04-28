@@ -6,7 +6,7 @@ import Moon_map from "../../images/moon_map.png";
 import Moon_elevation_map from "../../images/moon_elevation_map.png";
 
 const NUM_MOON_SEGMENTS = 32;
-const OFFSET_Y_ROTATION = -THREE.Math.degToRad(90);
+const OFFSET_Y_ROTATION = -THREE.MathUtils.degToRad(90);
 const ANISOTROPY_LEVEL = 20;
 
 function Moon(props) {
@@ -23,8 +23,8 @@ function Moon(props) {
   let [librationLatRad, setLibrationLatRad] = useState(0);
 
   useEffect(() => {
-    setLibrationLonRad(THREE.Math.degToRad(props.libration.lon));
-    setLibrationLatRad(THREE.Math.degToRad(props.libration.lat));
+    setLibrationLonRad(THREE.MathUtils.degToRad(props.libration.lon));
+    setLibrationLatRad(THREE.MathUtils.degToRad(props.libration.lat));
   }, [props.libration.lon, props.libration.lat]);
 
   return (
