@@ -15,8 +15,8 @@ function Sun(props) {
       phaseAngle -= 360.0;
     }
 
-    let phaseAngleRad = THREE.Math.degToRad(-phaseAngle);
-    let subSolarLatRad = THREE.Math.degToRad(props.subSolarLatitude);
+    let phaseAngleRad = THREE.MathUtils.degToRad(-phaseAngle);
+    let subSolarLatRad = THREE.MathUtils.degToRad(props.subSolarLatitude);
 
     setSunXPosition(sunRadius * Math.sin(phaseAngleRad));
     setSunYPosition(sunRadius * Math.sin(subSolarLatRad));

@@ -19,13 +19,13 @@ function LibrationArrow(props) {
   useEffect(() => {
     let arrowRadius = props.moonRadius * ARROW_RADIUS_OFFSET;
 
-    let librationLonRad = THREE.Math.degToRad(props.libration.lon);
-    let librationLatRad = THREE.Math.degToRad(props.libration.lat);
+    let librationLonRad = THREE.MathUtils.degToRad(props.libration.lon);
+    let librationLatRad = THREE.MathUtils.degToRad(props.libration.lat);
     let librationPhaseAngRad = Math.atan2(librationLatRad, librationLonRad);
 
     setOriginXPosition(arrowRadius * Math.cos(librationPhaseAngRad));
     setOriginYPosition(arrowRadius * Math.sin(librationPhaseAngRad));
-    setOriginZRotation(THREE.Math.degToRad(90) + librationPhaseAngRad);
+    setOriginZRotation(THREE.MathUtils.degToRad(90) + librationPhaseAngRad);
   }, [props.libration.lon, props.libration.lat, props.moonRadius]);
 
   return (
