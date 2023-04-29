@@ -1,6 +1,6 @@
 {
   "name": "lct-react",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "license": "MIT",
   "author": {
     "name": "Michael Reuter",
@@ -67,6 +67,9 @@
     "moduleNameMapper": {
       "axios": "axios/dist/node/axios.cjs"
     }
+  },
+  "resolutions": {
+    "nth-check": "^2.0.1"
   },
   "packageManager": "yarn@3.3.0"
 }
