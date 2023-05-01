@@ -1,3 +1,5 @@
+import { it, describe, expect } from 'vitest';
+
 import { createFeatureArray } from "./Features";
 
 let FEATURE_LIST = {
@@ -45,39 +47,39 @@ let FEATURE_LIST = {
 describe("Parse and Check Featues", () => {
   const features = createFeatureArray(FEATURE_LIST);
 
-  test("Right Length", () => {
+  it("Right Length", () => {
     expect(features.length).toBe(3);
   });
 
-  test("First Feature Name", () => {
+  it("First Feature Name", () => {
     expect(features[0].name).toBe(FEATURE_LIST[0][0]);
   });
 
-  test("First Feature Diameter", () => {
+  it("First Feature Diameter", () => {
     expect(features[0].diameter).toBe(FEATURE_LIST[0][1]);
   });
 
-  test("Second Feature Latitude", () => {
+  it("Second Feature Latitude", () => {
     expect(features[1].latitude).toBe(FEATURE_LIST[1][2]);
   });
 
-  test("Second Feature Longitude", () => {
+  it("Second Feature Longitude", () => {
     expect(features[1].longitude).toBe(FEATURE_LIST[1][3]);
   });
 
-  test("Second Feature Type", () => {
+  it("Second Feature Type", () => {
     expect(features[1].type).toBe(FEATURE_LIST[1][6]);
   });
 
-  test("Third Feature Quad Name", () => {
+  it("Third Feature Quad Name", () => {
     expect(features[2].quadName).toBe(FEATURE_LIST[2][7]);
   });
 
-  test("Third Feature Quad Code", () => {
+  it("Third Feature Quad Code", () => {
     expect(features[2].quadCode).toBe(FEATURE_LIST[2][8]);
   });
 
-  test("Third Feature Key", () => {
+  it("Third Feature Key", () => {
     expect(features[2].key).toBe(2);
   });
 });

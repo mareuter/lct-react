@@ -3,13 +3,14 @@ import { BrowserRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ResizeObserver } from "@juggle/resize-observer";
+import { it, describe, expect, vi } from 'vitest';
 
 import { DateProvider } from "./DateContext";
 import App from "./App";
 
 const mockGeolocation = {
-  getCurrentPosition: jest.fn(),
-  watchPosition: jest.fn(),
+  getCurrentPosition: vi.fn(),
+  watchPosition: vi.fn(),
 };
 
 global.navigator.geolocation = mockGeolocation;
@@ -27,7 +28,7 @@ const customRender = (ui, options) =>
   render(ui, { wrapper: AllTheProviders, ...options });
 
 describe("Does the app render default route", () => {
-  test("Renders default route", () => {
+  it("Renders default route", () => {
     customRender(<App />);
     const links = screen.getAllByRole("link");
     expect(links).toHaveLength(3);
@@ -40,7 +41,7 @@ describe("Does the app render default route", () => {
     expect(mainImage.alt).toBe(MAIN_IMAGE);
   });
 
-  test("Renders Moon Info tab route", async () => {
+  it("Renders Moon Info tab route", async () => {
     customRender(<App />);
     await userEvent.click(
       screen.getByRole("link", { name: "Moon Info Tab Moon Info" })
@@ -58,7 +59,7 @@ describe("Does the app render default route", () => {
     });
   });
 
-  test("Renders Lunar Club tab route", async () => {
+  it("Renders Lunar Club tab route", async () => {
     customRender(<App />);
     await userEvent.click(
       screen.getByRole("link", { name: "Lunar Club Tab Lunar Club" })
@@ -71,7 +72,7 @@ describe("Does the app render default route", () => {
     });
   });
 
-  test("Renders Lunar 2 Club tab route", async () => {
+  it("Renders Lunar 2 Club tab route", async () => {
     customRender(<App />);
     await userEvent.click(
       screen.getByRole("link", { name: "Lunar 2 Club Tab Lunar II Club" })
