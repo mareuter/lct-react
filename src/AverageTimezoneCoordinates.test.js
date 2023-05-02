@@ -1,5 +1,4 @@
 import { it, describe, expect } from 'vitest';
-import jstz from "jstz";
 
 import {getAverageTimezoneCoordinates} from "./AverageTimezoneCoordinates";
 
