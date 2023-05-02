@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
-import { OrthographicCamera } from "@react-three/drei";
+import React, { useState } from 'react';
+import { useFrame, useThree } from '@react-three/fiber';
+import { OrthographicCamera } from '@react-three/drei';
 
 const POSITION = [0, 0, 250];
 const BOX = 200;
@@ -13,24 +13,13 @@ function Camera(props) {
   let [currentHeight, setCurrentHeight] = useState(0);
 
   useFrame(() => {
-    let percentHeightChange =
-      100 *
-      (Math.abs(currentHeight - canvasSize.height) /
-        (currentHeight + canvasSize.height));
+    let percentHeightChange = 100 * (Math.abs(currentHeight - canvasSize.height) / (currentHeight + canvasSize.height));
     if (percentHeightChange > HEIGHT_PERCENT_CHANGE) {
-      setMaxCameraZoomOut(
-        (BASE_ZOOM * Math.min(canvasSize.height, canvasSize.width)) / BOX
-      );
+      setMaxCameraZoomOut((BASE_ZOOM * Math.min(canvasSize.height, canvasSize.width)) / BOX);
       setCurrentHeight(canvasSize.height);
     }
   });
 
-  return (
-    <OrthographicCamera
-      makeDefault
-      position={POSITION}
-      zoom={maxCameraZoomOut}
-    />
-  );
+  return <OrthographicCamera makeDefault position={POSITION} zoom={maxCameraZoomOut} />;
 }
 export default Camera;

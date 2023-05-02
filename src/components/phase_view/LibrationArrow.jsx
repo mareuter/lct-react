@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import * as THREE from "three";
+import * as THREE from 'three';
 
 const ARROW_RADIUS_OFFSET = 1.12;
 const SEGMENTS = 32;
@@ -29,10 +29,7 @@ function LibrationArrow(props) {
   }, [props.libration.lon, props.libration.lat, props.moonRadius]);
 
   return (
-    <group
-      position={[originXPosition, originYPosition, 0]}
-      rotation={[0, 0, originZRotation]}
-    >
+    <group position={[originXPosition, originYPosition, 0]} rotation={[0, 0, originZRotation]}>
       <mesh
         visible
         position={[0, CYLINDER_HEIGHT / 2, 0]}
@@ -42,14 +39,7 @@ function LibrationArrow(props) {
       <mesh
         visible
         position={[0, 0, 0]}
-        geometry={
-          new THREE.CylinderGeometry(
-            CYLINDER_RADIUS,
-            CYLINDER_RADIUS,
-            CYLINDER_HEIGHT,
-            SEGMENTS
-          )
-        }
+        geometry={new THREE.CylinderGeometry(CYLINDER_RADIUS, CYLINDER_RADIUS, CYLINDER_HEIGHT, SEGMENTS)}
         material={new THREE.MeshBasicMaterial(ARROW_MATERIAL)}
       />
     </group>

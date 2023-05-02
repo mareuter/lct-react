@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "../styles/Feature.scss";
+import '../styles/Feature.scss';
 
 function NoFeaturesVisible() {
   return (

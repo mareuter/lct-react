@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
-import DatePicker from "react-datepicker";
-import { useDateValue } from "../DateContext";
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import DatePicker from 'react-datepicker';
+import { useDateValue } from '../DateContext';
 
-import "react-datepicker/dist/react-datepicker.css";
-import "../styles/DateTimeChangeDialog.scss";
+import 'react-datepicker/dist/react-datepicker.css';
+import '../styles/DateTimeChangeDialog.scss';
 
-let domElement = document.getElementById("root");
+let domElement = document.getElementById('root');
 
 function DateTimeChangeDialog(props) {
   let { date, setDate } = useDateValue();
@@ -52,7 +52,7 @@ function DateTimeChangeDialog(props) {
                 </div>
               </div>
             </div>,
-            domElement
+            domElement,
           )
         : null}
     </div>
