@@ -2344,8 +2344,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.66.0":
-  version: 9.66.1
-  resolution: "@react-three/drei@npm:9.66.1"
+  version: 9.68.2
+  resolution: "@react-three/drei@npm:9.68.2"
   dependencies:
     "@babel/runtime": ^7.11.2
     "@react-spring/three": ~9.6.1
@@ -2375,7 +2375,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 95b7d5ccc6e82c4bd5f8d7cff330ec16591923844a95905a2bd3f6160d2a264af29eedc2036f6803e2c033492aa29bd828fc5356a091c8eb03c241938a78497b
+  checksum: 2b664dbe46f1015940010953db5b6eed1ede23cdb940a62ebee8339cde00b608273b8fcc270409b40b1c24c84abf6c3b84b587bbd8f2502d4e3e8c82fda2ae14
   languageName: node
   linkType: hard
 
