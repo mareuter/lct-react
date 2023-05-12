@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import Ephemeris from "./Ephemeris";
-import NextFourPhases from "./NextFourPhases";
-import PhaseAndLibration from "./PhaseAndLibration";
-import SkyPosition from "./SkyPosition";
+import Ephemeris from './Ephemeris';
+import NextFourPhases from './NextFourPhases';
+import PhaseAndLibration from './PhaseAndLibration';
+import SkyPosition from './SkyPosition';
 
-import "../styles/MoonInformation.scss";
+import '../styles/MoonInformation.scss';
 
-import moonInfoJson from "../data/moonInfo.json";
+import moonInfoJson from '../data/moonInfo.json';
 
-const MOON_INFO_LOCAL = "moonInfo";
+const MOON_INFO_LOCAL = 'moonInfo';
 
 function MoonInformation(props) {
   let moonInfoState = localStorage.getItem(MOON_INFO_LOCAL)
@@ -23,7 +23,7 @@ function MoonInformation(props) {
     let axiosCancelSource = axios.CancelToken.source();
 
     const config = {
-      url: "https://lct-web.onrender.com/moon_info",
+      url: 'https://lct-web.onrender.com/moon_info',
       params: {
         date: props.date,
         tz: props.timezone,
@@ -39,7 +39,7 @@ function MoonInformation(props) {
         localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(response.data));
       })
       .catch((error) => {
-        if (error.toString() !== "Cancel") {
+        if (error.toString() !== 'Cancel') {
           setError(true);
         }
       });
@@ -49,29 +49,29 @@ function MoonInformation(props) {
   }, [props.date, props.timezone, props.latitude, props.longitude]);
 
   useEffect(() => {
-    let divs = document.getElementsByClassName("coord-check");
+    let divs = document.getElementsByClassName('coord-check');
     for (var i = 0; i < divs.length; i++) {
       if (props.coordinatesGood) {
-        divs[i].className = divs[i].className.replace(" bad-coords", "");
+        divs[i].className = divs[i].className.replace(' bad-coords', '');
       } else {
-        divs[i].className += " bad-coords";
+        divs[i].className += ' bad-coords';
       }
     }
   }, [props.coordinatesGood]);
 
   useEffect(() => {
-    let div = document.getElementsByClassName("outer")[0];
+    let div = document.getElementsByClassName('outer')[0];
     let divP = div.childNodes[0];
-    divP.style = "";
+    divP.style = '';
     let viewportBottom = document.documentElement.clientHeight;
     let diff = viewportBottom - div.getBoundingClientRect().top;
     // console.log("B1:", viewportBottom)
     // console.log("B2:", div.getBoundingClientRect().top)
     if (diff < 0) {
-      divP.style = "display: hidden; margin: 0;";
+      divP.style = 'display: hidden; margin: 0;';
     } else {
-      let height = "height: calc(" + diff.toString() + "px + 10vw)";
-      let str = "flex-grow: 1; " + height;
+      let height = 'height: calc(' + diff.toString() + 'px + 10vw)';
+      let str = 'flex-grow: 1; ' + height;
       divP.style = str;
     }
   });
@@ -89,11 +89,7 @@ function MoonInformation(props) {
         />
       </div>
       <div className="nfp-item">
-        <NextFourPhases
-          timezone={props.timezone}
-          moonInfo={moonInfo}
-          error={error}
-        />
+        <NextFourPhases timezone={props.timezone} moonInfo={moonInfo} error={error} />
       </div>
       <div className="pal-item">
         <PhaseAndLibration moonInfo={moonInfo} error={error} />

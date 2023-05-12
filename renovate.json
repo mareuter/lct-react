@@ -4,5 +4,7 @@
     "config:base"
   ],
   "timezone": "America/Phoenix",
-  "schedule": ["every saturday"]
+  "schedule": [
+    "on saturday"
+  ]
 }

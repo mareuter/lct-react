@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import "../styles/PhaseAndLibration.scss";
+import '../styles/PhaseAndLibration.scss';
 
-import Error from "./Error";
-import { formatDoubleLabel } from "../Formatters";
-import MoonPhase from "./MoonPhase";
+import Error from './Error';
+import { formatDoubleLabel } from '../Formatters';
+import MoonPhase from './MoonPhase';
 
 function PhaseAndLibration(props) {
   const hasError = props.error;
@@ -27,15 +27,15 @@ function PhaseAndLibration(props) {
           <div className="info-container">
             <div className="info-row">
               <p>Libration Latitude:</p>
-              <p>{formatDoubleLabel(props.moonInfo.libration_lat, "°")}</p>
+              <p>{formatDoubleLabel(props.moonInfo.libration_lat, '°')}</p>
             </div>
             <div className="info-row">
               <p>Libration Longitude:</p>
-              <p>{formatDoubleLabel(props.moonInfo.libration_lon, "°")}</p>
+              <p>{formatDoubleLabel(props.moonInfo.libration_lon, '°')}</p>
             </div>
             <div className="info-row">
               <p>SubSolar Latitude:</p>
-              <p>{formatDoubleLabel(props.moonInfo.subsolar_lat, "°")}</p>
+              <p>{formatDoubleLabel(props.moonInfo.subsolar_lat, '°')}</p>
             </div>
           </div>
         </div>

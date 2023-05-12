@@ -1,17 +1,17 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Route, Routes } from "react-router-dom";
-import jstz from "jstz";
+import React, { useEffect, useState, useRef } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import jstz from 'jstz';
 
-import "./styles/App.scss";
+import './styles/App.scss';
 
-import MainNav from "./components/MainNav";
-import Welcome from "./components/Welcome";
-import MoonInformation from "./components/MoonInformation";
-import LunarClub from "./components/LunarClub";
-import LunarIIClub from "./components/LunarIIClub";
+import MainNav from './components/MainNav';
+import Welcome from './components/Welcome';
+import MoonInformation from './components/MoonInformation';
+import LunarClub from './components/LunarClub';
+import LunarIIClub from './components/LunarIIClub';
 
-import { useDateValue } from "./DateContext";
-import { getAverageTimezoneCoordinates } from "./AverageTimezoneCoordinates";
+import { useDateValue } from './DateContext';
+import { getAverageTimezoneCoordinates } from './AverageTimezoneCoordinates';
 
 function App() {
   let date = useDateValue().date;
@@ -39,25 +39,23 @@ function App() {
       var message;
       switch (error.code) {
         case error.PERMISSION_DENIED:
-          message = "User denied the request for Geolocation.";
+          message = 'User denied the request for Geolocation.';
           break;
         case error.POSITION_UNAVAILABLE:
-          message = "Location information is unavailable.";
+          message = 'Location information is unavailable.';
           break;
         case error.TIMEOUT:
-          message = "The request to get user location timed out.";
+          message = 'The request to get user location timed out.';
           break;
         case error.UNKNOWN_ERROR:
         default:
-          message = "An unknown error occurred.";
+          message = 'An unknown error occurred.';
           break;
       }
-      message += " Using average latitude/longitude from timezone.";
-      message += " Inaccurate information shown in italics!";
+      message += ' Using average latitude/longitude from timezone.';
+      message += ' Inaccurate information shown in italics!';
       alert(message);
-      let avgCoordinates = getAverageTimezoneCoordinates(
-        timezone.current.name()
-      );
+      let avgCoordinates = getAverageTimezoneCoordinates(timezone.current.name());
       setCoordinates({
         latitude: avgCoordinates[0],
         longitude: avgCoordinates[1],

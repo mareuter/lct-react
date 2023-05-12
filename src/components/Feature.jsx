@@ -1,8 +1,8 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-import "../styles/Feature.scss";
+import '../styles/Feature.scss';
 
 function Feature(props) {
   return (

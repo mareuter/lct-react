@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import "../styles/Welcome.scss";
+import '../styles/Welcome.scss';
 
-import launcher_screen from "../images/launcher_screen.png";
+import launcher_screen from '../images/launcher_screen.png';
 
 function Welcome() {
   return (

@@ -1,4 +1,4 @@
-export const createFeatureArray = features => {
+export const createFeatureArray = (features) => {
   var featureArray = [];
   var key = 0;
   for (var index in features) {
@@ -10,7 +10,7 @@ export const createFeatureArray = features => {
       diameter: features[index][1],
       quadCode: features[index][8],
       quadName: features[index][7],
-      key: key
+      key: key,
     });
     key = key + 1;
   }

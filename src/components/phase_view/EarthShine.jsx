@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function EarthShine(props) {
   return <ambientLight intensity={0.1} />;

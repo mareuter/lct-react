@@ -1,25 +1,25 @@
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-import Error from "./Error";
+import Error from './Error';
 
-import "../styles/Special.scss";
+import '../styles/Special.scss';
 
-import { formatDoubleLabel } from "../Formatters";
+import { formatDoubleLabel } from '../Formatters';
 
 let timeCutoff = 72.0;
 let timeWaxingCresent = 40.0;
 let timeWaningCresent = 48.0;
 let timeCowJumping = [2.0, 3.0];
 let fullMoonFraction = 0.987;
-let noTime = "----";
+let noTime = '----';
 
 function checkMoonTime(moonTime, cutoffTime, phaseTime) {
   let timeLabel;
   let indicatorState;
   if (moonTime <= cutoffTime) {
-    timeLabel = formatDoubleLabel(moonTime, " hours", 1);
+    timeLabel = formatDoubleLabel(moonTime, ' hours', 1);
     if (moonTime > phaseTime) {
       indicatorState = 2;
     } else {
@@ -36,25 +36,18 @@ function useCheckFullMoonStars(name, indicator) {
   useEffect(() => {
     let starDivs = document.getElementsByClassName(name);
     let isActive;
-    if (name.search("near") >= 0) {
-      isActive =
-        indicator >= timeCowJumping[0] && indicator <= timeCowJumping[1];
+    if (name.search('near') >= 0) {
+      isActive = indicator >= timeCowJumping[0] && indicator <= timeCowJumping[1];
     }
-    if (name.search("at") >= 0) {
+    if (name.search('at') >= 0) {
       isActive = indicator >= fullMoonFraction;
     }
     for (var i = 0; i < starDivs.length; i++) {
       var icon = starDivs[i].childNodes[1];
       if (isActive) {
-        icon.className.baseVal = icon.className.baseVal.replace(
-          "star-inactive",
-          "star-active"
-        );
+        icon.className.baseVal = icon.className.baseVal.replace('star-inactive', 'star-active');
       } else {
-        icon.className.baseVal = icon.className.baseVal.replace(
-          "star-active",
-          "star-inactive"
-        );
+        icon.className.baseVal = icon.className.baseVal.replace('star-active', 'star-inactive');
       }
     }
   }, [indicator, name]);
@@ -66,15 +59,9 @@ function useCheckNewMoonStars(name, indicator) {
     for (var i = 0; i < starDivs.length; i++) {
       var icon = starDivs[i].childNodes[1];
       if (starDivs[i].id === indicator.toString()) {
-        icon.className.baseVal = icon.className.baseVal.replace(
-          "star-inactive",
-          "star-active"
-        );
+        icon.className.baseVal = icon.className.baseVal.replace('star-inactive', 'star-active');
       } else {
-        icon.className.baseVal = icon.className.baseVal.replace(
-          "star-active",
-          "star-inactive"
-        );
+        icon.className.baseVal = icon.className.baseVal.replace('star-active', 'star-inactive');
       }
     }
   }, [indicator, name]);
@@ -83,21 +70,13 @@ function useCheckNewMoonStars(name, indicator) {
 function Special(props) {
   let hasError = props.error;
 
-  let [timeFromNew, fromNewIndicator] = checkMoonTime(
-    props.timeFromNew,
-    timeCutoff,
-    timeWaxingCresent
-  );
-  let [timeToNew, toNewIndicator] = checkMoonTime(
-    props.timeToNew,
-    timeCutoff,
-    timeWaningCresent
-  );
+  let [timeFromNew, fromNewIndicator] = checkMoonTime(props.timeFromNew, timeCutoff, timeWaxingCresent);
+  let [timeToNew, toNewIndicator] = checkMoonTime(props.timeToNew, timeCutoff, timeWaningCresent);
 
-  useCheckNewMoonStars("from-new", fromNewIndicator);
-  useCheckNewMoonStars("to-new", toNewIndicator);
-  useCheckFullMoonStars("near-full", props.timeToFull);
-  useCheckFullMoonStars("at-full", props.fractionalPhase);
+  useCheckNewMoonStars('from-new', fromNewIndicator);
+  useCheckNewMoonStars('to-new', toNewIndicator);
+  useCheckFullMoonStars('near-full', props.timeToFull);
+  useCheckFullMoonStars('at-full', props.fractionalPhase);
 
   return (
     <div>

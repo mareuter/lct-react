@@ -1,6 +1,6 @@
 {
   "name": "lct-react",
-  "version": "0.13.4",
+  "version": "0.13.5",
   "license": "MIT",
   "author": {
     "name": "Michael Reuter",
@@ -27,14 +27,15 @@
     "react-datepicker": "^4.11.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.10.0",
-    "react-scripts": "5.0.1",
     "three": "^0.152.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -56,7 +57,21 @@
     "@testing-library/dom": "^9.2.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "sass": "^1.62.1"
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-c8": "^0.30.1",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "jsdom": "^21.1.1",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.3",
+    "vitest": "^0.30.1"
   },
   "dependenciesMeta": {
     "@react-spring/core": {
