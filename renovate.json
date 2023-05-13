@@ -3,6 +3,40 @@
   "extends": [
     "config:base"
   ],
+  "packageRules": [
+    {
+      "groupName": "Runtime Dependencies",
+      "matchPackagePatterns": [
+        "^react",
+        "^@react",
+        "^@fortawesome"
+      ],
+      "matchPackageNames": [
+        "axios",
+        "jstz",
+        "luxon",
+        "three"
+      ]
+    },
+    {
+      "groupName": "Development Dependencies",
+      "matchPackagePatterns": [
+        "^@juggle",
+        "^@testing",
+        "^@typescript",
+        "^@vite",
+        "^eslint",
+        "^vite"
+      ],
+      "matchPackageNames": [
+        "jsdom",
+        "prettier",
+        "sass",
+        "typescript",
+        "yarn"
+      ]
+    }
+  ],
   "timezone": "America/Phoenix",
   "schedule": [
     "on saturday"
