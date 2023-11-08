@@ -7,40 +7,59 @@
   ],
   "packageRules": [
     {
-      "groupName": "Runtime Dependencies",
+      "groupName": "Runtime Dependencies Core",
       "matchPackagePatterns": [
-        "^react",
-        "^@react",
+        "^react"
+      ]
+    },
+    {
+      "groupName": "Runtime Dependencies Support",
+      "matchPackagePatterns": [
         "^@fortawesome"
       ],
       "matchPackageNames": [
         "axios",
         "jstz",
-        "luxon",
+        "luxon"
+      ]
+    },
+    {
+      "groupName": "Runtime Dependencies Graphics",
+      "matchPackagePatterns": [
+        "^@react-three"
+      ],
+      "matchPackageNames": [
         "three"
       ]
     },
     {
-      "groupName": "Development Dependencies",
+      "groupName": "Development Dependencies Dev and Test",
       "matchPackagePatterns": [
         "^@juggle",
         "^@testing",
-        "^@typescript",
         "^@vite",
-        "^eslint",
         "^vite"
       ],
       "matchPackageNames": [
         "jsdom",
+        "yarn"
+      ]
+    },
+    {
+      "groupName": "Development Dependencies Support",
+      "matchPackagePatterns": [
+        "^@typescript",
+        "^eslint"
+      ],
+      "matchPackageNames": [
         "prettier",
         "sass",
-        "typescript",
-        "yarn"
+        "typescript"
       ]
     }
   ],
   "timezone": "America/Phoenix",
   "schedule": [
-    "on saturday"
+    "on the 2nd saturday of the month at 11 AM"
   ]
 }
