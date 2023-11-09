@@ -56,10 +56,17 @@
         "sass",
         "typescript"
       ]
+    },
+    {
+      "groupName": "GitHub Actions",
+      "matchManagers": [
+        "github-actions"
+      ]
     }
   ],
   "timezone": "America/Phoenix",
   "schedule": [
-    "on the 2nd saturday of the month at 11 AM"
+    "on Saturday after 6pm",
+    "on Saturday before 11pm"
   ]
 }
