@@ -1,46 +1,90 @@
 {
-  "enabled": false,
+  "enabled": true,
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:best-practices",
     ":rebaseStalePrs"
   ],
   "packageRules": [
     {
-      "groupName": "Runtime Dependencies",
+      "groupName": "Runtime Dependencies Core",
       "matchPackagePatterns": [
-        "^react",
-        "^@react",
+        "^react"
+      ],
+      "schedule": [
+        "on Sunday"
+      ]
+    },
+    {
+      "groupName": "Runtime Dependencies Support",
+      "matchPackagePatterns": [
         "^@fortawesome"
       ],
       "matchPackageNames": [
         "axios",
         "jstz",
-        "luxon",
-        "three"
+        "luxon"
+      ],
+      "schedule": [
+        "on Sunday"
       ]
     },
     {
-      "groupName": "Development Dependencies",
+      "groupName": "Runtime Dependencies Graphics",
+      "matchPackagePatterns": [
+        "^@react-three"
+      ],
+      "matchPackageNames": [
+        "three"
+      ],
+      "extends": [
+        "schedule:monthly"
+      ]
+    },
+    {
+      "groupName": "Development Dependencies Dev and Test",
       "matchPackagePatterns": [
         "^@juggle",
         "^@testing",
-        "^@typescript",
         "^@vite",
-        "^eslint",
         "^vite"
       ],
       "matchPackageNames": [
         "jsdom",
+        "yarn"
+      ],
+      "schedule": [
+        "on Sunday"
+      ]
+    },
+    {
+      "groupName": "Development Dependencies Support",
+      "matchPackagePatterns": [
+        "^@typescript",
+        "^eslint"
+      ],
+      "matchPackageNames": [
         "prettier",
         "sass",
-        "typescript",
-        "yarn"
+        "typescript"
+      ],
+      "schedule": [
+        "on Sunday"
+      ]
+    },
+    {
+      "groupName": "GitHub Actions",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "schedule": [
+        "on Sunday"
       ]
     }
   ],
   "timezone": "America/Phoenix",
   "schedule": [
-    "on saturday"
+    "on Saturday after 6pm",
+    "on Saturday before 11pm"
   ]
 }
