@@ -80,6 +80,16 @@
       "schedule": [
         "on Sunday"
       ]
+    },
+    {
+      "groupName": "Node.js",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "node"
+      ],
+      "versioning": "node"
     }
   ],
   "timezone": "America/Phoenix",
