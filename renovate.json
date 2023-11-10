@@ -10,9 +10,6 @@
       "groupName": "Runtime Dependencies Core",
       "matchPackagePatterns": [
         "^react"
-      ],
-      "schedule": [
-        "on Sunday"
       ]
     },
     {
@@ -24,9 +21,6 @@
         "axios",
         "jstz",
         "luxon"
-      ],
-      "schedule": [
-        "on Sunday"
       ]
     },
     {
@@ -52,9 +46,6 @@
       "matchPackageNames": [
         "jsdom",
         "yarn"
-      ],
-      "schedule": [
-        "on Sunday"
       ]
     },
     {
@@ -67,24 +58,28 @@
         "prettier",
         "sass",
         "typescript"
-      ],
-      "schedule": [
-        "on Sunday"
       ]
     },
     {
       "groupName": "GitHub Actions",
       "matchManagers": [
         "github-actions"
-      ],
-      "schedule": [
-        "on Sunday"
       ]
+    },
+    {
+      "groupName": "Node.js",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "node"
+      ],
+      "versioning": "node"
     }
   ],
   "timezone": "America/Phoenix",
   "schedule": [
-    "on Saturday after 6pm",
+    "on Saturday after 4pm",
     "on Saturday before 11pm"
   ]
 }
