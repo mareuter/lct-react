@@ -31,16 +31,18 @@ function NextFourPhases(props) {
       nextFourPhases.push([phase, formattedDateTime]);
     }
 
-    var phaseSpans = document.getElementsByClassName('phase');
-    nextFourPhases.forEach((value, index) => {
-      if (phaseSpans[index].id === index.toString()) {
-        var image = phaseSpans[index].childNodes[0];
-        var dateTime = phaseSpans[index].childNodes[1];
-        image.src = moonPhaseIcons[value[0]];
-        image.alt = value[0];
-        dateTime.innerHTML = value[1];
-      }
-    });
+    if (nextFourPhases.length) {
+      var phaseSpans = document.getElementsByClassName('phase');
+      nextFourPhases.forEach((value, index) => {
+        if (phaseSpans[index].id === index.toString()) {
+          var image = phaseSpans[index].childNodes[0];
+          var dateTime = phaseSpans[index].childNodes[1];
+          image.src = moonPhaseIcons[value[0]];
+          image.alt = value[0];
+          dateTime.innerHTML = value[1];
+        }
+      });
+    }
   });
 
   return (
