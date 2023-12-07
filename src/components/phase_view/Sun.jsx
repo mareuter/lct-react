@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import * as THREE from 'three';
 
 const sunRadius = 5000;
+const sunIntensity = 100000000.0;
 
 function Sun(props) {
   let [sunXPosition, setSunXPosition] = useState(0);
@@ -23,7 +24,7 @@ function Sun(props) {
     setSunZPosition(sunRadius * Math.cos(phaseAngleRad));
   }, [props.solarElongation, props.subSolarLatitude]);
 
-  return <pointLight intensity={1.0} position={[sunXPosition, sunYPosition, sunZPosition]} decay={2} />;
+  return <pointLight intensity={sunIntensity} position={[sunXPosition, sunYPosition, sunZPosition]} />;
 }
 
 export default Sun;
