@@ -18,7 +18,7 @@
       "matchPackagePatterns": [
         "^@fortawesome"
       ],
-      "matchPackageNames": [
+      "matchDepNames": [
         "axios",
         "jstz",
         "luxon"
@@ -29,7 +29,7 @@
       "matchPackagePatterns": [
         "^@react-three"
       ],
-      "matchPackageNames": [
+      "matchDepNames": [
         "three"
       ],
       "extends": [
@@ -44,7 +44,7 @@
         "^@vite",
         "^vite"
       ],
-      "matchPackageNames": [
+      "matchDepNames": [
         "jsdom",
         "yarn"
       ]
@@ -55,7 +55,7 @@
         "^@typescript",
         "^eslint"
       ],
-      "matchPackageNames": [
+      "matchDepNames": [
         "prettier",
         "sass",
         "typescript"
@@ -72,7 +72,7 @@
       "matchDatasources": [
         "docker"
       ],
-      "matchPackageNames": [
+      "matchDepNames": [
         "node"
       ]
     }
