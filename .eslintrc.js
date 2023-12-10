@@ -23,7 +23,11 @@ module.exports = {
       },
     },
   },
+  env: {
+    browser: true,
+    node: true,
+  },
   rules: {
-    // Add your own rules here to override ones from the extended configs.
+    'no-console': 1,
   },
 };
