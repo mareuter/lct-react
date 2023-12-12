@@ -1,0 +1,11 @@
+@import './variables';
+@import './media_mixins';
+@import './app_mixins';
+
+.load-screen {
+  top: 40px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: $background-color;
+}
