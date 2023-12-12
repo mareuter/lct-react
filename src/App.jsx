@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { Suspense, useEffect, useState, useRef } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import jstz from 'jstz';
 
@@ -9,6 +9,8 @@ import Welcome from './components/Welcome';
 import MoonInformation from './components/MoonInformation';
 import LunarClub from './components/LunarClub';
 import LunarIIClub from './components/LunarIIClub';
+import LoadScreen from './components/LoadScreen';
+import ErrorBoundary from './components/ErrorBoundary';
 
 import { useDateValue } from './DateContext';
 import { getAverageTimezoneCoordinates } from './AverageTimezoneCoordinates';
@@ -75,13 +77,17 @@ function App() {
           <Route
             path="/moon_info"
             element={
-              <MoonInformation
-                date={getSecondsTimestamp(date)}
-                timezone={timezone.current.name()}
-                latitude={coordinates.latitude}
-                longitude={coordinates.longitude}
-                coordinatesGood={coordinates.good}
-              />
+              <ErrorBoundary>
+                <Suspense fallback={<LoadScreen />}>
+                  <MoonInformation
+                    date={getSecondsTimestamp(date)}
+                    timezone={timezone.current.name()}
+                    latitude={coordinates.latitude}
+                    longitude={coordinates.longitude}
+                    coordinatesGood={coordinates.good}
+                  />
+                </Suspense>
+              </ErrorBoundary>
             }
           />
           <Route

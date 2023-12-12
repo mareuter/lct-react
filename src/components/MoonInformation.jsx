@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import useGetData from './UseGetData';
+
 import Ephemeris from './Ephemeris';
 import NextFourPhases from './NextFourPhases';
 import PhaseAndLibration from './PhaseAndLibration';
@@ -16,37 +18,51 @@ function MoonInformation(props) {
   let moonInfoState = localStorage.getItem(MOON_INFO_LOCAL)
     ? JSON.parse(localStorage.getItem(MOON_INFO_LOCAL))
     : moonInfoJson;
-  var [moonInfo, setMoonInfo] = useState(moonInfoState);
+  // var [moonInfo, setMoonInfo] = useState(moonInfoState);
   var [error, setError] = useState(false);
+  var moonInfo = useGetData({
+    url: 'https://lct-web.onrender.com/moon_info',
+    params: {
+      date: props.date,
+      tz: props.timezone,
+      lat: props.latitude,
+      lon: props.longitude,
+    },
+  });
+  if (!moonInfo) {
+    moonInfo = moonInfoState;
+  } else {
+    localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(moonInfo));
+  }
 
-  useEffect(() => {
-    let axiosCancelSource = axios.CancelToken.source();
+  // useEffect(() => {
+  //   let axiosCancelSource = axios.CancelToken.source();
 
-    const config = {
-      url: 'https://lct-web.onrender.com/moon_info',
-      params: {
-        date: props.date,
-        tz: props.timezone,
-        lat: props.latitude,
-        lon: props.longitude,
-      },
-      cancelToken: axiosCancelSource.token,
-    };
-    axios(config)
-      .then((response) => {
-        setMoonInfo(response.data);
-        setError(false);
-        localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        if (error.toString() !== 'Cancel') {
-          setError(true);
-        }
-      });
-    return () => {
-      axiosCancelSource.cancel();
-    };
-  }, [props.date, props.timezone, props.latitude, props.longitude]);
+  //   const config = {
+  //     url: 'https://lct-web.onrender.com/moon_info',
+  //     params: {
+  //       date: props.date,
+  //       tz: props.timezone,
+  //       lat: props.latitude,
+  //       lon: props.longitude,
+  //     },
+  //     cancelToken: axiosCancelSource.token,
+  //   };
+  //   axios(config)
+  //     .then((response) => {
+  //       setMoonInfo(response.data);
+  //       setError(false);
+  //       localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(response.data));
+  //     })
+  //     .catch((error) => {
+  //       if (error.toString() !== 'Cancel') {
+  //         setError(true);
+  //       }
+  //     });
+  //   return () => {
+  //     axiosCancelSource.cancel();
+  //   };
+  // }, [props.date, props.timezone, props.latitude, props.longitude]);
 
   useEffect(() => {
     let divs = document.getElementsByClassName('coord-check');
