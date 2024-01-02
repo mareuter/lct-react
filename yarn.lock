@@ -970,8 +970,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.89.3
-  resolution: "@react-three/drei@npm:9.89.3"
+  version: 9.92.7
+  resolution: "@react-three/drei@npm:9.92.7"
   dependencies:
     "@babel/runtime": "npm:^7.11.2"
     "@mediapipe/tasks-vision": "npm:0.10.8"
@@ -984,11 +984,11 @@ __metadata:
     lodash.clamp: "npm:^4.0.3"
     lodash.omit: "npm:^4.5.0"
     lodash.pick: "npm:^4.4.0"
-    maath: "npm:^0.9.0"
+    maath: "npm:^0.10.7"
     meshline: "npm:^3.1.6"
     react-composer: "npm:^5.0.3"
     react-merge-refs: "npm:^1.1.0"
-    stats-gl: "npm:^1.0.4"
+    stats-gl: "npm:^2.0.0"
     stats.js: "npm:^0.17.0"
     suspend-react: "npm:^0.1.3"
     three-mesh-bvh: "npm:^0.6.7"
@@ -1005,13 +1005,13 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: d68d3a0d3e35683d327e707c249c89776730b9ca36d0e85fc364bf90f58ded9ca6da7621e7b88a4ace3829bd74d73762207fb81286f0bf9d1fa956df35ddb354
+  checksum: 4bca7a8c93a7c92c01afa826c0ba6104ccab730b1876b5a678d26a3450237b99880ac04efd743d48ca3a6949fc60876c4d9e82741d78338fc649c786ee95a7b0
   languageName: node
   linkType: hard
 
 "@react-three/fiber@npm:^8.15.9":
-  version: 8.15.12
-  resolution: "@react-three/fiber@npm:8.15.12"
+  version: 8.15.13
+  resolution: "@react-three/fiber@npm:8.15.13"
   dependencies:
     "@babel/runtime": "npm:^7.17.8"
     "@types/react-reconciler": "npm:^0.26.7"
@@ -1046,7 +1046,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 5dccebef10822883399a473d20ea646658b7d137824682e69e6b0ee9debdae3a430d258db27c6a1a6ad28d78f654cfbb971d1bcd784f3cb3c7e4a8e8bfc9a42f
+  checksum: 4169b020ac49d2d8df54739373e0ccaef5994381122fe2a8455aaf94b5dbf1d7ccda831ecb8d05fd40c6b97e0c339528d6336d1a5947500db5d3edd58f004b86
   languageName: node
   linkType: hard
 
@@ -4276,13 +4276,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"maath@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "maath@npm:0.9.0"
+"maath@npm:^0.10.7":
+  version: 0.10.7
+  resolution: "maath@npm:0.10.7"
   peerDependencies:
     "@types/three": ">=0.144.0"
     three: ">=0.144.0"
-  checksum: b55c9af6f38b8e44d25865d72d3df061e2aa00cf31728ec1c0190038a08b1c05fc68be7c6058906782dc88f51b79f066da493d3e7a54b5efdec1e98696baaf8f
+  checksum: b020c11507ccd314b4a0869d1039ee63f1bd773dbb40db68121468b50795fc377860104d4b99acd7080bfe911a3ffb1e820234d701b2f9a77a414f815b9ec86f
   languageName: node
   linkType: hard
 
@@ -5563,10 +5563,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stats-gl@npm:^1.0.4":
-  version: 1.0.5
-  resolution: "stats-gl@npm:1.0.5"
-  checksum: 3ff5be8150d6418b2e65b959b79698d9f514e594b0328f9d9dd759ffe9ef4309521a0dc22e61ad3d650ab1fa79c03f09a53a6436257c80aea2e7abec4db53afa
+"stats-gl@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "stats-gl@npm:2.0.1"
+  checksum: 46d7fde045f3861b4f1fd8efbe419e518d3febb8da3864eb96e2f158203dfc07d39b5f83d86fc4e678be61a3e22275dc457822ecd8cecda6f94c907319bc6dc5
   languageName: node
   linkType: hard
 
