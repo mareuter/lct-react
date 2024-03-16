@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@8eb1f6a495037164bea451156472f35fdd6bafc0
+        uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017
 
       - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@25b062c917b0c75f8b47d8469aff6c94ffd89abb
+        uses: actions/setup-node@c2ac33f2c62f978d6c944d9648125a294e56dc0b
         with:
           node-version: ${{ matrix.node-version }}
           check-latest: true
