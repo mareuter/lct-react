@@ -27,7 +27,7 @@
     "react-datepicker": "^6.0.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.18.0",
-    "three": "^0.162.0"
+    "three": "^0.163.0"
   },
   "scripts": {
     "start": "vite",
