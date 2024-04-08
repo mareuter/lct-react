@@ -30,4 +30,5 @@ module.exports = {
   rules: {
     'no-console': 1,
   },
+  ignorePatterns: ['node_modules/', 'dist/', '.prettierrc.js', '.eslintrc.js', 'env.d.ts', 'src/serviceWorker.js'],
 };
