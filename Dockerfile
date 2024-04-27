@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 RUN yarn install && yarn build
 
-FROM nginx:stable@sha256:f6daac2445b0ce70e64d77442ccf62839f3f1b4c24bf6746a857eff014e798c8
+FROM nginx:stable@sha256:dbfc5ffaaf6c000d006f39b9ae6eb8d40b6dfe7d743fcc251efb0ae58640f1cb
 COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
