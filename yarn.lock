@@ -927,6 +927,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monogrid/gainmap-js@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "@monogrid/gainmap-js@npm:3.0.5"
+  dependencies:
+    promise-worker-transferable: "npm:^1.0.4"
+  peerDependencies:
+    three: ">= 0.159.0"
+  checksum: 10/311d182721db8ffd1795c57c04621cf7f25c71d99a0f820219b90d0fe87f3075d2b691812819d39a8d6d8ddd237375b391a5c542bec8940d2f4f547f878cd9c9
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -1052,11 +1063,12 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.103.0
-  resolution: "@react-three/drei@npm:9.103.0"
+  version: 9.105.6
+  resolution: "@react-three/drei@npm:9.105.6"
   dependencies:
     "@babel/runtime": "npm:^7.11.2"
     "@mediapipe/tasks-vision": "npm:0.10.8"
+    "@monogrid/gainmap-js": "npm:^3.0.5"
     "@react-spring/three": "npm:~9.6.1"
     "@use-gesture/react": "npm:^10.2.24"
     camera-controls: "npm:^2.4.2"
@@ -1071,7 +1083,7 @@ __metadata:
     stats.js: "npm:^0.17.0"
     suspend-react: "npm:^0.1.3"
     three-mesh-bvh: "npm:^0.7.0"
-    three-stdlib: "npm:^2.29.4"
+    three-stdlib: "npm:^2.29.9"
     troika-three-text: "npm:^0.49.0"
     tunnel-rat: "npm:^0.1.2"
     utility-types: "npm:^3.10.0"
@@ -1085,13 +1097,13 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/d7e9b9c641823b46eff7d812238136a90b4a683c400f6b60418c2b7162273fb5676eb8ae583487d0307d2808a983433e06590566d20b2a3c970efadacabb7884
+  checksum: 10/48a1122f6b6cb06dbb4856f1b94151302c8911cbeaeaecb5768dde77dfe3b12e6d58ead5e5b4043239f859e8be2fe502003e4c635432a85e06347336070b21b2
   languageName: node
   linkType: hard
 
 "@react-three/fiber@npm:^8.15.9":
-  version: 8.16.1
-  resolution: "@react-three/fiber@npm:8.16.1"
+  version: 8.16.3
+  resolution: "@react-three/fiber@npm:8.16.3"
   dependencies:
     "@babel/runtime": "npm:^7.17.8"
     "@types/react-reconciler": "npm:^0.26.7"
@@ -1126,7 +1138,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/968d1546a793da06365163de75a235d7459935d0ba8bc18d41a75db1e8cf9b42321505dcfd8ef0a83300d862aecf73f96445eb7ebf930b1dcbcb6a600fec703b
+  checksum: 10/5aae61cfcd408e2e84c6cde9295d352524c20d5184c6a98948880109155def86b0c04cebe5d0c908f00ce109793d421c08dd49605b579668add284c6569558af
   languageName: node
   linkType: hard
 
@@ -3933,6 +3945,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"immediate@npm:~3.0.5":
+  version: 3.0.6
+  resolution: "immediate@npm:3.0.6"
+  checksum: 10/f9b3486477555997657f70318cc8d3416159f208bec4cca3ff3442fd266bc23f50f0c9bd8547e1371a6b5e82b821ec9a7044a4f7b944798b25aa3cc6d5e63e62
+  languageName: node
+  linkType: hard
+
 "immutable@npm:^4.0.0":
   version: 4.3.4
   resolution: "immutable@npm:4.3.4"
@@ -4198,6 +4217,13 @@ __metadata:
   version: 1.0.1
   resolution: "is-potential-custom-element-name@npm:1.0.1"
   checksum: 10/ced7bbbb6433a5b684af581872afe0e1767e2d1146b2207ca0068a648fb5cab9d898495d1ac0583524faaf24ca98176a7d9876363097c2d14fee6dd324f3a1ab
+  languageName: node
+  linkType: hard
+
+"is-promise@npm:^2.1.0":
+  version: 2.2.2
+  resolution: "is-promise@npm:2.2.2"
+  checksum: 10/18bf7d1c59953e0ad82a1ed963fb3dc0d135c8f299a14f89a17af312fc918373136e56028e8831700e1933519630cc2fd4179a777030330fde20d34e96f40c78
   languageName: node
   linkType: hard
 
@@ -4602,7 +4628,7 @@ __metadata:
     react-dom: "npm:18.3.1"
     react-router-dom: "npm:^6.18.0"
     sass: "npm:1.75.0"
-    three: "npm:^0.163.0"
+    three: "npm:^0.164.0"
     typescript: "npm:5.4.5"
     vite: "npm:5.2.10"
     vitest: "npm:1.5.2"
@@ -4619,6 +4645,15 @@ __metadata:
     prelude-ls: "npm:^1.2.1"
     type-check: "npm:~0.4.0"
   checksum: 10/2e4720ff79f21ae08d42374b0a5c2f664c5be8b6c8f565bb4e1315c96ed3a8acaa9de788ffed82d7f2378cf36958573de07ef92336cb5255ed74d08b8318c9ee
+  languageName: node
+  linkType: hard
+
+"lie@npm:^3.0.2":
+  version: 3.3.0
+  resolution: "lie@npm:3.3.0"
+  dependencies:
+    immediate: "npm:~3.0.5"
+  checksum: 10/f335ce67fe221af496185d7ce39c8321304adb701e122942c495f4f72dcee8803f9315ee572f5f8e8b08b9e8d7195da91b9fad776e8864746ba8b5e910adf76e
   languageName: node
   linkType: hard
 
@@ -5444,6 +5479,16 @@ __metadata:
     err-code: "npm:^2.0.2"
     retry: "npm:^0.12.0"
   checksum: 10/96e1a82453c6c96eef53a37a1d6134c9f2482f94068f98a59145d0986ca4e497bf110a410adf73857e588165eab3899f0ebcf7b3890c1b3ce802abc0d65967d4
+  languageName: node
+  linkType: hard
+
+"promise-worker-transferable@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "promise-worker-transferable@npm:1.0.4"
+  dependencies:
+    is-promise: "npm:^2.1.0"
+    lie: "npm:^3.0.2"
+  checksum: 10/a54414fb3d17c9c2c3e120052f86b308787b10716f47ee2ff91f7e1a864b25320a740c9a9df32e9fe331510dbf83a782b7bb8499ba60fed13f84f5ce2e8dfe91
   languageName: node
   linkType: hard
 
@@ -6395,9 +6440,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three-stdlib@npm:^2.29.4":
-  version: 2.29.4
-  resolution: "three-stdlib@npm:2.29.4"
+"three-stdlib@npm:^2.29.9":
+  version: 2.29.11
+  resolution: "three-stdlib@npm:2.29.11"
   dependencies:
     "@types/draco3d": "npm:^1.4.0"
     "@types/offscreencanvas": "npm:^2019.6.4"
@@ -6407,14 +6452,14 @@ __metadata:
     potpack: "npm:^1.0.1"
   peerDependencies:
     three: ">=0.128.0"
-  checksum: 10/ba54e2e334ca86e71a025337e0239a943de22af42dda2f664c2aea2bf6c65d343c995ea1182a3b7c6513fc1dc5c401f218be6cb77eddfc0e6ab5b0c3b3339ddc
+  checksum: 10/3bf164959eaca9e22cc1c6ed4561f2309048defe54c50f8d52e8a572f3a84b9ac4cbde67809c25203438a1c043b63b6fc64d02c33c658c122cb232a2991b0e49
   languageName: node
   linkType: hard
 
-"three@npm:^0.163.0":
-  version: 0.163.0
-  resolution: "three@npm:0.163.0"
-  checksum: 10/caf4b681b62b4367242b88e89299f8f5e728636a38af51ccb56c5814ff9d2a59a8116df3d6851238804b23435b4410ba68ae9e70f7d26791345945c094abf011
+"three@npm:^0.164.0":
+  version: 0.164.1
+  resolution: "three@npm:0.164.1"
+  checksum: 10/561f28a84c6978b3fb548c11892ac6411df97a848089611d16ef921613d71af7a77815f531d10311cd7f9f9477ba900b69a99a39fe978d193a990476050fe062
   languageName: node
   linkType: hard
 
