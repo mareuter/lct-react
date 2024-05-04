@@ -54,13 +54,13 @@
   },
   "devDependencies": {
     "@juggle/resize-observer": "3.4.0",
-    "@testing-library/dom": "10.0.0",
-    "@testing-library/react": "15.0.5",
+    "@testing-library/dom": "10.1.0",
+    "@testing-library/react": "15.0.6",
     "@testing-library/user-event": "14.5.2",
     "@typescript-eslint/eslint-plugin": "7.7.1",
     "@typescript-eslint/parser": "7.7.1",
     "@vitejs/plugin-react": "4.2.1",
-    "@vitest/coverage-v8": "1.5.2",
+    "@vitest/coverage-v8": "1.6.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
@@ -71,8 +71,8 @@
     "prettier": "3.2.5",
     "sass": "1.75.0",
     "typescript": "5.4.5",
-    "vite": "5.2.10",
-    "vitest": "1.5.2"
+    "vite": "5.2.11",
+    "vitest": "1.6.0"
   },
   "dependenciesMeta": {
     "@react-spring/core": {
@@ -84,5 +84,5 @@
       "axios": "axios/dist/node/axios.cjs"
     }
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.2.1"
 }
