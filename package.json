@@ -59,7 +59,7 @@
     "@testing-library/user-event": "14.5.2",
     "@typescript-eslint/eslint-plugin": "7.10.0",
     "@typescript-eslint/parser": "7.10.0",
-    "@vitejs/plugin-react": "4.3.0",
+    "@vitejs/plugin-react": "4.3.1",
     "@vitest/coverage-v8": "1.6.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
@@ -71,7 +71,7 @@
     "prettier": "3.2.5",
     "sass": "1.77.2",
     "typescript": "5.4.5",
-    "vite": "5.2.13",
+    "vite": "5.3.1",
     "vitest": "1.6.0"
   },
   "dependenciesMeta": {
@@ -84,5 +84,5 @@
       "axios": "axios/dist/node/axios.cjs"
     }
   },
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.3.0"
 }
