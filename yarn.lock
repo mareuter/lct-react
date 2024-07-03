@@ -1095,8 +1095,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.105.6
-  resolution: "@react-three/drei@npm:9.105.6"
+  version: 9.108.1
+  resolution: "@react-three/drei@npm:9.108.1"
   dependencies:
     "@babel/runtime": "npm:^7.11.2"
     "@mediapipe/tasks-vision": "npm:0.10.8"
@@ -1129,13 +1129,13 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/48a1122f6b6cb06dbb4856f1b94151302c8911cbeaeaecb5768dde77dfe3b12e6d58ead5e5b4043239f859e8be2fe502003e4c635432a85e06347336070b21b2
+  checksum: 10/1592026295453e313a6ac2d3fec979f9c7a5fae524d64cb7179d78a6df4f02946164092558569d2bad3ec6ad64446b6a9d727870393a60fb8151060018f40061
   languageName: node
   linkType: hard
 
 "@react-three/fiber@npm:^8.15.9":
-  version: 8.16.3
-  resolution: "@react-three/fiber@npm:8.16.3"
+  version: 8.16.8
+  resolution: "@react-three/fiber@npm:8.16.8"
   dependencies:
     "@babel/runtime": "npm:^7.17.8"
     "@types/react-reconciler": "npm:^0.26.7"
@@ -1170,7 +1170,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/5aae61cfcd408e2e84c6cde9295d352524c20d5184c6a98948880109155def86b0c04cebe5d0c908f00ce109793d421c08dd49605b579668add284c6569558af
+  checksum: 10/6a2eb570530b720d03e163907fb93a298091a640fac55a55259b3af115a8863b6b3e84f12f89507c2564bab007d63c201b53cf6b5c5c66395ef1d286c41dfa5b
   languageName: node
   linkType: hard
 
