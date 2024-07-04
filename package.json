@@ -53,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.6.0",
     "@juggle/resize-observer": "3.4.0",
     "@testing-library/dom": "10.2.0",
     "@testing-library/react": "16.0.0",
@@ -84,5 +85,6 @@
       "axios": "axios/dist/node/axios.cjs"
     }
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.3.1",
+  "type": "module"
 }
