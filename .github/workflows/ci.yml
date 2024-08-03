@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+        uses: actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08
 
       - name: Install Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@26961cf329f22f6837d5f54c3efd76b480300ace
@@ -21,7 +21,7 @@ jobs:
           check-latest: true
 
       - name: Cache Dependencies
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
+        uses: actions/cache@40c3b67b2955d93d83b27ed164edd0756bc24049
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
