@@ -61,7 +61,7 @@
     "@typescript-eslint/eslint-plugin": "7.17.0",
     "@typescript-eslint/parser": "7.17.0",
     "@vitejs/plugin-react": "4.3.1",
-    "@vitest/coverage-v8": "2.0.4",
+    "@vitest/coverage-v8": "2.0.5",
     "eslint": "9.8.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
@@ -73,7 +73,7 @@
     "sass": "1.77.8",
     "typescript": "5.5.4",
     "vite": "5.3.5",
-    "vitest": "2.0.4"
+    "vitest": "2.0.5"
   },
   "dependenciesMeta": {
     "@react-spring/core": {
@@ -85,6 +85,6 @@
       "axios": "axios/dist/node/axios.cjs"
     }
   },
-  "packageManager": "yarn@4.3.1",
+  "packageManager": "yarn@4.4.0",
   "type": "module"
 }
