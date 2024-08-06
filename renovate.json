@@ -9,77 +9,39 @@
   "packageRules": [
     {
       "groupName": "Runtime Dependencies Core",
-      "matchPackagePatterns": [
-        "^react"
-      ]
+      "matchPackageNames": ["/^react/"]
     },
     {
       "groupName": "Runtime Dependencies Support",
-      "matchPackagePatterns": [
-        "^@fortawesome"
-      ],
-      "matchDepNames": [
-        "axios",
-        "jstz",
-        "luxon"
-      ]
+      "matchDepNames": ["axios", "jstz", "luxon"],
+      "matchPackageNames": ["/^@fortawesome/"]
     },
     {
       "groupName": "Runtime Dependencies Graphics",
-      "matchPackagePatterns": [
-        "^@react-three"
-      ],
-      "matchDepNames": [
-        "three"
-      ],
-      "extends": [
-        "schedule:monthly"
-      ]
+      "matchDepNames": ["three"],
+      "extends": ["schedule:monthly"],
+      "matchPackageNames": ["/^@react-three/"]
     },
     {
       "groupName": "Development Dependencies Dev and Test",
-      "matchPackagePatterns": [
-        "^@juggle",
-        "^@testing",
-        "^@vite",
-        "^vite"
-      ],
-      "matchDepNames": [
-        "jsdom",
-        "yarn"
-      ]
+      "matchDepNames": ["jsdom", "yarn"],
+      "matchPackageNames": ["/^@juggle/", "/^@testing/", "/^@vite/", "/^vite/"]
     },
     {
       "groupName": "Development Dependencies Support",
-      "matchPackagePatterns": [
-        "^@typescript",
-        "^eslint"
-      ],
-      "matchDepNames": [
-        "prettier",
-        "sass",
-        "typescript"
-      ]
+      "matchDepNames": ["prettier", "sass", "typescript"],
+      "matchPackageNames": ["/^@typescript/", "/^eslint/"]
     },
     {
       "groupName": "GitHub Actions",
-      "matchManagers": [
-        "github-actions"
-      ]
+      "matchManagers": ["github-actions"]
     },
     {
       "groupName": "Node.js",
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchDepNames": [
-        "node"
-      ]
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["node"]
     }
   ],
   "timezone": "America/Phoenix",
-  "schedule": [
-    "on Saturday after 4pm",
-    "on Saturday before 11pm"
-  ]
+  "schedule": ["on Saturday after 4pm", "on Saturday before 11pm"]
 }
