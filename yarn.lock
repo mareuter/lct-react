@@ -759,10 +759,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.8.0":
-  version: 9.8.0
-  resolution: "@eslint/js@npm:9.8.0"
-  checksum: 10/1c6ddbcc9f45f0165d9e218c085543536c03b4b650449a6f38f4e2b65b1d6bcd5f24f7feae72fca14d3697073cbdb413f270baef0f744cb0fb9e11ce9c84dbcc
+"@eslint/js@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@eslint/js@npm:9.9.0"
+  checksum: 10/9d6e94d0334aecaa7e5c78e654297d9b11679f56c8ec1b64db122cbecf64b5a04138617e901d0c79727d03abce8a898cce4288259435bde78460ebdab202998f
   languageName: node
   linkType: hard
 
@@ -3357,15 +3357,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:9.8.0":
-  version: 9.8.0
-  resolution: "eslint@npm:9.8.0"
+"eslint@npm:9.9.0":
+  version: 9.9.0
+  resolution: "eslint@npm:9.9.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.2.0"
     "@eslint-community/regexpp": "npm:^4.11.0"
     "@eslint/config-array": "npm:^0.17.1"
     "@eslint/eslintrc": "npm:^3.1.0"
-    "@eslint/js": "npm:9.8.0"
+    "@eslint/js": "npm:9.9.0"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
     "@humanwhocodes/retry": "npm:^0.3.0"
     "@nodelib/fs.walk": "npm:^1.2.8"
@@ -3395,9 +3395,14 @@ __metadata:
     optionator: "npm:^0.9.3"
     strip-ansi: "npm:^6.0.1"
     text-table: "npm:^0.2.0"
+  peerDependencies:
+    jiti: "*"
+  peerDependenciesMeta:
+    jiti:
+      optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10/b1dd864170ca359249c92d1d8e09a628497efcf8a4293b571308460125fb0367a15612b2b0f135ff21b92453bf324ce75843fcaac3e01734f4bee2ff79919cc3
+  checksum: 10/88616421c9cb873d8f116d1ef6aa665cc898d35361351739c8041f11c30fe004bcfa641a2b6074655393eac7e7e5f9a661675dd1c01a24cf1e65cc6b556e06b3
   languageName: node
   linkType: hard
 
@@ -3799,6 +3804,13 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 10/698dfe11828b7efd0514cd11e573eaed26b2dff611f0400907281ce3eab0c1e56143ef9b35adc7c77ecc71fba74717b510c7c223d34ca8a98ec81777b293d4ac
+  languageName: node
+  linkType: hard
+
+"globals@npm:15.9.0":
+  version: 15.9.0
+  resolution: "globals@npm:15.9.0"
+  checksum: 10/19bca70131c5d3e0d4171deed0f8ae16adda19f18d39b67421056f1eaa160b4433c3ffc8eb69b8b19adebbbdad4834d8a0494c5fe1ae295f0f769a5c0331d794
   languageName: node
   linkType: hard
 
@@ -4741,7 +4753,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "lct-react@workspace:."
   dependencies:
-    "@eslint/js": "npm:9.8.0"
+    "@eslint/js": "npm:9.9.0"
     "@fortawesome/fontawesome-svg-core": "npm:^6.4.2"
     "@fortawesome/free-solid-svg-icons": "npm:^6.4.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
@@ -4756,12 +4768,13 @@ __metadata:
     "@vitejs/plugin-react": "npm:4.3.1"
     "@vitest/coverage-v8": "npm:2.0.5"
     axios: "npm:^1.6.0"
-    eslint: "npm:9.8.0"
+    eslint: "npm:9.9.0"
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-import: "npm:2.29.1"
     eslint-plugin-jsx-a11y: "npm:6.9.0"
     eslint-plugin-react: "npm:7.35.0"
     eslint-plugin-react-hooks: "npm:4.6.2"
+    globals: "npm:15.9.0"
     jsdom: "npm:24.1.1"
     jstz: "npm:^2.1.1"
     luxon: "npm:3.5.0"
