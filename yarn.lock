@@ -1133,8 +1133,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.112.1
-  resolution: "@react-three/drei@npm:9.112.1"
+  version: 9.113.0
+  resolution: "@react-three/drei@npm:9.113.0"
   dependencies:
     "@babel/runtime": "npm:^7.11.2"
     "@mediapipe/tasks-vision": "npm:0.10.8"
@@ -1152,7 +1152,7 @@ __metadata:
     stats-gl: "npm:^2.0.0"
     stats.js: "npm:^0.17.0"
     suspend-react: "npm:^0.1.3"
-    three-mesh-bvh: "npm:^0.7.0"
+    three-mesh-bvh: "npm:^0.7.8"
     three-stdlib: "npm:^2.29.9"
     troika-three-text: "npm:^0.49.0"
     tunnel-rat: "npm:^0.1.2"
@@ -1167,7 +1167,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/7c47a075b75a45d8678b64c94f224f1aff27b5eb310f0c52f4c18f2ab50571bab7f67debb2838e404aec8149eb042f33b4142e1aab1d8eec1bc3beb66beb3445
+  checksum: 10/be108e74c554157321848b600ed4f649ecf0cc97051f1f74a1a5f9e44209047734dc75cfd90a6a81779653f893914858100843375c0170d4ddb70b3531769284
   languageName: node
   linkType: hard
 
@@ -6490,12 +6490,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three-mesh-bvh@npm:^0.7.0":
-  version: 0.7.3
-  resolution: "three-mesh-bvh@npm:0.7.3"
+"three-mesh-bvh@npm:^0.7.8":
+  version: 0.7.8
+  resolution: "three-mesh-bvh@npm:0.7.8"
   peerDependencies:
     three: ">= 0.151.0"
-  checksum: 10/0f8f1b6960e57e9f7971a9b499c5ac8647eb7042dc98ed3c753328c658f1f542504b7f57571fb34b0c124e4f291ce9f999bdd2a2e06de507b8e8715a5dcecccc
+  checksum: 10/7bc07ea3e77372de41df54764de5e2f8baacf43d816c9d1ee94ed343cec853ce1f6645d022676c0377d37c3a5dab4db1dc8b6ed4fd44a9a1af4c8ae574ccecda
   languageName: node
   linkType: hard
 
