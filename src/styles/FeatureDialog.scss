@@ -2,6 +2,7 @@
 @use "media_mixins";
 @use "modal_mixins";
 @use "animation_mixins";
+@use "mixins";
 
 $animationName: slideInTopFd;
 
@@ -10,7 +11,7 @@ $animationName: slideInTopFd;
   left: 0;
   width: 100%;
   font-size: 18px;
-  @include animation($animationName, 0.4s);
+  @include mixins.animation($animationName, 0.4s);
 }
 
 $slide-in-top: 8vh;
