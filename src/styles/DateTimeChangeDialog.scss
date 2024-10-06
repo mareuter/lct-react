@@ -1,7 +1,9 @@
-@import "./Modal.scss";
-@import "./media_mixins";
-@import "./modal_mixins";
-@import "./animation_mixins";
+@use "Modal.scss";
+@use "media_mixins";
+@use "modal_mixins";
+@use "animation_mixins";
+@use "mixins";
+@use "variables";
 
 $slide-in-left: 10vw;
 $animationName: slideInTopDt;
@@ -12,7 +14,7 @@ $animationName: slideInTopDt;
   left: $slide-in-left;
   height: 82vh;
   width: 80vw;
-  @include animation(slideInLeft, 0.45s);
+  @include mixins.animation(slideInLeft, 0.45s);
 }
 
 .widget-dt {
@@ -20,15 +22,15 @@ $animationName: slideInTopDt;
 }
 
 .update-button {
-  color: $navtype-color;
-  background-color: $background-color;
-  border-color: $navtype-color;
+  color: variables.$navtype-color;
+  background-color: variables.$background-color;
+  border-color: variables.$navtype-color;
   width: 25vw;
 }
 
 .react-datepicker {
-  background-color: $background-color;
-  color: $navtype-color;
+  background-color: variables.$background-color;
+  color: variables.$navtype-color;
 }
 
 .react-datepicker__triangle > button {
@@ -41,11 +43,11 @@ $animationName: slideInTopDt;
 }
 
 .react-datepicker__navigation--previous {
-  border-right-color: $navtype-color;
+  border-right-color: variables.$navtype-color;
 }
 
 .react-datepicker__navigation--next {
-  border-left-color: $navtype-color;
+  border-left-color: variables.$navtype-color;
 }
 
 .react-datepicker__input-time-container {
@@ -55,24 +57,24 @@ $animationName: slideInTopDt;
     input[type="time"] {
       width: 90px;
       margin-left: 2px;
-      background-color: $background-color;
-      color: $navtype-color;
-      border: 1px solid $navtype-color;
+      background-color: variables.$background-color;
+      color: variables.$navtype-color;
+      border: 1px solid variables.$navtype-color;
       text-align: center;
-      @include remove-appearance;
+      @include mixins.remove-appearance;
       font: inherit;
     }
   }
 }
 
 .react-datepicker__header {
-  background-color: $background-color;
+  background-color: variables.$background-color;
 }
 
 .react-datepicker__day-name,
 .react-datepicker__day,
 .react-datepicker__time-name {
-  color: $navtype-color;
+  color: variables.$navtype-color;
   width: 1rem;
   line-height: 1rem;
 }
@@ -80,25 +82,25 @@ $animationName: slideInTopDt;
 .react-datepicker__current-month,
 .react-datepicker-time__header,
 .react-datepicker-year-header {
-  color: $navtype-color;
+  color: variables.$navtype-color;
 }
 
 .react-datepicker__today-button {
-  background-color: $background-color;
+  background-color: variables.$background-color;
 }
 
 .react-datepicker__day--selected {
-  color: $standard-color;
+  color: variables.$standard-color;
 }
 
-@include slide-in-left($slide-in-left);
+@include animation_mixins.slide-in-left($slide-in-left);
 
-@include small-vertical {
+@include media_mixins.small-vertical {
   $slide-in-top: 20vh;
   // @include content-dt-scaling(10vw, 60vh, 80vw, $animationName); 
-  @include content-dt-vh-scaling(60vh, $animationName);
-  @include slide-in-top($animationName, $slide-in-top);
-  @include content-dt-top($slide-in-top);
+  @include modal_mixins.content-dt-vh-scaling(60vh, $animationName);
+  @include animation_mixins.slide-in-top($animationName, $slide-in-top);
+  @include modal_mixins.content-dt-top($slide-in-top);
 
   .react-datepicker__day-name,
   .react-datepicker__day,
@@ -108,80 +110,80 @@ $animationName: slideInTopDt;
   }
 }
 
-@include medium-small-vertical {
+@include media_mixins.medium-small-vertical {
   $slide-in-top: 25vh;
   // @include content-dt-scaling(30vw, 50vh, 40vw, $animationName);
-  @include content-dt-vh-scaling(50vh, $animationName);
-  @include slide-in-top($animationName, $slide-in-top);
-  @include content-dt-top($slide-in-top);
+  @include modal_mixins.content-dt-vh-scaling(50vh, $animationName);
+  @include animation_mixins.slide-in-top($animationName, $slide-in-top);
+  @include modal_mixins.content-dt-top($slide-in-top);
 }
 
-@include medium-vertical {
+@include media_mixins.medium-vertical {
   $slide-in-top: 25vh;
-  @include content-dt-vh-scaling(45vh, $animationName);
-  @include slide-in-top($animationName, $slide-in-top);
-  @include content-dt-top($slide-in-top);
+  @include modal_mixins.content-dt-vh-scaling(45vh, $animationName);
+  @include animation_mixins.slide-in-top($animationName, $slide-in-top);
+  @include modal_mixins.content-dt-top($slide-in-top);
 }
 
-@include large-vertical {
+@include media_mixins.large-vertical {
   $slide-in-top: 30vh;
   // @include content-dt-scaling(30vw, 40vh, 40vw, $animationName);
-  @include content-dt-vh-scaling(40vh, $animationName);
-  @include slide-in-top($animationName, $slide-in-top);
-  @include content-dt-top($slide-in-top);
+  @include modal_mixins.content-dt-vh-scaling(40vh, $animationName);
+  @include animation_mixins.slide-in-top($animationName, $slide-in-top);
+  @include modal_mixins.content-dt-top($slide-in-top);
 }
 
-@include extra-large-vertical {
+@include media_mixins.extra-large-vertical {
   $slide-in-top: 30vh;
   // @include content-dt-scaling(30vw, 30vh, 40vw, $animationName);
-  @include content-dt-vh-scaling(35vh, $animationName);
-  @include slide-in-top($animationName, $slide-in-top);
-  @include content-dt-top($slide-in-top);
+  @include modal_mixins.content-dt-vh-scaling(35vh, $animationName);
+  @include animation_mixins.slide-in-top($animationName, $slide-in-top);
+  @include modal_mixins.content-dt-top($slide-in-top);
 }
 
-@include extra-extra-large-vertical {
+@include media_mixins.extra-extra-large-vertical {
   $slide-in-top: 30vh;
-  @include content-dt-vh-scaling(30vh, $animationName);
-  @include slide-in-top($animationName, $slide-in-top);
-  @include content-dt-top($slide-in-top);
+  @include modal_mixins.content-dt-vh-scaling(30vh, $animationName);
+  @include animation_mixins.slide-in-top($animationName, $slide-in-top);
+  @include modal_mixins.content-dt-top($slide-in-top);
 }
 
-@include extra-extra-extra-large-vertical {
+@include media_mixins.extra-extra-extra-large-vertical {
   $slide-in-top: 30vh;
-  @include content-dt-vh-scaling(27vh, $animationName);
-  @include slide-in-top($animationName, $slide-in-top);
-  @include content-dt-top($slide-in-top);
+  @include modal_mixins.content-dt-vh-scaling(27vh, $animationName);
+  @include animation_mixins.slide-in-top($animationName, $slide-in-top);
+  @include modal_mixins.content-dt-top($slide-in-top);
 }
 
-@include extra-small-horizontal {
+@include media_mixins.extra-small-horizontal {
   $slide-in-left: 25vw;
-  @include slide-in-left($slide-in-left);
-  @include content-dt-vw-scaling(15vw, 70vw);
+  @include animation_mixins.slide-in-left($slide-in-left);
+  @include modal_mixins.content-dt-vw-scaling(15vw, 70vw);
 }
 
-@include small-horizontal {
+@include media_mixins.small-horizontal {
   $slide-in-left: 25vw;
-  @include slide-in-left($slide-in-left);
-  @include content-dt-vw-scaling(25vw, 45vw);
+  @include animation_mixins.slide-in-left($slide-in-left);
+  @include modal_mixins.content-dt-vw-scaling(25vw, 45vw);
 }
 
-@include medium-small-horizontal {
+@include media_mixins.medium-small-horizontal {
   $slide-in-left: 25vw;
-  @include slide-in-left($slide-in-left);
-  @include content-dt-vw-scaling(25vw, 42vw);
-  @include update-button-scaling(15vw);
+  @include animation_mixins.slide-in-left($slide-in-left);
+  @include modal_mixins.content-dt-vw-scaling(25vw, 42vw);
+  @include modal_mixins.update-button-scaling(15vw);
 }
 
-@include large-horizontal {
+@include media_mixins.large-horizontal {
   $slide-in-left: 25vw;
-  @include slide-in-left($slide-in-left);
-  @include content-dt-vw-scaling(25vw, 35vw);
-  @include update-button-scaling(10vw);
+  @include animation_mixins.slide-in-left($slide-in-left);
+  @include modal_mixins.content-dt-vw-scaling(25vw, 35vw);
+  @include modal_mixins.update-button-scaling(10vw);
 }
 
-@include extra-large-horizontal {
+@include media_mixins.extra-large-horizontal {
   $slide-in-left: 35vw;
-  @include slide-in-left($slide-in-left);
-  @include content-dt-vw-scaling(35vw, 32vw);
-  @include update-button-scaling(7vw);
+  @include animation_mixins.slide-in-left($slide-in-left);
+  @include modal_mixins.content-dt-vw-scaling(35vw, 32vw);
+  @include modal_mixins.update-button-scaling(7vw);
 }

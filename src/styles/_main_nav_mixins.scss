@@ -1,4 +1,4 @@
-@import "./mixins";
+@use "mixins";
 
 @mixin nav-button-scaling($isize, $fsize, $psize) {
   .main-nav {
@@ -6,7 +6,7 @@
       padding: $psize calc(#{$psize} * 2);
     }
     img {
-      @include make-square($isize);
+      @include mixins.make-square($isize);
     }
     a {
       font-size: $fsize;

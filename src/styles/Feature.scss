@@ -1,11 +1,11 @@
-@import "./variables";
+@use "variables";
 
 .info {
-  color: $button-color;
+  color: variables.$button-color;
 }
 
 .info:hover {
-  color: $standard-color;
+  color: variables.$standard-color;
 }
 
 .no-features {

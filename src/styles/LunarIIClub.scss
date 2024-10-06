@@ -1,9 +1,9 @@
-@import "./variables";
-@import "./mixins";
-@import "./media_mixins";
+@use "variables";
+@use "mixins";
+@use "media_mixins";
 
 .lc2-container {
-  @include small-grid-container;
+  @include mixins.small-grid-container;
   grid-template-areas:
     "features"
     "landing";
@@ -17,16 +17,16 @@
   grid-area: landing;
 }
 
-@include for-tablet-portrait-up {
+@include media_mixins.for-tablet-portrait-up {
   .lc2-container {
-    @include medium-grid-container;
+    @include mixins.medium-grid-container;
     grid-template-areas: "features landing";
   }
 }
 
-@include for-desktop-up {
+@include media_mixins.for-desktop-up {
   .lc2-container {
-    @include large-grid-container;
+    @include mixins.large-grid-container;
     grid-template-areas: "features landing . ";
   }
 }

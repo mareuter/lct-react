@@ -1,5 +1,5 @@
-@import "./media_mixins";
-@import "./next_four_phase_mixins";
+@use "media_mixins";
+@use "next_four_phase_mixins";
 
 .phase {
   display: flex;
@@ -8,16 +8,16 @@
   align-items: center;
 }
 
-@include scaling(70px, 18px, 8px);
+@include next_four_phase_mixins.scaling(70px, 18px, 8px);
 
-@include for-tablet-portrait-up {
-  @include scaling(80px, 18px, 8px);
+@include media_mixins.for-tablet-portrait-up {
+  @include next_four_phase_mixins.scaling(80px, 18px, 8px);
 }
 
-@include for-tablet-landscape-up {
-  @include scaling(90px, 25px, 10px);
+@include media_mixins.for-tablet-landscape-up {
+  @include next_four_phase_mixins.scaling(90px, 25px, 10px);
 }
 
-@include for-desktop-up {
-  @include scaling(95px, 25px, 20px);
+@include media_mixins.for-desktop-up {
+  @include next_four_phase_mixins.scaling(95px, 25px, 20px);
 }

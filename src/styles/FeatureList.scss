@@ -1,4 +1,4 @@
-@import "./variables";
+@use "variables";
 
 .dialog {
   text-align: center;
@@ -11,12 +11,12 @@ ul {
 
   li {
     padding: 8px 0px;
-    border-bottom: $feature-border;
+    border-bottom: variables.$feature-border;
   }
   li:first-child {
-    border-top: $feature-border;
+    border-top: variables.$feature-border;
   }
   li:last-child {
-    border-bottom: $feature-border;
+    border-bottom: variables.$feature-border;
   }
 }
