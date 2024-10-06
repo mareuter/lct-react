@@ -3,7 +3,7 @@
 
 @mixin scaling($isize, $fsize, $psize) {
   .phase {
-    padding: $psize calc(#{math.div($psize, 2)});
+    padding: $psize calc(math.div($psize, 2));
     font-size: $fsize;
   }
   .phase-image {
