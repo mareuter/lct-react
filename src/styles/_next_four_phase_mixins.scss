@@ -1,5 +1,5 @@
 @use "sass:math";
-@import "./mixins";
+@use "mixins";
 
 @mixin scaling($isize, $fsize, $psize) {
   .phase {
@@ -7,6 +7,6 @@
     font-size: $fsize;
   }
   .phase-image {
-    @include make-square($isize);
+    @include mixins.make-square($isize);
   }
 }

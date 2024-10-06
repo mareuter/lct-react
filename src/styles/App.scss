@@ -1,11 +1,11 @@
-@import "./variables";
-@import "./media_mixins";
-@import "./app_mixins";
+@use "variables";
+@use "media_mixins";
+@use "app_mixins";
 
 .App {
-  background-color: $background-color;
+  background-color: variables.$background-color;
   font-size: 18px;
-  color: $standard-color;
+  color: variables.$standard-color;
   overflow: auto;
 }
 
@@ -40,14 +40,14 @@ p {
   align-items: center;
 }
 
-@include medium-small-horizontal {
-  @include scaling(18px, 26px, 50px);
+@include media_mixins.medium-small-horizontal {
+  @include app_mixins.scaling(18px, 26px, 50px);
 }
 
-@include large-horizontal {
-  @include scaling(25px, 35px, 55px);
+@include media_mixins.large-horizontal {
+  @include app_mixins.scaling(25px, 35px, 55px);
 }
 
-@include extra-large-horizontal {
-  @include scaling(30px, 45px, 75px);
+@include media_mixins.extra-large-horizontal {
+  @include app_mixins.scaling(30px, 45px, 75px);
 }
