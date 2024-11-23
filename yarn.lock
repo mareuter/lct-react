@@ -1279,8 +1279,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.117.0
-  resolution: "@react-three/drei@npm:9.117.0"
+  version: 9.117.3
+  resolution: "@react-three/drei@npm:9.117.3"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -1304,7 +1304,7 @@ __metadata:
     tunnel-rat: "npm:^0.1.2"
     utility-types: "npm:^3.11.0"
     uuid: "npm:^9.0.1"
-    zustand: "npm:^3.7.1"
+    zustand: "npm:^5.0.1"
   peerDependencies:
     "@react-three/fiber": ">=8.0"
     react: ">=18.0"
@@ -1313,7 +1313,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/0356a1a265ae5a7099b374b1fc380e83e9a97d81824c4585f968fc1bfc867c17005718716df632349004ff76583783328d272076bac5e3df97a96e8b97dddd99
+  checksum: 10/8d55603d7e46fb080586010d8a8d8a2972e854d758c73d4b81511baa93f35f91760537db142817f9fc0b41287b445b141bc95667912fe5c373714dd65c85feb0
   languageName: node
   linkType: hard
 
@@ -7520,5 +7520,26 @@ __metadata:
     react:
       optional: true
   checksum: 10/c5dcd734ddcc393bc1febcf1811d606222c6d40cb4cf0e4d605be6cfa1855c8b09b6725ab6b73a395f1e020f8f617b605c800c1f19301b240c45d5042e1b2a10
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "zustand@npm:5.0.1"
+  peerDependencies:
+    "@types/react": ">=18.0.0"
+    immer: ">=9.0.6"
+    react: ">=18.0.0"
+    use-sync-external-store: ">=1.2.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+    use-sync-external-store:
+      optional: true
+  checksum: 10/9ee5b2483213157c519be2647e873fb21962b4e6e521031916e8969552379dd03348057c9dfd030eb1e7ef98a945a1f99f9aa9badda5d9673eb4004e354dc2dc
   languageName: node
   linkType: hard
