@@ -1236,8 +1236,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.120.3
-  resolution: "@react-three/drei@npm:9.120.3"
+  version: 9.120.4
+  resolution: "@react-three/drei@npm:9.120.4"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -1263,14 +1263,14 @@ __metadata:
     uuid: "npm:^9.0.1"
     zustand: "npm:^5.0.1"
   peerDependencies:
-    "@react-three/fiber": ^8
+    "@react-three/fiber": ^8 || ^9.0.0-0
     react: ^18
     react-dom: ^18
     three: ">=0.137"
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/fb7e0d37fc99b6cb1617e1cd7e7a2ce29b7041e42022bec53efe3de7d849f3b266ced5a96cee69a047fb0a5553b4ca278800458ef0c9dc82ac13ea52d0518931
+  checksum: 10/d2288e1b707dee6a1e192dce93c5fc3bd4dadc6ee5652af5a84eecb45a294cb29ac7e77d101c7c99bd8c2719bafd22dccc0ec80b106b4bc36985e6279d1c943d
   languageName: node
   linkType: hard
 
