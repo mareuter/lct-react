@@ -1243,8 +1243,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.120.5
-  resolution: "@react-three/drei@npm:9.120.5"
+  version: 9.120.6
+  resolution: "@react-three/drei@npm:9.120.6"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -1263,7 +1263,7 @@ __metadata:
     stats.js: "npm:^0.17.0"
     suspend-react: "npm:^0.1.3"
     three-mesh-bvh: "npm:^0.7.8"
-    three-stdlib: "npm:^2.34.0"
+    three-stdlib: "npm:^2.35.6"
     troika-three-text: "npm:^0.52.0"
     tunnel-rat: "npm:^0.1.2"
     utility-types: "npm:^3.11.0"
@@ -1277,7 +1277,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/667b10da8ad6f66da97335618a55d4f082d0832d2fc2074a8d7f82918620807bfb9fced1ff98e58bcdf5753db2fde7017ed746f7cef30b98d530b3694281f5ac
+  checksum: 10/3d109c025d06913e58bd0e41cf89c2ff6f7960d595751b6313877b4baa5b0ba947e23ccf3d459a409d7de7829e5f150731afa449696d141af87c0225dab05c70
   languageName: node
   linkType: hard
 
@@ -7312,9 +7312,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three-stdlib@npm:^2.34.0":
-  version: 2.34.0
-  resolution: "three-stdlib@npm:2.34.0"
+"three-stdlib@npm:^2.35.6":
+  version: 2.35.6
+  resolution: "three-stdlib@npm:2.35.6"
   dependencies:
     "@types/draco3d": "npm:^1.4.0"
     "@types/offscreencanvas": "npm:^2019.6.4"
@@ -7324,7 +7324,7 @@ __metadata:
     potpack: "npm:^1.0.1"
   peerDependencies:
     three: ">=0.128.0"
-  checksum: 10/9b535abe245dbc8611e2a293ba0df3130bcc9543054fcc8dbb522e64e69e6bc8436862dec46944becc188d5ff8a2e23a348ce5811cd2527c6a5d1f25226d8991
+  checksum: 10/098db5eda1d7fff49004fe4a54dcfcd2f2680d3dc87722edd0176a0cf06326f6a6db236a9730e001e0591b4df204dcfe40d8500d5fc4bfbdb887d5968636dfd6
   languageName: node
   linkType: hard
 
