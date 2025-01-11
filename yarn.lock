@@ -1282,8 +1282,8 @@ __metadata:
   linkType: hard
 
 "@react-three/fiber@npm:^8.15.9":
-  version: 8.17.10
-  resolution: "@react-three/fiber@npm:8.17.10"
+  version: 8.17.12
+  resolution: "@react-three/fiber@npm:8.17.12"
   dependencies:
     "@babel/runtime": "npm:^7.17.8"
     "@types/debounce": "npm:^1.2.1"
@@ -1302,8 +1302,8 @@ __metadata:
     expo-asset: ">=8.4"
     expo-file-system: ">=11.0"
     expo-gl: ">=11.0"
-    react: ">=18.0"
-    react-dom: ">=18.0"
+    react: ">=18 <19"
+    react-dom: ">=18 <19"
     react-native: ">=0.64"
     three: ">=0.133"
   peerDependenciesMeta:
@@ -1319,7 +1319,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/16cff9d17838e18075b0c512c41f6e644e592fc40413ff9bb6f029fd1207ca085163c6b84f24bef211962462d968d3c750d2bc99d3840506973e91b49b2d068e
+  checksum: 10/30997b4280452dcce3111af5dc00a7494c0aa5969e91d35406415373c1b74a5af978c4ef07998342c6234c7703d526405b44c1e981b33c6901a57064ecc9c997
   languageName: node
   linkType: hard
 
