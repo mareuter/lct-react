@@ -1312,8 +1312,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.88.11":
-  version: 9.120.8
-  resolution: "@react-three/drei@npm:9.120.8"
+  version: 9.121.2
+  resolution: "@react-three/drei@npm:9.121.2"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -1336,17 +1336,16 @@ __metadata:
     troika-three-text: "npm:^0.52.0"
     tunnel-rat: "npm:^0.1.2"
     utility-types: "npm:^3.11.0"
-    uuid: "npm:^9.0.1"
     zustand: "npm:^5.0.1"
   peerDependencies:
-    "@react-three/fiber": ^8 || ^9.0.0-0
+    "@react-three/fiber": ^8
     react: ^18
     react-dom: ^18
     three: ">=0.137"
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/afb84a4587b470b0f1cff20853b1ec18d6189ad36aa99c6b0365840a021c2d202ff3115591527db59b537abcdedae1af1a68c1a52d83cd064e98296595692376
+  checksum: 10/c7700eb86f96b27b123a2c1f7da1dd9cd7b34231d355df7bd6f7c24c94a66eb9a6f6bf6d70947bb1b368533470c08290f115fa33d88e96dd1c7ea36f85d44e72
   languageName: node
   linkType: hard
 
@@ -7863,15 +7862,6 @@ __metadata:
   version: 3.11.0
   resolution: "utility-types@npm:3.11.0"
   checksum: 10/a3c51463fc807ed04ccc8b5d0fa6e31f3dcd7a4cbd30ab4bc6d760ce5319dd493d95bf04244693daf316f97e9ab2a37741edfed8748ad38572a595398ad0fdaf
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^9.0.1":
-  version: 9.0.1
-  resolution: "uuid@npm:9.0.1"
-  bin:
-    uuid: dist/bin/uuid
-  checksum: 10/9d0b6adb72b736e36f2b1b53da0d559125ba3e39d913b6072f6f033e0c87835b414f0836b45bcfaf2bdf698f92297fea1c3cc19b0b258bc182c9c43cc0fab9f2
   languageName: node
   linkType: hard
 
