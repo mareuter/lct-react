@@ -1189,18 +1189,17 @@ __metadata:
   linkType: hard
 
 "@react-three/fiber@npm:^8.15.9":
-  version: 8.17.12
-  resolution: "@react-three/fiber@npm:8.17.12"
+  version: 8.17.14
+  resolution: "@react-three/fiber@npm:8.17.14"
   dependencies:
     "@babel/runtime": "npm:^7.17.8"
-    "@types/debounce": "npm:^1.2.1"
     "@types/react-reconciler": "npm:^0.26.7"
     "@types/webxr": "npm:*"
     base64-js: "npm:^1.5.1"
     buffer: "npm:^6.0.3"
-    debounce: "npm:^1.2.1"
     its-fine: "npm:^1.0.6"
     react-reconciler: "npm:^0.27.0"
+    react-use-measure: "npm:^2.1.7"
     scheduler: "npm:^0.21.0"
     suspend-react: "npm:^0.1.3"
     zustand: "npm:^3.7.1"
@@ -1226,7 +1225,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/30997b4280452dcce3111af5dc00a7494c0aa5969e91d35406415373c1b74a5af978c4ef07998342c6234c7703d526405b44c1e981b33c6901a57064ecc9c997
+  checksum: 10/3b32a6518d8be127745b04036bcbba24d08d11ffd5ea7bad9d2e6ba0dadd878c36ca8b62d67f3103ad6d2d15f6aeeff49e2971696d768e2139a502a633f6b2cf
   languageName: node
   linkType: hard
 
@@ -1467,13 +1466,6 @@ __metadata:
   version: 0.6.0
   resolution: "@types/cookie@npm:0.6.0"
   checksum: 10/b883348d5bf88695fbc2c2276b1c49859267a55cae3cf11ea1dccc1b3be15b466e637ce3242109ba27d616c77c6aa4efe521e3d557110b4fdd9bc332a12445c2
-  languageName: node
-  linkType: hard
-
-"@types/debounce@npm:^1.2.1":
-  version: 1.2.4
-  resolution: "@types/debounce@npm:1.2.4"
-  checksum: 10/decef3eee65d681556d50f7fac346f1b33134f6b21f806d41326f9dfb362fa66b0282ff0640ae6791b690694c9dc3dad4e146e909e707e6f96650f3aa325b9da
   languageName: node
   linkType: hard
 
@@ -2693,13 +2685,6 @@ __metadata:
   version: 3.6.0
   resolution: "date-fns@npm:3.6.0"
   checksum: 10/cac35c58926a3b5d577082ff2b253612ec1c79eb6754fddef46b6a8e826501ea2cb346ecbd211205f1ba382ddd1f9d8c3f00bf433ad63cc3063454d294e3a6b8
-  languageName: node
-  linkType: hard
-
-"debounce@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "debounce@npm:1.2.1"
-  checksum: 10/0b95b2a9d80ed69117d890f8dab8c0f2d6066f8d20edd1d810ae51f8f366a6d4c8b1d56e97dcb9304e93d57de4d5db440d34a03def7dad50403fc3f22bf16808
   languageName: node
   linkType: hard
 
@@ -6056,6 +6041,19 @@ __metadata:
     react-dom:
       optional: true
   checksum: 10/84b292e4947e5f9e0c5bae4059f28faf0b4c21944dc27707563188f001f006e2a62f0b5cfefda925f890629f40a237230c4e2a8572a64763e2cf809b504c0d87
+  languageName: node
+  linkType: hard
+
+"react-use-measure@npm:^2.1.7":
+  version: 2.1.7
+  resolution: "react-use-measure@npm:2.1.7"
+  peerDependencies:
+    react: ">=16.13"
+    react-dom: ">=16.13"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+  checksum: 10/d3cbd359b97728654904a7b3b42c2bcac95596702d482bd497362869eeb040f0e585eb7073cfe76a6055783215581f5db5d2be3ba5b78668f0dd0be5b3330e67
   languageName: node
   linkType: hard
 
