@@ -62,7 +62,7 @@
     "@typescript-eslint/eslint-plugin": "8.24.1",
     "@typescript-eslint/parser": "8.24.1",
     "@vitejs/plugin-react": "4.3.4",
-    "@vitest/coverage-v8": "3.0.6",
+    "@vitest/coverage-v8": "3.0.7",
     "eslint": "9.21.0",
     "eslint-config-prettier": "10.0.2",
     "eslint-plugin-import": "2.31.0",
@@ -74,7 +74,7 @@
     "sass": "1.85.1",
     "typescript": "5.7.3",
     "vite": "6.1.1",
-    "vitest": "3.0.6"
+    "vitest": "3.0.7"
   },
   "dependenciesMeta": {
     "@react-spring/core": {
