@@ -5408,7 +5408,7 @@ __metadata:
     react-dom: "npm:18.3.1"
     react-router-dom: "npm:^7.0.0"
     sass: "npm:1.86.0"
-    three: "npm:^0.174.0"
+    three: "npm:^0.175.0"
     typescript: "npm:5.8.2"
     vite: "npm:6.2.3"
     vitest: "npm:3.0.9"
@@ -7395,10 +7395,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.174.0":
-  version: 0.174.0
-  resolution: "three@npm:0.174.0"
-  checksum: 10/d02d33aaacc56f60c38a2466f29c96c0afa8bddc5e284f8b4a474ef7d917c8c6d4557403521c6f9bc3c49a96719872074f5cf02c3cb6f1e0a85f901da5b92ac8
+"three@npm:^0.175.0":
+  version: 0.175.0
+  resolution: "three@npm:0.175.0"
+  checksum: 10/f458e3e41e7171811c66702fa544e559d8863e1a7e2338f137b445fe95e22c41307d58fa973b98ee22ab5281c064f73a4f520b75c1d2e367a8d94c2bd9473c20
   languageName: node
   linkType: hard
 
