@@ -1326,8 +1326,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^10.0.0":
-  version: 10.0.6
-  resolution: "@react-three/drei@npm:10.0.6"
+  version: 10.0.7
+  resolution: "@react-three/drei@npm:10.0.7"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -1345,7 +1345,7 @@ __metadata:
     suspend-react: "npm:^0.1.3"
     three-mesh-bvh: "npm:^0.8.3"
     three-stdlib: "npm:^2.35.6"
-    troika-three-text: "npm:^0.52.0"
+    troika-three-text: "npm:^0.52.4"
     tunnel-rat: "npm:^0.1.2"
     use-sync-external-store: "npm:^1.4.0"
     utility-types: "npm:^3.11.0"
@@ -1358,7 +1358,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/773e1dbaab1d1220f390972a5a94a07f774f184a26dbcba12fd2c797c97fc93a6062f4a67100454d3ad7c9c7eca3689d99dc90d4fef4e52b89fe7f740047d1e7
+  checksum: 10/cff84a49a1ce564c6957d4427ef2c6729d3ca56b5e2b45b575b0cdf6b10e20ba41c13069ad12c87e4898b8c0a80a20f7880863ebc84f73be9c05b1bb5f2bac8f
   languageName: node
   linkType: hard
 
@@ -7642,26 +7642,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"troika-three-text@npm:^0.52.0":
-  version: 0.52.0
-  resolution: "troika-three-text@npm:0.52.0"
+"troika-three-text@npm:^0.52.4":
+  version: 0.52.4
+  resolution: "troika-three-text@npm:0.52.4"
   dependencies:
     bidi-js: "npm:^1.0.2"
-    troika-three-utils: "npm:^0.52.0"
+    troika-three-utils: "npm:^0.52.4"
     troika-worker-utils: "npm:^0.52.0"
     webgl-sdf-generator: "npm:1.1.1"
   peerDependencies:
     three: ">=0.125.0"
-  checksum: 10/bec140287ca4bc997d304e8e8cbb00430b0afe50d6b13219d7c07e64c839e3f514fff359e56bda99964a0c43787a309ad3cff0ae33e14dae00157a6197b09328
+  checksum: 10/bbc0aaaed657b30240b69034543ac71451590e0b7403ae9eadc6b0891b791434185e687c6db545c23433fea0bfe93d67def3e1d120ba73dae74fe08aea95e8ca
   languageName: node
   linkType: hard
 
-"troika-three-utils@npm:^0.52.0":
-  version: 0.52.0
-  resolution: "troika-three-utils@npm:0.52.0"
+"troika-three-utils@npm:^0.52.4":
+  version: 0.52.4
+  resolution: "troika-three-utils@npm:0.52.4"
   peerDependencies:
     three: ">=0.125.0"
-  checksum: 10/d0d4589dca3010c370adf1ca230b9bc62391ac68e665232f71cd7cac3bf04b904b4870df8877aabab1cf71f5c9b0e5b8ca3216c6109321127074b1d7d874dc4c
+  checksum: 10/cd2382b50584fdbec86c6ab9ac771c777cc937b9f23f40cb3f2fa3f401ba438ffea822171f84fddc7d6537798e4fc1cc8c2f5fe81b04b3e1e6e7bb6c2f228f5c
   languageName: node
   linkType: hard
 
