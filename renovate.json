@@ -87,7 +87,6 @@
   ],
   "timezone": "America/Phoenix",
   "schedule": [
-    "on Saturday after 4pm",
-    "on Saturday before 11pm"
+    "* * * * 6"
   ]
 }
