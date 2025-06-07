@@ -86,6 +86,6 @@
       "axios": "axios/dist/node/axios.cjs"
     }
   },
-  "packageManager": "yarn@4.9.1",
+  "packageManager": "yarn@4.9.2",
   "type": "module"
 }
