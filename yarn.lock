@@ -1222,14 +1222,14 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^10.0.0":
-  version: 10.5.1
-  resolution: "@react-three/drei@npm:10.5.1"
+  version: 10.6.1
+  resolution: "@react-three/drei@npm:10.6.1"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
     "@monogrid/gainmap-js": "npm:^3.0.6"
     "@use-gesture/react": "npm:^10.3.1"
-    camera-controls: "npm:^3.0.0"
+    camera-controls: "npm:^3.1.0"
     cross-env: "npm:^7.0.3"
     detect-gpu: "npm:^5.0.56"
     glsl-noise: "npm:^0.0.0"
@@ -1254,7 +1254,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/64c96312e721ce47cfb29227edc46abdcc940fe49f6a980e3dc0061f77fbb569680a9b04721fa7d8b76787b7dfa6ee5e8ab446fe9644005296d123db01c1ca68
+  checksum: 10/dbcb2060bb70350d77a2f5a5cdcb7c10448fc2c4d76a8328106a6a358d3ce5acb7c5d551841309849a90e4ab60a40131354ab3cad44ce4c7d37c2381e3710763
   languageName: node
   linkType: hard
 
@@ -2594,12 +2594,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"camera-controls@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "camera-controls@npm:3.0.0"
+"camera-controls@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "camera-controls@npm:3.1.0"
   peerDependencies:
     three: ">=0.126.1"
-  checksum: 10/8855fb56e7f8066b1c8b29f631770735cc1d10672fe56dd3ffb2ccebc46af00edad64a14b45cd199da98ed6cfc3749601b92f9672a9f386c9800f5a2310c230b
+  checksum: 10/25e46aee14f49112cd2de213c52f77e3f0bded77be935e65198c66ab79e19155c117f315cbc84717f322da8d1994b4a67b1b9a2cd55acfccffd9621193d3cbc4
   languageName: node
   linkType: hard
 
