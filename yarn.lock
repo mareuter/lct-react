@@ -1213,8 +1213,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^10.0.0":
-  version: 10.6.1
-  resolution: "@react-three/drei@npm:10.6.1"
+  version: 10.7.2
+  resolution: "@react-three/drei@npm:10.7.2"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -1245,7 +1245,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/dbcb2060bb70350d77a2f5a5cdcb7c10448fc2c4d76a8328106a6a358d3ce5acb7c5d551841309849a90e4ab60a40131354ab3cad44ce4c7d37c2381e3710763
+  checksum: 10/c2694e76720e4cf6d0cfc158eb0f049d45133341ff552c39a70f95a740c0a63adfb49a10b7923d4505d10e74fc0be2678571c6229d4efc170f8cbd79e0ab607f
   languageName: node
   linkType: hard
 
