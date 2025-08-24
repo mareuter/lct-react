@@ -829,15 +829,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/react-fontawesome@npm:^0.2.0":
-  version: 0.2.6
-  resolution: "@fortawesome/react-fontawesome@npm:0.2.6"
+"@fortawesome/react-fontawesome@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@fortawesome/react-fontawesome@npm:3.0.0"
   dependencies:
-    prop-types: "npm:^15.8.1"
+    semver: "npm:^7.7.2"
   peerDependencies:
-    "@fortawesome/fontawesome-svg-core": ~1 || ~6 || ~7
-    react: ^16.3 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10/e1660d528e3b76eb7e8080a6179188adb9a9eb6ec76a3d18443a8a30bb4a12515fdec456c5c23ae805cdff75c8bae636249863d587f66745a889f3df630d05a4
+    "@fortawesome/fontawesome-svg-core": ~6 || ~7
+    react: ^18.0.0 || ^19.0.0
+  checksum: 10/5459378ae218a4f111bea7b433e1d47c61181e2a7d5e72ded7561df725497b763fab43e2aa5224812201d91e739b2da2f41e0d355ee57c8383c73f28bb8450fa
   languageName: node
   linkType: hard
 
@@ -5540,7 +5540,7 @@ __metadata:
     "@eslint/js": "npm:9.34.0"
     "@fortawesome/fontawesome-svg-core": "npm:^7.0.0"
     "@fortawesome/free-solid-svg-icons": "npm:^7.0.0"
-    "@fortawesome/react-fontawesome": "npm:^0.2.0"
+    "@fortawesome/react-fontawesome": "npm:^3.0.0"
     "@juggle/resize-observer": "npm:3.4.0"
     "@react-three/drei": "npm:^10.0.0"
     "@react-three/fiber": "npm:^8.15.9"
@@ -7066,6 +7066,15 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 10/1b41018df2d8aca5a1db4729985e8e20428c650daea60fcd16e926e9383217d00f574fab92d79612771884a98d2ee2a1973f49d630829a8d54d6570defe62535
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.7.2":
+  version: 7.7.2
+  resolution: "semver@npm:7.7.2"
+  bin:
+    semver: bin/semver.js
+  checksum: 10/7a24cffcaa13f53c09ce55e05efe25cd41328730b2308678624f8b9f5fc3093fc4d189f47950f0b811ff8f3c3039c24a2c36717ba7961615c682045bf03e1dda
   languageName: node
   linkType: hard
 
