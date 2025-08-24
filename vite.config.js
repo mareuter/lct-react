@@ -14,4 +14,8 @@ export default defineConfig({
     },
     setupFiles: ['./vitest.setup.js'],
   },
+  ssr: {
+    // ensure react-fontawesome is not externalized to Node at runtime
+    noExternal: ["@fortawesome/react-fontawesome"],
+  },
 });
