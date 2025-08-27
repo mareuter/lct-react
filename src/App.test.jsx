@@ -18,7 +18,12 @@ global.ResizeObserver = ResizeObserver;
 
 const AllTheProviders = ({ children }) => {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true
+      }}
+    >
       <DateProvider date={new Date()}>{children}</DateProvider>
     </BrowserRouter>
   );
