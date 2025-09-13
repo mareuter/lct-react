@@ -1196,9 +1196,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/drei@npm:10.7.4":
-  version: 10.7.4
-  resolution: "@react-three/drei@npm:10.7.4"
+"@react-three/drei@npm:10.7.6":
+  version: 10.7.6
+  resolution: "@react-three/drei@npm:10.7.6"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -1229,7 +1229,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/3ef93f161b5ee158faf7e393e9a6cbd2b53a29bfff3211a2acfb25dda5328a42e8a7806633fa31a10d6dc8e77035bef331a474e0def1eb1d93ecef35bfd405d3
+  checksum: 10/fd6efdb687cfa0bdceeaf4183dfad99e7a2dc1b153f803d24de861fea8d5c924d2b01f5a659a4942f051f56842f6ac193f62cc4d1e3d0032f0b847a4c6177ddf
   languageName: node
   linkType: hard
 
@@ -5495,7 +5495,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": "npm:^7.0.0"
     "@fortawesome/react-fontawesome": "npm:^3.0.0"
     "@juggle/resize-observer": "npm:3.4.0"
-    "@react-three/drei": "npm:10.7.4"
+    "@react-three/drei": "npm:10.7.6"
     "@react-three/fiber": "npm:9.3.0"
     "@testing-library/dom": "npm:10.4.1"
     "@testing-library/react": "npm:16.3.0"
