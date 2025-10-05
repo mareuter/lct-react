@@ -73,12 +73,12 @@ function App() {
       <MainNav />
       <main className="App-main">
         <Routes>
+          <Suspense fallback={<LoadScreen />}>
           <Route path="/" element={<Welcome />} />
           <Route
             path="/moon_info"
             element={
               <ErrorBoundary>
-                <Suspense fallback={<LoadScreen />}>
                   <MoonInformation
                     date={getSecondsTimestamp(date)}
                     timezone={timezone.current.name()}
@@ -86,7 +86,6 @@ function App() {
                     longitude={coordinates.longitude}
                     coordinatesGood={coordinates.good}
                   />
-                </Suspense>
               </ErrorBoundary>
             }
           />
@@ -110,6 +109,7 @@ function App() {
               />
             }
           />
+        </Suspense>
         </Routes>
       </main>
     </div>

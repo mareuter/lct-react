@@ -17,7 +17,9 @@ root.render(
     }}
   >
     <DateProvider>
-      <App />
+      <Suspense fallback={<h1>Waking up ...</h1>}>
+      < App />
+      </Suspense>
     </DateProvider>
   </BrowserRouter>,
 );
