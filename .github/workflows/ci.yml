@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
 
       - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@13427813f706a0f6c9b74603b31103c40ab1c35a
+        uses: actions/setup-node@dda4788290998366da86b6a4f497909644397bb2
         with:
           node-version: ${{ matrix.node-version }}
           check-latest: true
