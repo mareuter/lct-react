@@ -5414,7 +5414,7 @@ __metadata:
     react: "npm:19.2.0"
     react-datepicker: "npm:^8.0.0"
     react-dom: "npm:19.2.0"
-    react-router-dom: "npm:7.9.5"
+    react-router-dom: "npm:7.9.6"
     sass: "npm:1.94.0"
     three: "npm:^0.181.0"
     typescript: "npm:5.9.3"
@@ -6241,8 +6241,8 @@ __metadata:
   linkType: hard
 
 "react-datepicker@npm:^8.0.0":
-  version: 8.8.0
-  resolution: "react-datepicker@npm:8.8.0"
+  version: 8.9.0
+  resolution: "react-datepicker@npm:8.9.0"
   dependencies:
     "@floating-ui/react": "npm:^0.27.15"
     clsx: "npm:^2.1.1"
@@ -6250,7 +6250,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
     react-dom: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
-  checksum: 10/3cec04b3da591712aca638ab3d0f1af5970c4d00d01bba4ceeee95e14220504b3eb186c90db68cd38697f78e4b005a23299b01be1679269578f22ac4d82e3049
+  checksum: 10/26c33c4a16d8f21ab8ed71e516c4c1bb4aedc9f9954efb2ca78c1edfbcdc64014388c4ad35b867b675fb93e8110f7b2414ef172053f230e9227e306afe686087
   languageName: node
   linkType: hard
 
@@ -6297,21 +6297,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:7.9.5":
-  version: 7.9.5
-  resolution: "react-router-dom@npm:7.9.5"
+"react-router-dom@npm:7.9.6":
+  version: 7.9.6
+  resolution: "react-router-dom@npm:7.9.6"
   dependencies:
-    react-router: "npm:7.9.5"
+    react-router: "npm:7.9.6"
   peerDependencies:
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10/e58bb2b91db04c3fd8584fce3e42f720cfc5c000d859ae898ed36fc590098f39dbe1a7f2088d3fe17e84065af479759499ddf5dd753628cdbc08b69f70d2b8db
+  checksum: 10/fd8ecd098abbff9355d17038143fb42db61fd0b28ede3ac5f6a945009cc61dca86745a4da331904b1b7918055844c9d8bdbc6565b934267b516b2db7dea6ab1a
   languageName: node
   linkType: hard
 
-"react-router@npm:7.9.5":
-  version: 7.9.5
-  resolution: "react-router@npm:7.9.5"
+"react-router@npm:7.9.6":
+  version: 7.9.6
+  resolution: "react-router@npm:7.9.6"
   dependencies:
     cookie: "npm:^1.0.1"
     set-cookie-parser: "npm:^2.6.0"
@@ -6321,7 +6321,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/cfef53455c5ead14450283218c73aa08d95dfeb6dd85e52c10d2534c2ee1ba55c6dab81df8655f8fcc5ae858f1796448d9895a225ffd8a2b2865a0a03a117073
+  checksum: 10/f34714b3701caf689c306631f5326a9fdab585799021c234aa3eee75bed6bfcea9250f0867e984e4e3c43c77d947c41bd47b70c0601d76c4290e03247fb7ac23
   languageName: node
   linkType: hard
 
