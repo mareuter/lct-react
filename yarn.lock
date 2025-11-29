@@ -6236,8 +6236,8 @@ __metadata:
   linkType: hard
 
 "react-datepicker@npm:^8.0.0":
-  version: 8.9.0
-  resolution: "react-datepicker@npm:8.9.0"
+  version: 8.10.0
+  resolution: "react-datepicker@npm:8.10.0"
   dependencies:
     "@floating-ui/react": "npm:^0.27.15"
     clsx: "npm:^2.1.1"
@@ -6245,7 +6245,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
     react-dom: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
-  checksum: 10/26c33c4a16d8f21ab8ed71e516c4c1bb4aedc9f9954efb2ca78c1edfbcdc64014388c4ad35b867b675fb93e8110f7b2414ef172053f230e9227e306afe686087
+  checksum: 10/8063ffb4221daaff9879fb96c3f482819e9702ce72879c415ea1a112c130665fff0849fbf79ae8acdee63fce5b5c6e4d64b8d4e3e7f0b1c6bcb9eab12ec7a0ae
   languageName: node
   linkType: hard
 
