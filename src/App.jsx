@@ -72,45 +72,49 @@ function App() {
     <div className="App">
       <MainNav />
       <main className="App-main">
-        <Routes>
-          <Suspense fallback={<LoadScreen />}>
-          <Route path="/" element={<Welcome />} />
-          <Route
-            path="/moon_info"
-            element={
-              <ErrorBoundary>
-                  <MoonInformation
-                    date={getSecondsTimestamp(date)}
-                    timezone={timezone.current.name()}
-                    latitude={coordinates.latitude}
-                    longitude={coordinates.longitude}
-                    coordinatesGood={coordinates.good}
-                  />
-              </ErrorBoundary>
-            }
-          />
-          <Route
-            path="/lunar_club"
-            element={
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route
+          path="/moon_info"
+          element={
+            <ErrorBoundary>
+              <Suspense fallback={<LoadScreen />}>
+                <MoonInformation
+                  date={getSecondsTimestamp(date)}
+                  timezone={timezone.current.name()}
+                  latitude={coordinates.latitude}
+                  longitude={coordinates.longitude}
+                  coordinatesGood={coordinates.good}
+                />
+                </Suspense>
+            </ErrorBoundary>
+          }
+        />
+        <Route
+          path="/lunar_club"
+          element={
+            <Suspense fallback={<LoadScreen />}>
               <LunarClub
                 date={getSecondsTimestamp(date)}
                 latitude={coordinates.latitude}
                 longitude={coordinates.longitude}
               />
-            }
-          />
-          <Route
-            path="/lunar_ii_club"
-            element={
+            </Suspense>
+          }
+        />
+        <Route
+          path="/lunar_ii_club"
+          element={
+            <Suspense fallback={<LoadScreen />}>
               <LunarIIClub
                 date={getSecondsTimestamp(date)}
                 latitude={coordinates.latitude}
                 longitude={coordinates.longitude}
               />
-            }
-          />
-        </Suspense>
-        </Routes>
+            </Suspense>
+          }
+        />
+      </Routes>
       </main>
     </div>
   );

@@ -18,22 +18,49 @@ function MoonInformation(props) {
   let moonInfoState = localStorage.getItem(MOON_INFO_LOCAL)
     ? JSON.parse(localStorage.getItem(MOON_INFO_LOCAL))
     : moonInfoJson;
-  // var [moonInfo, setMoonInfo] = useState(moonInfoState);
+  var [moonInfo, setMoonInfo] = useState(moonInfoState);
   var [error, setError] = useState(false);
-  var moonInfo = useGetData({
-    url: 'https://lct-web.onrender.com/moon_info',
-    params: {
-      date: props.date,
-      tz: props.timezone,
-      lat: props.latitude,
-      lon: props.longitude,
-    },
-  });
-  if (!moonInfo) {
-    moonInfo = moonInfoState;
-  } else {
-    localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(moonInfo));
-  }
+  // var moonInfo = useGetData({
+  //   url: 'https://lct-web.onrender.com/moon_info',
+  //   params: {
+  //     date: props.date,
+  //     tz: props.timezone,
+  //     lat: props.latitude,
+  //     lon: props.longitude,
+  //   },
+  // });
+  // if (!moonInfo) {
+  //   moonInfo = moonInfoState;
+  // } else {
+  //   localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(moonInfo));
+  // }
+
+  useEffect(() => {
+    const getData = async () => {
+      let url = 'https://lct-web.onrender.com/moon_info';
+      const params = new URLSearchParams({
+        date: props.date,
+        tz: props.timezone,
+        lat: props.latitude,
+        lon: props.longitude,
+      });
+      try {
+        const response = await fetch(`${url}?${params}`);
+        if (!response.ok) {
+          setError(true);
+          // throw new Error(`Response status: ${response.status}`);
+        }
+        const result = await response.json();
+        // console.log(result);
+        setMoonInfo(result);
+        setError(false);
+        localStorage.setItem(MOON_INFO_LOCAL, JSON.stringify(result));
+      } catch (error) {
+        setError(true);
+      }
+    };
+    getData();
+  }, [props.date, props.timezone, props.latitude, props.longitude]);
 
   // useEffect(() => {
   //   let axiosCancelSource = axios.CancelToken.source();

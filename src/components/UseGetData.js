@@ -36,7 +36,8 @@ function useGetData(config) {
   console.log('X');
   useEffect(() => {
     console.log('E');
-    const promise = axios(config).then((response) => response.data);
+    // const promise = axios(config).then((response) => response.data);
+    const promise = new Promise((resolve) => setTimeout(resolve, 600000));
     setResource(promiseWrapper(promise));
   }, [...Object.values(config.params)]);
   return resource?.read();
