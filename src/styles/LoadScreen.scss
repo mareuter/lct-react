@@ -1,13 +1,13 @@
-@import './variables';
-@import './media_mixins';
-@import './app_mixins';
+@use 'variables';
+@use 'media_mixins';
+@use 'app_mixins';
 
 .load-screen {
   // height: 100%;
   // width: 100%;
   // position: relative;
   // z-index: 100;
-  background: $background-color;
+  background: variables.$background-color;
   color: blue;
   background-color: aqua;
 }

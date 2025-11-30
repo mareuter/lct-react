@@ -1,23 +1,23 @@
-@import "./variables";
-@import "./media_mixins";
+@use "variables";
+@use "media_mixins";
 
 .canvas {
   height: 300px;
 }
 
-@include for-tablet-portrait-up {
+@include media_mixins.for-tablet-portrait-up {
   .canvas {
     height: 350px;
   }
 }
 
-@include for-tablet-landscape-up {
+@include media_mixins.for-tablet-landscape-up {
   .canvas {
     height: 400px;
   }
 }
 
-@include for-desktop-up {
+@include media_mixins.for-desktop-up {
   .canvas {
     height: 450px;
   }

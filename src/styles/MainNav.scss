@@ -1,7 +1,7 @@
-@import "./variables";
-@import "./mixins";
-@import "./media_mixins";
-@import "./main_nav_mixins";
+@use "variables";
+@use "mixins";
+@use "media_mixins";
+@use "main_nav_mixins";
 
 $menu-font: 15px;
 
@@ -11,7 +11,7 @@ $menu-font: 15px;
   justify-content: space-between;
   position: fixed;
   width: 100%;
-  background: $background-color;
+  background: variables.$background-color;
   z-index: 100;
   top: 0;
 
@@ -21,7 +21,7 @@ $menu-font: 15px;
   }
 
   img {
-    @include make-square(20px);
+    @include mixins.make-square(20px);
     padding: 1px;
   }
   p {
@@ -29,16 +29,16 @@ $menu-font: 15px;
   }
   a {
     display: inline-block;
-    color: $navtype-color;
+    color: variables.$navtype-color;
     text-decoration: none;
     font-size: 11px;
   }
   a:hover {
-    background-color: $hover-button-color;
+    background-color: variables.$hover-button-color;
   }
   a.active {
-    background-color: $active-button-color;
-    color: $button-color;
+    background-color: variables.$active-button-color;
+    color: variables.$button-color;
   }
   .dropdown-hide {
     display: none;
@@ -58,37 +58,37 @@ $menu-font: 15px;
 }
 
 .bars {
-  color: $standard-color;
+  color: variables.$standard-color;
   font-size: $menu-font;
   height: 30px;
 }
 
 .hamburger-menu > button {
-  @include remove-appearance;
-  background-color: $background-color;
-  border-color: $background-color;
+  @include mixins.remove-appearance;
+  background-color: variables.$background-color;
+  border-color: variables.$background-color;
   border: none;
 }
 
 .hamburger-menu {
   button:hover {
-    background-color: $hover-button-color;
+    background-color: variables.$hover-button-color;
   }
   button.active {
-    background-color: $active-button-color;
+    background-color: variables.$active-button-color;
   }
   button:focus {
     outline: none;
-    background-color: $background-color;
+    background-color: variables.$background-color;
   }
 }
 
 .menu-button {
-  @include remove-appearance;
+  @include mixins.remove-appearance;
   text-decoration: none;
-  color: $navtype-color;
-  background-color: $background-color;
-  border-color: $active-button-color;
+  color: variables.$navtype-color;
+  background-color: variables.$background-color;
+  border-color: variables.$active-button-color;
 }
 
 .calendar {
@@ -100,12 +100,12 @@ $menu-font: 15px;
   font-size: $menu-font;
 }
 
-@include for-tablet-portrait-up {
-  @include nav-button-scaling(30px, 15px, 3px);
-  @include menu-button-scaling(25px, 45px, 5px);
+@include media_mixins.for-tablet-portrait-up {
+  @include main_nav_mixins.nav-button-scaling(30px, 15px, 3px);
+  @include main_nav_mixins.menu-button-scaling(25px, 45px, 5px);
 }
 
-@include for-desktop-up {
-  @include nav-button-scaling(45px, 25px, 4px);
-  @include menu-button-scaling(35px, 60px, 10px);
+@include media_mixins.for-desktop-up {
+  @include main_nav_mixins.nav-button-scaling(45px, 25px, 4px);
+  @include main_nav_mixins.menu-button-scaling(35px, 60px, 10px);
 }

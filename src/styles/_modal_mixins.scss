@@ -1,4 +1,4 @@
-@import "./mixins";
+@use "mixins";
 
 @mixin content-fd-top($top) {
   .content-fd {
@@ -25,7 +25,7 @@
     left: $left;
     height: $height;
     width: $width;
-    @include animation($animName, 0.45s);
+    @include mixins.animation($animName, 0.45s);
   }
 }
 
@@ -39,7 +39,7 @@
 @mixin content-dt-vh-scaling($height, $animName) {
   .content-dt {
     height: $height;
-    @include animation($animName, 0.45s);
+    @include mixins.animation($animName, 0.45s);
   }
 }
 

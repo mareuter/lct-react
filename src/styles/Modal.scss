@@ -1,25 +1,25 @@
-@import "./variables";
-@import "./mixins";
+@use "variables";
+@use "mixins";
 
 .header > .close {
-  @include remove-appearance;
-  background-color: $background-color;
-  color: $button-color;
-  border-color: $background-color;
+  @include mixins.remove-appearance;
+  background-color: variables.$background-color;
+  color: variables.$button-color;
+  border-color: variables.$background-color;
   border: none;
   padding: 5px;
   font-size: 30px;
 }
 
 .close:hover {
-  color: $standard-color;
+  color: variables.$standard-color;
 }
 
 .content {
   position: fixed;
   overflow: auto;
-  background-color: $background-color;
-  color: $standard-color;
+  background-color: variables.$background-color;
+  color: variables.$standard-color;
   z-index: 100;
 }
 
@@ -33,7 +33,7 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  @include animation(fadeIn, 0.4s);
+  @include mixins.animation(fadeIn, 0.4s);
 }
 
 @-webkit-keyframes fadeIn {
