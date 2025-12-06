@@ -24,10 +24,10 @@
     "globals": "16.5.0",
     "jstz": "^2.1.1",
     "luxon": "3.7.2",
-    "react": "19.2.0",
+    "react": "19.2.1",
     "react-datepicker": "^8.0.0",
-    "react-dom": "19.2.0",
-    "react-router-dom": "7.9.6",
+    "react-dom": "19.2.1",
+    "react-router-dom": "7.10.0",
     "three": "^0.181.0"
   },
   "scripts": {
