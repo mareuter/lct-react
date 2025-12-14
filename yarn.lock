@@ -5315,7 +5315,7 @@ __metadata:
     luxon: "npm:3.7.2"
     prettier: "npm:3.7.4"
     react: "npm:19.2.1"
-    react-datepicker: "npm:^8.0.0"
+    react-datepicker: "npm:^9.0.0"
     react-dom: "npm:19.2.1"
     react-router-dom: "npm:7.10.1"
     sass: "npm:1.96.0"
@@ -6133,17 +6133,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:^8.0.0":
-  version: 8.10.0
-  resolution: "react-datepicker@npm:8.10.0"
+"react-datepicker@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "react-datepicker@npm:9.0.0"
   dependencies:
     "@floating-ui/react": "npm:^0.27.15"
     clsx: "npm:^2.1.1"
     date-fns: "npm:^4.1.0"
   peerDependencies:
+    date-fns-tz: ^3.0.0
     react: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
     react-dom: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
-  checksum: 10/8063ffb4221daaff9879fb96c3f482819e9702ce72879c415ea1a112c130665fff0849fbf79ae8acdee63fce5b5c6e4d64b8d4e3e7f0b1c6bcb9eab12ec7a0ae
+  peerDependenciesMeta:
+    date-fns-tz:
+      optional: true
+  checksum: 10/8012b9fbc62ce52d0eec11d59b900fd738316450ed58a98f61fac493826e61b50e80f09b493715e51b3af0c9f711088f7f6795a4f574bda25af7056acb7ba11d
   languageName: node
   linkType: hard
 
