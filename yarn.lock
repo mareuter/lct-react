@@ -6405,8 +6405,8 @@ __metadata:
   linkType: hard
 
 "react-datepicker@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "react-datepicker@npm:9.0.0"
+  version: 9.1.0
+  resolution: "react-datepicker@npm:9.1.0"
   dependencies:
     "@floating-ui/react": "npm:^0.27.15"
     clsx: "npm:^2.1.1"
@@ -6418,7 +6418,7 @@ __metadata:
   peerDependenciesMeta:
     date-fns-tz:
       optional: true
-  checksum: 10/8012b9fbc62ce52d0eec11d59b900fd738316450ed58a98f61fac493826e61b50e80f09b493715e51b3af0c9f711088f7f6795a4f574bda25af7056acb7ba11d
+  checksum: 10/d1b2e7c2f90abef05e1669b096005a9130482600781fe15d8fdaf1441bd070376ac7ab5c0da07f9af2959b33e8fe8f5807365285823f6dc3f7ade4641d88ebe5
   languageName: node
   linkType: hard
 
