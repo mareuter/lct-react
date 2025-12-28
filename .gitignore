@@ -12,6 +12,9 @@
 /build
 /dist
 
+# React Router
+/.react-router
+
 # misc
 .DS_Store
 .env.local

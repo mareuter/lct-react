@@ -78,7 +78,6 @@ function App() {
           path="/moon_info"
           element={
             <ErrorBoundary>
-              <Suspense fallback={<LoadScreen />}>
                 <MoonInformation
                   date={getSecondsTimestamp(date)}
                   timezone={timezone.current.name()}
@@ -86,7 +85,6 @@ function App() {
                   longitude={coordinates.longitude}
                   coordinatesGood={coordinates.good}
                 />
-                </Suspense>
             </ErrorBoundary>
           }
         />
