@@ -5375,9 +5375,9 @@ __metadata:
   linkType: hard
 
 "three@npm:^0.183.0":
-  version: 0.183.1
-  resolution: "three@npm:0.183.1"
-  checksum: 10/b340d74dfa13c6e720868c4eb443907a4cbe32fa2437cdfdf93159aad5450661d15a80384ea494b7698d9264e2cade2db079fbeacd1c673dd8b99eaeff6cee7d
+  version: 0.183.2
+  resolution: "three@npm:0.183.2"
+  checksum: 10/e002bbb299f2d72b84633b363bc7237d91d26e01eeb8ad0e9faefc9584ce22b8901962d397ffa38536ea244f7599e678ac0c323324ceab0ff587419cbe21b3e9
   languageName: node
   linkType: hard
 
