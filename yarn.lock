@@ -4062,10 +4062,10 @@ __metadata:
     jstz: "npm:^2.1.1"
     luxon: "npm:3.7.2"
     prettier: "npm:3.8.1"
-    react: "npm:19.2.4"
+    react: "npm:19.2.5"
     react-datepicker: "npm:^9.0.0"
-    react-dom: "npm:19.2.4"
-    react-router-dom: "npm:7.13.2"
+    react-dom: "npm:19.2.5"
+    react-router-dom: "npm:7.14.0"
     sass: "npm:1.98.0"
     three: "npm:^0.183.0"
     typescript: "npm:5.9.3"
@@ -4875,14 +4875,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.2.4":
-  version: 19.2.4
-  resolution: "react-dom@npm:19.2.4"
+"react-dom@npm:19.2.5":
+  version: 19.2.5
+  resolution: "react-dom@npm:19.2.5"
   dependencies:
     scheduler: "npm:^0.27.0"
   peerDependencies:
-    react: ^19.2.4
-  checksum: 10/ec17721a8cb131bc33480a9f738bc5bbfe4bd11b11cf69f3f473605346578a329ad26ceef6ef0761ea67a4b455803407dd7ed4ba3d8a5abd2cee8c32d221e498
+    react: ^19.2.5
+  checksum: 10/ba14b022c7191d27b723314b964a1a4d839832e6edd231294097e323973808f97ac647bcf182ab0104e20ae6532dbc36733aec3e8333a1446a7183099c96b255
   languageName: node
   linkType: hard
 
@@ -4907,21 +4907,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:7.13.2":
-  version: 7.13.2
-  resolution: "react-router-dom@npm:7.13.2"
+"react-router-dom@npm:7.14.0":
+  version: 7.14.0
+  resolution: "react-router-dom@npm:7.14.0"
   dependencies:
-    react-router: "npm:7.13.2"
+    react-router: "npm:7.14.0"
   peerDependencies:
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10/981835c8df633f9b033e185d3efcdd178d5809b489d6d696172767cc7f96c280403cf4d8a768f86f99b4096360859bbc96aca66e93f4d5741e814766b34cced0
+  checksum: 10/74d8ca886b9282f10ba80f9af9d08fa33a6858afccca75ec62751ae3c78f410099675e0c705357fd43d37db61135a9ddbf016491b0ffb067329a779b0130190c
   languageName: node
   linkType: hard
 
-"react-router@npm:7.13.2":
-  version: 7.13.2
-  resolution: "react-router@npm:7.13.2"
+"react-router@npm:7.14.0":
+  version: 7.14.0
+  resolution: "react-router@npm:7.14.0"
   dependencies:
     cookie: "npm:^1.0.1"
     set-cookie-parser: "npm:^2.6.0"
@@ -4931,7 +4931,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/86e3538e4b50402bb15ac7b0938fdace5947a45d418bd1713b15288a208a5b102dfa599a3e5c4a86e136331b5dafaacfe57d93d2cc48241cf48fe770190cfbda
+  checksum: 10/fcf42b30f580d453b60a40f5a7c9df729992228e34993df361598f7ef912c77b4ef993428962dfc78881170fdd7fc329c4dce7cc3ef17034a63485e4fd33cb62
   languageName: node
   linkType: hard
 
@@ -4948,10 +4948,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.2.4":
-  version: 19.2.4
-  resolution: "react@npm:19.2.4"
-  checksum: 10/18179fe217f67eb2d0bc61cd04e7ad3c282ea09a1dface7eacd71816f62609f4bbf566c447c704335284deb8397b00bca084e0cd60e6f437279a7498e2d0bfe0
+"react@npm:19.2.5":
+  version: 19.2.5
+  resolution: "react@npm:19.2.5"
+  checksum: 10/1c3c7ffecb90b7f89a5c3ef635e6811f3a84600097f203b918150cb7e6b0a52915e858e5b4c82317a520dffccfa46ee4819ccf92c59c5b2d6c25cffe258dd20c
   languageName: node
   linkType: hard
 
