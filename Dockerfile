@@ -1,4 +1,4 @@
-FROM node:22@sha256:7e791fc54bd02fc89fd4fb39eb37e5bea753c75679c8022478d81679367d995a AS builder
+FROM node:22@sha256:ecabd1cb6956d7acfffe8af6bbfbe2df42362269fd28c227f36367213d0bb777 AS builder
 LABEL maintainer mareuternh@gmail.com
 
 WORKDIR /app
