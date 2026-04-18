@@ -849,9 +849,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/fiber@npm:9.5.0":
-  version: 9.5.0
-  resolution: "@react-three/fiber@npm:9.5.0"
+"@react-three/fiber@npm:9.6.0":
+  version: 9.6.0
+  resolution: "@react-three/fiber@npm:9.6.0"
   dependencies:
     "@babel/runtime": "npm:^7.17.8"
     "@types/webxr": "npm:*"
@@ -885,7 +885,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/4a2280099fd13105196fea18fa5af3ada34441f65d881ce7e5b741ca72cdafecfb0e9d9da82bc420449795167601faaad42b56965ead7b8ee393d81155a3d740
+  checksum: 10/e407de57734cf357143aa43901ac1c02aae19c8b93039d6f33906fcb5ae502fe67f91d324d4d176a0b0c60b1e1d3eda4631f1f2921c9cb9df8426fbd9008d467
   languageName: node
   linkType: hard
 
@@ -3557,7 +3557,7 @@ __metadata:
     "@fortawesome/react-fontawesome": "npm:^3.0.0"
     "@juggle/resize-observer": "npm:3.4.0"
     "@react-three/drei": "npm:10.7.7"
-    "@react-three/fiber": "npm:9.5.0"
+    "@react-three/fiber": "npm:9.6.0"
     "@testing-library/dom": "npm:10.4.1"
     "@testing-library/react": "npm:16.3.2"
     "@testing-library/user-event": "npm:14.6.1"
